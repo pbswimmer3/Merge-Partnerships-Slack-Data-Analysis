@@ -18,9 +18,11 @@ from src import store
 from src.analyze import analyze as run_analyze
 from src.llm import classify_questions, summarize_trends
 from src.report import render_markdown
+from src.dashboard import aggregate as run_aggregate, render_html
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 REPORTS_DIR = BASE_DIR / "reports"
+SITE_DIR = BASE_DIR / "site"
 
 
 def _date_strs_for_range(days: int, end_date: Optional[datetime] = None) -> List[str]:
@@ -103,6 +105,21 @@ def cmd_report(config: Config, end_date_str: str) -> Path:
     return report_path
 
 
+def cmd_dashboard() -> Path:
+    """Aggregate all cached analysis files into site/index.html. Always writes a
+    valid page, even with zero analysis files (empty-state)."""
+    analysis_files = store.read_all_analysis()
+    model = run_aggregate(analysis_files)
+    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    markup = render_html(model, generated_at)
+
+    SITE_DIR.mkdir(parents=True, exist_ok=True)
+    index_path = SITE_DIR / "index.html"
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(markup)
+    return index_path
+
+
 def cmd_notion(config: Config, analysis: dict) -> None:
     if not config.notion_token:
         print("Skipping Notion: NOTION_API_KEY not set.", file=sys.stderr)
@@ -148,6 +165,7 @@ def _add_global_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--post", action="store_true", help="Post the rendered digest to SLACK_POST_CHANNEL_ID.")
     p.add_argument("--notion", action="store_true", help="Write analyzed questions to the Notion database.")
     p.add_argument("--export-dir", type=str, default=None, help="Use an offline Slack export directory instead of the live API.")
+    p.add_argument("--dashboard", action="store_true", help="Also (re)build the static dashboard at site/index.html.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -160,6 +178,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("analyze", "Analyze cached raw messages."),
         ("report", "Render the markdown report from cached analysis."),
         ("run", "Run scrape -> analyze -> report (default)."),
+        ("dashboard", "Build the static dashboard (site/index.html) from all cached analysis files."),
     ):
         sub = subparsers.add_parser(name, help=help_text)
         _add_global_args(sub)
@@ -193,6 +212,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         print(f"Report written to {report_path}")
         return 0
 
+    if command == "dashboard":
+        index_path = cmd_dashboard()
+        print(f"Dashboard written to {index_path}")
+        return 0
+
     if command == "run":
         cmd_scrape(config, export_dir=args.export_dir)
         cmd_analyze(config, today_str)
@@ -203,6 +227,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             analysis = store.read_json(store.analysis_path(today_str))
             if analysis is not None:
                 cmd_notion(config, analysis)
+        if args.dashboard:
+            index_path = cmd_dashboard()
+            print(f"Dashboard written to {index_path}")
         print(f"Report written to {report_path}")
         return 0
 

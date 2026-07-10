@@ -139,6 +139,43 @@ Columns created in the Notion database:
 If `NOTION_API_KEY` is unset, `--notion` is skipped with a warning rather than
 failing the run.
 
+## Dashboard (GitHub Pages)
+
+`site/index.html` is a self-contained static dashboard (no external CDNs/fonts,
+inline SVG charts) built from every cached `data/analysis/*.json` file. It shows:
+
+- KPI tiles (messages, questions, unanswered %, median first-reply time, automation
+  candidates)
+- a volume-over-time line chart (messages vs. questions)
+- a top-question-categories bar chart
+- an automation-opportunities scatter chart + ranked table (volume vs. difficulty/
+  automatable %, or volume-only if LLM analysis is disabled)
+- top askers and, if present, the LLM narrative summary
+
+Build/update it locally with:
+
+```
+python -m src.cli dashboard
+```
+
+or as part of a full run:
+
+```
+python -m src.cli run --dashboard
+```
+
+Then open `site/index.html` in a browser.
+
+In CI, the daily workflow (`.github/workflows/daily-partnerships-analysis.yml`)
+rebuilds the dashboard and deploys `site/` to GitHub Pages via the
+`upload-pages-artifact` / `deploy-pages` actions (no build output is committed).
+This requires the repo's **Settings -> Pages -> Source** to be set to
+**GitHub Actions**. Once enabled, the site is published at:
+
+```
+https://<org-or-user>.github.io/<repo-name>/
+```
+
 ## Daily GitHub Action
 
 `.github/workflows/daily-partnerships-analysis.yml` runs the pipeline daily

@@ -1,3 +1,4 @@
+# Requires repo Settings -> Pages -> Source = GitHub Actions.
 name: Daily Partnerships Analysis
 
 on:
@@ -13,6 +14,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   analyze:
@@ -38,7 +45,7 @@ jobs:
           NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           DAYS: ${{ github.event.inputs.days || '1' }}
-        run: python -m src.cli run --days "$DAYS" --notion
+        run: python -m src.cli run --days "$DAYS" --notion --dashboard
 
       - name: Commit and push report if changed
         run: |
@@ -51,3 +58,19 @@ jobs:
           else
             echo "No changes to commit."
           fi
+
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy:
+    needs: analyze
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -61,3 +61,14 @@ def read_json(path: Path) -> Optional[dict]:
         return None
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def read_all_analysis() -> List[dict]:
+    """Load every cached analysis JSON file under data/analysis/, sorted by filename."""
+    _ensure_dirs()
+    results = []
+    for path in sorted(ANALYSIS_DIR.glob("*.json")):
+        data = read_json(path)
+        if data is not None:
+            results.append(data)
+    return results

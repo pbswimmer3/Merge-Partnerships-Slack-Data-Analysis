@@ -1,0 +1,4 @@
+slack-sdk>=3.27
+anthropic>=0.40
+pyyaml>=6.0
+python-dotenv>=1.0

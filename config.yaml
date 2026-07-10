@@ -1,0 +1,19 @@
+channel_id: ""            # overridden by SLACK_CHANNEL_ID env if set
+lookback_days: 30
+notion:
+  parent_page_id: ""       # overridden by NOTION_PARENT_PAGE_ID env if set
+  database_id: ""          # overridden by NOTION_DATABASE_ID env or notion_state.json if set
+llm:
+  enabled: auto           # auto = use if ANTHROPIC_API_KEY present; true/false to force
+  model: claude-opus-4-8
+  batch_size: 25
+categories:               # keyword buckets for heuristic categorization
+  integration_connector: [integration, connector, connect, sync failing, mapping, field mapping]
+  api_technical: [api, endpoint, webhook, token, oauth, rate limit, sdk, error, 401, 403, 500]
+  pricing_commercial: [pricing, price, cost, quote, contract, plan, billing, invoice]
+  onboarding: [onboard, setup, get started, kickoff, provision]
+  access_permissions: [access, permission, invite, seat, role, cannot see, can't access]
+  docs: [docs, documentation, guide, how do i, where is, link to]
+  bug_issue: [bug, broken, failing, not working, issue, down, outage]
+  data_sync: [sync, data, records, missing data, stale, refresh]
+  roadmap: [roadmap, eta, when will, planned, upcoming, feature request]

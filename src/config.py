@@ -1,6 +1,7 @@
 """Configuration loading: config.yaml + .env, resolved into a Config dataclass."""
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -10,6 +11,24 @@ import yaml
 from dotenv import load_dotenv
 
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
+NOTION_STATE_PATH = Path(__file__).resolve().parent.parent / "notion_state.json"
+
+
+def read_notion_state(path: Path = NOTION_STATE_PATH) -> Optional[str]:
+    """Return the database_id from the committed state file pointer, or None."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f) or {}
+        return data.get("database_id") or None
+    except (OSError, ValueError):
+        return None
+
+
+def write_notion_state(database_id: str, path: Path = NOTION_STATE_PATH) -> None:
+    """Persist the created database_id so subsequent runs reuse it."""
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"database_id": database_id}, f, indent=2)
+        f.write("\n")
 
 
 @dataclass
@@ -23,6 +42,9 @@ class Config:
     slack_token: Optional[str]
     anthropic_key: Optional[str]
     post_channel_id: Optional[str]
+    notion_token: Optional[str]
+    notion_parent_page_id: Optional[str]
+    notion_database_id: Optional[str]
 
     @classmethod
     def resolve(cls, config_path: Optional[str] = None, days_override: Optional[int] = None) -> "Config":
@@ -55,6 +77,17 @@ class Config:
 
         categories = raw.get("categories", {}) or {}
 
+        notion_cfg = raw.get("notion", {}) or {}
+        notion_parent_page_id = (
+            os.environ.get("NOTION_PARENT_PAGE_ID") or notion_cfg.get("parent_page_id") or None
+        )
+        notion_database_id = (
+            os.environ.get("NOTION_DATABASE_ID")
+            or read_notion_state()
+            or notion_cfg.get("database_id")
+            or None
+        )
+
         return cls(
             channel_id=channel_id,
             lookback_days=lookback_days,
@@ -65,4 +98,7 @@ class Config:
             slack_token=os.environ.get("SLACK_BOT_TOKEN") or None,
             anthropic_key=anthropic_key,
             post_channel_id=os.environ.get("SLACK_POST_CHANNEL_ID") or None,
+            notion_token=os.environ.get("NOTION_API_KEY") or None,
+            notion_parent_page_id=notion_parent_page_id,
+            notion_database_id=notion_database_id,
         )

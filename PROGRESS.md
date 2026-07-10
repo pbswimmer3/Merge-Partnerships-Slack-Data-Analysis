@@ -11,6 +11,9 @@
 ## Recent Changes
 - [2026-07-10] src/*, workflow, tests: built full scrape+analyze+report pipeline | greenfield build | 13/13 tests pass, offline e2e verified
 - [2026-07-10] review fixes: workflow shell-injection, bounded retry, analyze/scrape window align, thread-reply questions | reviewer findings | tests green
+- [2026-07-10] src/notion_writer.py + --notion + cron 5pm PST: Notion DB output (auto-create + upsert), GitHub Actions daily | hosting=Actions, view=Notion | 21/21 tests pass
+## Known edges
+- Notion select rejects commas in option names; LLM Category w/ a comma would raise. Constrain prompt or sanitize if hit.
 ## Next Actions
 - [ ] User: enable Slack connector or supply SLACK_BOT_TOKEN + SLACK_CHANNEL_ID
 - [ ] Run `make install && make run ARGS="--days 30"` for the 30-day look-back

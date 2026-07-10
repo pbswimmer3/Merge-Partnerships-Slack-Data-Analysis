@@ -1,5 +1,8 @@
 channel_id: ""            # overridden by SLACK_CHANNEL_ID env if set
 lookback_days: 30
+notion:
+  parent_page_id: ""       # overridden by NOTION_PARENT_PAGE_ID env if set
+  database_id: ""          # overridden by NOTION_DATABASE_ID env or notion_state.json if set
 llm:
   enabled: auto           # auto = use if ANTHROPIC_API_KEY present; true/false to force
   model: claude-opus-4-8

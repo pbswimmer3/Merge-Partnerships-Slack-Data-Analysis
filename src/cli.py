@@ -103,6 +103,33 @@ def cmd_report(config: Config, end_date_str: str) -> Path:
     return report_path
 
 
+def cmd_notion(config: Config, analysis: dict) -> None:
+    if not config.notion_token:
+        print("Skipping Notion: NOTION_API_KEY not set.", file=sys.stderr)
+        return
+
+    creating = not config.notion_database_id
+    if creating and not config.notion_parent_page_id:
+        print("Skipping Notion: NOTION_PARENT_PAGE_ID not set (required to create a new database).", file=sys.stderr)
+        return
+
+    from src import notion_writer
+
+    try:
+        database_id = notion_writer.write_analysis(
+            analysis, config.notion_token, config.notion_parent_page_id, config.notion_database_id
+        )
+    except Exception as exc:
+        print(f"ERROR: Notion write failed: {exc}", file=sys.stderr)
+        return
+
+    if creating:
+        from src.config import write_notion_state
+        write_notion_state(database_id)
+        print(f"Created new Notion database: {database_id}")
+        print("Save this as NOTION_DATABASE_ID secret (also written to notion_state.json).")
+
+
 def cmd_post(config: Config, report_path: Path) -> None:
     if not config.post_channel_id or not config.slack_token:
         print("Skipping post: SLACK_POST_CHANNEL_ID or SLACK_BOT_TOKEN not set.", file=sys.stderr)
@@ -119,6 +146,7 @@ def _add_global_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--days", type=int, default=None, help="Override lookback_days from config.")
     p.add_argument("--config", type=str, default=None, help="Path to config.yaml (default: repo root).")
     p.add_argument("--post", action="store_true", help="Post the rendered digest to SLACK_POST_CHANNEL_ID.")
+    p.add_argument("--notion", action="store_true", help="Write analyzed questions to the Notion database.")
     p.add_argument("--export-dir", type=str, default=None, help="Use an offline Slack export directory instead of the live API.")
 
 
@@ -158,6 +186,10 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     if command == "report":
         report_path = cmd_report(config, today_str)
+        if args.notion:
+            analysis = store.read_json(store.analysis_path(today_str))
+            if analysis is not None:
+                cmd_notion(config, analysis)
         print(f"Report written to {report_path}")
         return 0
 
@@ -167,6 +199,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         report_path = cmd_report(config, today_str)
         if args.post:
             cmd_post(config, report_path)
+        if args.notion:
+            analysis = store.read_json(store.analysis_path(today_str))
+            if analysis is not None:
+                cmd_notion(config, analysis)
         print(f"Report written to {report_path}")
         return 0
 

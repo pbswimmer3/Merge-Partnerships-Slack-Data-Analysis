@@ -58,7 +58,7 @@ def classify_questions(questions: List[dict], config) -> List[dict]:
         return questions
 
     try:
-        client = anthropic.Anthropic(api_key=api_key)
+        client = anthropic.Anthropic(api_key=api_key, base_url=getattr(config, "anthropic_base_url", None))
     except Exception:
         return questions
 
@@ -124,7 +124,7 @@ def summarize_trends(analysis: dict, config) -> str:
         return ""
 
     try:
-        client = anthropic.Anthropic(api_key=api_key)
+        client = anthropic.Anthropic(api_key=api_key, base_url=getattr(config, "anthropic_base_url", None))
         model = getattr(config, "llm_model", "claude-opus-4-8")
         stats_payload = {
             "totals": analysis.get("totals"),

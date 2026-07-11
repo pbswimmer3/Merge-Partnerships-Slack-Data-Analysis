@@ -7,6 +7,7 @@ llm:
   enabled: auto           # auto = use if ANTHROPIC_API_KEY present; true/false to force
   model: claude-opus-4-8
   batch_size: 25
+  base_url: ""            # optional custom endpoint; e.g. Merge Gateway. Env ANTHROPIC_BASE_URL overrides.
 categories:               # keyword buckets for heuristic categorization
   integration_connector: [integration, connector, connect, sync failing, mapping, field mapping]
   api_technical: [api, endpoint, webhook, token, oauth, rate limit, sdk, error, 401, 403, 500]

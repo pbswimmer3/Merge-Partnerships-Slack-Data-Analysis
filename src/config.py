@@ -41,6 +41,7 @@ class Config:
     categories: Dict[str, List[str]]
     slack_token: Optional[str]
     anthropic_key: Optional[str]
+    anthropic_base_url: Optional[str]
     post_channel_id: Optional[str]
     notion_token: Optional[str]
     notion_parent_page_id: Optional[str]
@@ -74,6 +75,8 @@ class Config:
 
         llm_model = llm_cfg.get("model", "claude-opus-4-8")
         llm_batch_size = int(llm_cfg.get("batch_size", 25))
+        # Optional custom endpoint (e.g. Merge Gateway); SDK also honors this env var directly.
+        anthropic_base_url = os.environ.get("ANTHROPIC_BASE_URL") or llm_cfg.get("base_url") or None
 
         categories = raw.get("categories", {}) or {}
 
@@ -97,6 +100,7 @@ class Config:
             categories=categories,
             slack_token=os.environ.get("SLACK_BOT_TOKEN") or None,
             anthropic_key=anthropic_key,
+            anthropic_base_url=anthropic_base_url,
             post_channel_id=os.environ.get("SLACK_POST_CHANNEL_ID") or None,
             notion_token=os.environ.get("NOTION_API_KEY") or None,
             notion_parent_page_id=notion_parent_page_id,

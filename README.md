@@ -98,6 +98,21 @@ llm:
 Without an Anthropic key, the report still includes heuristic categorization,
 question detection, trends, and a heuristic difficulty/automation proxy.
 
+### Custom endpoint / Merge Gateway
+
+To route LLM calls through an Anthropic-compatible gateway (e.g. the Merge
+Gateway) instead of `api.anthropic.com`, set `ANTHROPIC_BASE_URL` (or `llm.base_url`
+in `config.yaml`). Use the gateway's key as `ANTHROPIC_API_KEY`. Example:
+
+```
+ANTHROPIC_API_KEY=<merge-gateway-key>
+ANTHROPIC_BASE_URL=https://api-gateway.merge.dev/v1/anthropic
+```
+
+In GitHub Actions the base URL is read from a repo **Variable** `ANTHROPIC_BASE_URL`
+(non-sensitive), while the key stays a **Secret**. The SDK appends `/v1/messages` to
+the base URL — if the gateway returns 404, adjust the trailing path accordingly.
+
 ## Notion output
 
 Analyzed questions can be written to a Notion database (one row per question,

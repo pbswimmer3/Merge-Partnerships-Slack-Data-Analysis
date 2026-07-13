@@ -1,0 +1,53 @@
+{
+  "per_day": {
+    "2026-05-14": {
+      "messages": 15,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U0ASX68HG2V",
+      2
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1778778904.386709",
+      "user": "U0ASX68HG2V",
+      "text": "I can't tell if this competes with us but have you spoken w/ folks on their side about this recently?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "competitive assessment",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Competitive analysis requiring human knowledge and recent conversations."
+    },
+    {
+      "ts": "1778779005.109899",
+      "user": "U0ASX68HG2V",
+      "text": "oh damn ty, what makes it not competitive?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "competitiveness clarification",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Nuanced competitive reasoning needs human context."
+    }
+  ]
+}

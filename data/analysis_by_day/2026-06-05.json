@@ -1,0 +1,138 @@
+{
+  "per_day": {
+    "2026-06-05": {
+      "messages": 27,
+      "questions": 7
+    }
+  },
+  "category_distribution": {
+    "other": 5,
+    "data_sync": 1,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U02HSF3TNBG",
+      3
+    ],
+    [
+      "U05M5UUCDS9",
+      2
+    ],
+    [
+      "U0832UK1KU5",
+      2
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 598.484169960022,
+    "unanswered_question_count": 5
+  },
+  "questions": [
+    {
+      "ts": "1780689611.444299",
+      "user": "U05M5UUCDS9",
+      "text": "Do we have a technical support contact at ADP WFN? cc: Matt Linehan Pritak Patel Nishka Chotai",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 13,
+      "first_reply_latency_sec": 1076.2675099372864,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "ADP WFN support contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires specific contact info from humans."
+    },
+    {
+      "ts": "1780690687.711809",
+      "user": "U02HSF3TNBG",
+      "text": "yeah whats the question?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying the question",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Conversational filler, no answerable content."
+    },
+    {
+      "ts": "1780691210.090639",
+      "user": "U05M5UUCDS9",
+      "text": "We're currently trying to generate Employee Deduction records for payroll runs/checks. Are there any fields that indicate whether a deduction is an employee or employer deduction?",
+      "category": "data_sync",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "data_sync",
+      "subtopic": "Employee vs employer deduction field",
+      "difficulty": 4,
+      "automatable": true,
+      "rationale": "API docs likely specify deduction type fields."
+    },
+    {
+      "ts": "1780670930.021399",
+      "user": "U0832UK1KU5",
+      "text": "A client is asking: do you know the licensing model of ADP workforce now? does it charge on API consumption? Pritak Patel you know anything about this?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 8,
+      "first_reply_latency_sec": 120.70082998275757,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "ADP WFN licensing model",
+      "difficulty": 4,
+      "automatable": true,
+      "rationale": "Vendor licensing may be documented publicly."
+    },
+    {
+      "ts": "1780671050.722229",
+      "user": "U02HSF3TNBG",
+      "text": "Like as a product?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying product context",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Fragment clarification, no standalone answer."
+    },
+    {
+      "ts": "1780671062.076709",
+      "user": "U02HSF3TNBG",
+      "text": "or as a partner?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying partner context",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Fragment clarification, no standalone answer."
+    },
+    {
+      "ts": "1780673212.334439",
+      "user": "U0832UK1KU5",
+      "text": "so annual fee + fee for every linked account?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "annual and linked account fees",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Pricing structure question answerable from pricing docs/FAQ."
+    }
+  ]
+}

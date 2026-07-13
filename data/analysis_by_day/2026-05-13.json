@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-05-13": {
+      "messages": 2,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U03UR4YUHMX",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1778681268.489029",
+      "user": "U03UR4YUHMX",
+      "text": "Is it not that we're hitting rate limits?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "rate limit diagnosis",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs log inspection to confirm rate limiting."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "per_day": {
+    "2026-07-02": {
+      "messages": 8,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      1
+    ],
+    [
+      "U02EXQ8T1JL",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 10.1842200756073,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1783027376.955079",
+      "user": "U060YKZR918",
+      "text": "PartnerBot can you add Krista's contact into to our Partnerships contacts lists?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "data_management",
+      "subtopic": "add contact to list",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Bot could update contacts list programmatically."
+    },
+    {
+      "ts": "1783011053.402989",
+      "user": "U02EXQ8T1JL",
+      "text": "PartnerBot do we have a contact at employment hero?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 10.1842200756073,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Employment Hero contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
+    }
+  ]
+}

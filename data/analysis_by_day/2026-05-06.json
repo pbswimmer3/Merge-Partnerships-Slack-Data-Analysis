@@ -1,0 +1,72 @@
+{
+  "per_day": {
+    "2026-05-06": {
+      "messages": 13,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U013W4P3NG3",
+      2
+    ],
+    [
+      "U082R8BGV7H",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 3
+  },
+  "questions": [
+    {
+      "ts": "1778076719.431799",
+      "user": "U013W4P3NG3",
+      "text": "can he get us an intro with their team first",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "partner team intro request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires human relationship coordination for introduction."
+    },
+    {
+      "ts": "1778077037.558959",
+      "user": "U082R8BGV7H",
+      "text": "Adding in Marcos Placona!! Who should be included in the intro?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "intro participant selection",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs human judgment on who to include."
+    },
+    {
+      "ts": "1778077092.979699",
+      "user": "U013W4P3NG3",
+      "text": "can you do this in the gateway marketing channel",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "channel routing request",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple directive, no factual query."
+    }
+  ]
+}

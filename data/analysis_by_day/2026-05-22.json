@@ -1,0 +1,57 @@
+{
+  "per_day": {
+    "2026-05-22": {
+      "messages": 6,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U06R97P6LG7",
+      1
+    ],
+    [
+      "U02HSF3TNBG",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 3676.9302299022675,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1779485789.330599",
+      "user": "U06R97P6LG7",
+      "text": "Pritak Patel I received a question from a customer about MPOP and they shared the attached doc. Screenshotting/highlighting the relevant portion. The question is do we need to take any action to get the MPOP credits approved or is it automatic?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 25,
+      "first_reply_latency_sec": 3676.9302299022675,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "MPOP credits approval process",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires program-specific knowledge about credit approval workflow."
+    },
+    {
+      "ts": "1779489778.413229",
+      "user": "U02HSF3TNBG",
+      "text": "It should be automatic. Kevin Zhang do you know how the MPOPP gets applied to our private offers?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "MPOPP application to private offers",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires internal process knowledge and named person input."
+    }
+  ]
+}

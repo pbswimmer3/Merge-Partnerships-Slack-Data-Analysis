@@ -1,0 +1,96 @@
+{
+  "per_day": {
+    "2026-06-24": {
+      "messages": 34,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "other": 3,
+    "pricing_commercial": 1
+  },
+  "top_askers": [
+    [
+      "U04Q93BATTN",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ],
+    [
+      "U0AQN0VNZ7Z",
+      1
+    ],
+    [
+      "U02HSF3TNBG",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 1339.9468449354172,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1782337404.848889",
+      "user": "U04Q93BATTN",
+      "text": "whose number ends in [redacted] for the uber account MFA?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 20,
+      "first_reply_latency_sec": 493.7532398700714,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "MFA phone number owner",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Sensitive credential info; requires human with account knowledge."
+    },
+    {
+      "ts": "1782337922.483759",
+      "user": "U08KP0PHNG0",
+      "text": "can we change it",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "vague change request",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "No context; ambiguous referent needs clarification from human."
+    },
+    {
+      "ts": "1782325027.086159",
+      "user": "U0AQN0VNZ7Z",
+      "text": "Hi all, does anyone know the current status of support for Sage CRE? I had a ticket come through asking about if we have any plans. I saw there was some mention of Sage CRE 300 suggesting talks were progressing early last year but not finding much info since. Was it dropped?",
+      "category": "pricing_commercial",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 2186.140450000763,
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Sage CRE support status",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Roadmap status unclear; needs human with historical knowledge."
+    },
+    {
+      "ts": "1782318474.057539",
+      "user": "U02HSF3TNBG",
+      "text": "Which agent store?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "which agent store",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Ambiguous fragment lacking context; requires clarification."
+    }
+  ]
+}

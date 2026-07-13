@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-05-11": {
+      "messages": 3,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "bug_issue": 1
+  },
+  "top_askers": [
+    [
+      "U02HSF3TNBG",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1778512499.291159",
+      "user": "U02HSF3TNBG",
+      "text": "could it be a bug in Merge Link?",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "bug_issue",
+      "subtopic": "Merge Link bug speculation",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires investigation and technical debugging by human."
+    }
+  ]
+}

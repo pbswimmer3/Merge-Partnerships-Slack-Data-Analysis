@@ -1,0 +1,58 @@
+{
+  "per_day": {
+    "2026-04-16": {
+      "messages": 6,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "pricing_commercial": 1,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U08VAUU4Z2M",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 751.1249301433563,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1776364246.950929",
+      "user": "U08VAUU4Z2M",
+      "text": "Can we get an upgraded plan for Smartsheet?",
+      "category": "pricing_commercial",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 751.1249301433563,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "plan upgrade request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires commercial decision on plan upgrade with vendor."
+    },
+    {
+      "ts": "1776365152.190499",
+      "user": "U08KP0PHNG0",
+      "text": "but was able to create creds?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "credential creation confirmation",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Fragmentary follow-up needing thread context to interpret."
+    }
+  ]
+}

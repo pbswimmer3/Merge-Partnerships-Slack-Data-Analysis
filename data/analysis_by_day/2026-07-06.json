@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-07-06": {
+      "messages": 2,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "integration_connector": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 212.3612699508667,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1783364999.959409",
+      "user": "U060YKZR918",
+      "text": "do we happen to have a recent consolidated OAuth app tracker that shows which integrations across Unified API and which AH connectors have Merge default credentials available for customer use, versus which require the end user to provide their own credentials?\nsimilar to this Partner Auth Audit, but perhaps as a new sheet or column on the Partnership & Sandbox Tracker",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 212.3612699508667,
+      "permalink": null,
+      "llm_category": "credentials_tracking",
+      "subtopic": "OAuth default credentials tracker",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Structured data request; a maintained tracker/doc could answer this fully."
+    }
+  ]
+}

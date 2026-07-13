@@ -1,0 +1,142 @@
+{
+  "per_day": {
+    "2026-07-01": {
+      "messages": 15,
+      "questions": 7
+    }
+  },
+  "category_distribution": {
+    "other": 5,
+    "api_technical": 1,
+    "bug_issue": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      3
+    ],
+    [
+      "U04Q93BATTN",
+      2
+    ],
+    [
+      "U0ASX68HG2V",
+      1
+    ],
+    [
+      "U013W4P3NG3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 468.11809504032135,
+    "unanswered_question_count": 5
+  },
+  "questions": [
+    {
+      "ts": "1782939461.426249",
+      "user": "U04Q93BATTN",
+      "text": "PartnerBot who is our contact at Freshdesk or Freshservice?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 13.333790063858032,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Freshdesk/Freshservice contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
+    },
+    {
+      "ts": "1782939593.003229",
+      "user": "U04Q93BATTN",
+      "text": "Aidan Timmerman are you okay with me filling out the partner program signup and looping/handing off to y'all once I get a response?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "partner program signup handoff",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Process approval requiring human sign-off."
+    },
+    {
+      "ts": "1782928429.526869",
+      "user": "U0ASX68HG2V",
+      "text": "met one of the guys who architected oauth2.0 at the AIE booth today, he's now working on a protocol for agent auth\nprobably worth having partnerships/eng reach out?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "agent auth protocol outreach",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic outreach suggestion needs human decision."
+    },
+    {
+      "ts": "1782871991.836679",
+      "user": "U060YKZR918",
+      "text": "do we have a Justworks contact who we can reach out to & get some insight for this?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 7,
+      "first_reply_latency_sec": 922.9024000167847,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Justworks contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
+    },
+    {
+      "ts": "1782872914.739079",
+      "user": "U013W4P3NG3",
+      "text": "We do!! Try asking partner bot?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "pointer to partnerbot",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Peer response, not a question needing answer."
+    },
+    {
+      "ts": "1782874237.905709",
+      "user": "U060YKZR918",
+      "text": "PartnerBot do we have a Justworks contact who can help with this issue?",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Justworks contact for issue",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
+    },
+    {
+      "ts": "1782924681.173979",
+      "user": "U060YKZR918",
+      "text": "Nishka Chotai Prad Biswas could either of you add me to the shared slack channel?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_request",
+      "subtopic": "add to slack channel",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Access request needing human to add member."
+    }
+  ]
+}

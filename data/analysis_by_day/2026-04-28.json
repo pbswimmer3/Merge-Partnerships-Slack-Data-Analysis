@@ -1,0 +1,54 @@
+{
+  "per_day": {
+    "2026-04-28": {
+      "messages": 8,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1,
+    "bug_issue": 1
+  },
+  "top_askers": [
+    [
+      "U08VAUU4Z2M",
+      2
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 1047.8458800315857,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1777410139.852859",
+      "user": "U08VAUU4Z2M",
+      "text": "Do we have a Gong end-user account? I see the OAuth creds in Sandbox but not a user to test with",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 7,
+      "first_reply_latency_sec": 1047.8458800315857,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "end-user test account",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires checking account existence and possibly provisioning."
+    },
+    {
+      "ts": "1777411284.283489",
+      "user": "U08VAUU4Z2M",
+      "text": "ooh okay yes could I get an account to test a bug fix?",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "test account for bugfix",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Provisioning request needs human action."
+    }
+  ]
+}

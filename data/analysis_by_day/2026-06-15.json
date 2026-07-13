@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-15": {
+      "messages": 3,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U06R97P6LG7",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1781544908.069139",
+      "user": "U06R97P6LG7",
+      "text": "Do we have any updates here, would love to get the MPPO shipped this week.",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "deadline_timeline",
+      "subtopic": "MPPO shipping status",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Status update request needing human follow-up."
+    }
+  ]
+}

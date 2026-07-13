@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-22": {
+      "messages": 3,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1782164883.331669",
+      "user": "U099MRN2JNA",
+      "text": "can you add me??",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_request",
+      "subtopic": "add me to channel",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple access request but needs human to grant."
+    }
+  ]
+}

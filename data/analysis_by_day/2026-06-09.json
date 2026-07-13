@@ -1,0 +1,58 @@
+{
+  "per_day": {
+    "2026-06-09": {
+      "messages": 15,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "other": 1,
+    "bug_issue": 1
+  },
+  "top_askers": [
+    [
+      "U03GEH32R9A",
+      1
+    ],
+    [
+      "U034LALDDK4",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1781010498.832349",
+      "user": "U03GEH32R9A",
+      "text": "When does the renewal need to ship by?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "deadline_timeline",
+      "subtopic": "Renewal ship date",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Specific internal deadline requires human knowledge."
+    },
+    {
+      "ts": "1781033605.664719",
+      "user": "U034LALDDK4",
+      "text": "ok thanks for checking, should we take this down from default creds for now?",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "security_credentials",
+      "subtopic": "removing default credentials",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Decision requires human judgment on action after investigation."
+    }
+  ]
+}

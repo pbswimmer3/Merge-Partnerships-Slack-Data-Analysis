@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-29": {
+      "messages": 4,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 16.071190118789673,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1782751433.436879",
+      "user": "U08KP0PHNG0",
+      "text": "PartnerBot do we have a workday contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 16.071190118789673,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Workday contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
+    }
+  ]
+}

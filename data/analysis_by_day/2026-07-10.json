@@ -1,0 +1,92 @@
+{
+  "per_day": {
+    "2026-07-10": {
+      "messages": 35,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "integration_connector": 2,
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U09F1BB96KC",
+      2
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ],
+    [
+      "U0A1G4H5Z60",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 12.08442509174347,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1783726815.513929",
+      "user": "U08KP0PHNG0",
+      "text": "<@U0BBLFYHDFG|PartnerBot> <@U0BETHXAKFS|Connector Bot> are you a drake fan?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 5.528520107269287,
+      "permalink": null,
+      "llm_category": "off_topic",
+      "subtopic": "casual non-work banter",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Irrelevant joke; bot can trivially deflect."
+    },
+    {
+      "ts": "1783726591.393009",
+      "user": "U0A1G4H5Z60",
+      "text": "<@U0BBLFYHDFG|PartnerBot> what Default app credentials do we have for Google product connectors?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 9,
+      "first_reply_latency_sec": 18.64033007621765,
+      "permalink": null,
+      "llm_category": "credentials_tracking",
+      "subtopic": "Google connector default credentials",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Specific credential lookup answerable from maintained credentials list."
+    },
+    {
+      "ts": "1783696559.743569",
+      "user": "U09F1BB96KC",
+      "text": "Grace Park what scope do they want added?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "integration_scope",
+      "subtopic": "requested scope added",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Directed question requiring specific case knowledge from person."
+    },
+    {
+      "ts": "1783699711.061289",
+      "user": "U09F1BB96KC",
+      "text": "Nishka Chotai can you a pass here at investigating?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "task_assignment",
+      "subtopic": "investigate request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Delegation to a person, not an answerable question."
+    }
+  ]
+}

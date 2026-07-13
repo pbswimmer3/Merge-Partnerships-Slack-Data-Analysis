@@ -1,0 +1,54 @@
+{
+  "per_day": {
+    "2026-04-17": {
+      "messages": 7,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "access_permissions": 1,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U09DQENB7PX",
+      2
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 43145.409890174866,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1776389616.315899",
+      "user": "U09DQENB7PX",
+      "text": "I have an end user that wants to get start_date from Rippling and I mentioned the partnership terms don't currently grant us access to it. I guess they reached out to Rippling and Rippling said [screenshot]. Is this a conversation we have had recently or something we can ask them?",
+      "category": "access_permissions",
+      "is_question": true,
+      "reply_count": 6,
+      "first_reply_latency_sec": 43145.409890174866,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "partnership data field access",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Partner-specific terms negotiation requiring human coordination with Rippling."
+    },
+    {
+      "ts": "1776446151.403329",
+      "user": "U09DQENB7PX",
+      "text": "cc Ariya Patel Ashwin Prakash for this ticket - could you make the request?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "ticket request handoff",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Internal task assignment, no factual answer possible by bot."
+    }
+  ]
+}

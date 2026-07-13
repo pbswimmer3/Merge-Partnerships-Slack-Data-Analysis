@@ -1,0 +1,77 @@
+{
+  "per_day": {
+    "2026-04-23": {
+      "messages": 25,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 2,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ],
+    [
+      "U096N7MURJS",
+      1
+    ],
+    [
+      "U040W5LA59R",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 377.7981199026108,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1776982977.675919",
+      "user": "U099MRN2JNA",
+      "text": "does this look familiar? Nishka Chotai not sure why i got this",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 14,
+      "first_reply_latency_sec": 51.93955993652344,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "unexpected notification triage",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague context-dependent query needing human investigation."
+    },
+    {
+      "ts": "1776984163.094849",
+      "user": "U096N7MURJS",
+      "text": "is it a customer?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "customer status check",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs CRM lookup and thread context to answer."
+    },
+    {
+      "ts": "1776955358.350059",
+      "user": "U040W5LA59R",
+      "text": "How can I see what scopes an OAuth application has? Auditboard is asking for Bitbucket",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 703.6566798686981,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "OAuth scope inspection",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Documentable process for viewing OAuth app scopes."
+    }
+  ]
+}

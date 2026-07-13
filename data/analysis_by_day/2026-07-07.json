@@ -1,0 +1,142 @@
+{
+  "per_day": {
+    "2026-07-07": {
+      "messages": 25,
+      "questions": 7
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1,
+    "integration_connector": 3,
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U04923DBYUU",
+      4
+    ],
+    [
+      "U07841HAUKW",
+      1
+    ],
+    [
+      "U060YKZR918",
+      1
+    ],
+    [
+      "U08P41NFP2Q",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 660.0127899646759,
+    "unanswered_question_count": 6
+  },
+  "questions": [
+    {
+      "ts": "1783417647.766049",
+      "user": "U07841HAUKW",
+      "text": "Pritak Patel it's probably a long shot, but have we helped other customers negotiate Paylocity's API fees in the past?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "Paylocity API fee negotiation",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Historical negotiation precedent needs human institutional knowledge."
+    },
+    {
+      "ts": "1783458081.798379",
+      "user": "U04923DBYUU",
+      "text": "Nishka Chotai Prad Biswas Do we have examples of Merge customers that use our Workday integration, and were then able to become Workday Preferred Partners with us powering the integration?\nA prospect of mine wants to ensure that using a Merge powered integration doesn't impede them to being a UKG and/or Workday partner?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 17,
+      "first_reply_latency_sec": 660.0127899646759,
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "Workday preferred partner examples",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires case-study knowledge and nuanced partnership eligibility judgment."
+    },
+    {
+      "ts": "1783458741.811169",
+      "user": "U060YKZR918",
+      "text": "Jemma Baus iirc FirstUp did and you may have other customers who have, right?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "confirm customer examples",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Directed at person; relies on individual memory of customers."
+    },
+    {
+      "ts": "1783458947.215719",
+      "user": "U04923DBYUU",
+      "text": "Any idea if its the same using Merge to power the integration vs. them building direct to get a partnership?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "Merge vs direct partnership",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Nuanced partnership eligibility question; needs vendor-specific expert insight."
+    },
+    {
+      "ts": "1783459057.393079",
+      "user": "U04923DBYUU",
+      "text": "Hmm how does workday approve the integration?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "integration_approval",
+      "subtopic": "Workday integration approval process",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Process question answerable via documented approval workflow FAQ."
+    },
+    {
+      "ts": "1783459117.971569",
+      "user": "U04923DBYUU",
+      "text": "Sg sg - is UKG any different?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "UKG process differences",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Comparison answerable from documented vendor process notes."
+    },
+    {
+      "ts": "1783439973.821689",
+      "user": "U08P41NFP2Q",
+      "text": "Apologies if there's an existing thread already, what is the latest on where we stand in the app review process?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "status_followup",
+      "subtopic": "app review status",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Live status of specific review needs human or ticket lookup."
+    }
+  ]
+}

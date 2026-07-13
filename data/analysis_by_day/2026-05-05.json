@@ -1,0 +1,57 @@
+{
+  "per_day": {
+    "2026-05-05": {
+      "messages": 9,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "api_technical": 2
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ],
+    [
+      "U08VAUU4Z2M",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 123.22595000267029,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1777998360.306339",
+      "user": "U099MRN2JNA",
+      "text": "are we good to proceed with the REST API scopes?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "REST API scope approval",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs confirmation from someone about correct scope choice."
+    },
+    {
+      "ts": "1778019016.626959",
+      "user": "U08VAUU4Z2M",
+      "text": "Is there a Hibob developer portal acct I could use to create an Agent Handler OAuth app? If you received a verification link for Hibob that was me lol Pritak Patel",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 123.22595000267029,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Hibob developer portal account",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Account provisioning request requiring human action."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-07-11": {
+      "messages": 1,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "integration_connector": 1
+  },
+  "top_askers": [
+    [
+      "U02EXQ8T1JL",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1783768104.710479",
+      "user": "U02EXQ8T1JL",
+      "text": "What connectors do they need?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "connectors needed",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague referent 'they'; needs customer context to answer."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "per_day": {
+    "2026-06-25": {
+      "messages": 19,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ],
+    [
+      "U08VAV23ZL1",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 7063.686480045319,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1782409522.467159",
+      "user": "U099MRN2JNA",
+      "text": "sarah sent me a new sandbox so i made a new login, should i replace the login info in the 1pass we have?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Updating shared credentials",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Process confirmation needing team agreement."
+    },
+    {
+      "ts": "1782404329.727869",
+      "user": "U08KP0PHNG0",
+      "text": "PartnerBot who is our contact at uber?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Uber contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot from contacts list."
+    },
+    {
+      "ts": "1782375208.687239",
+      "user": "U08VAV23ZL1",
+      "text": "Hey subteam Yash Gogri \u2014 inbound from EmpirioLabs asking to be listed as a provider on the Merge Gateway.\nMy take is we should not do a named listing since it's effectively gateway-on-gateway, which adds complexity (routing/latency, support ownership, observability). Does that match your view?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 7063.686480045319,
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "gateway-on-gateway listing",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Strategic partnership decision requiring team judgment."
+    }
+  ]
+}

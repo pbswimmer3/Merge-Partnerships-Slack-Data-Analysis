@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-11": {
+      "messages": 6,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "pricing_commercial": 1
+  },
+  "top_askers": [
+    [
+      "U0ASMSQM3N0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1781215994.587799",
+      "user": "U0ASMSQM3N0",
+      "text": "Pritak Patel Chloe Leblanc Nishka Chotai sounds like I can generate a project for your use case and add you as members - sound like a plan?",
+      "category": "pricing_commercial",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Generate project, add members",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Coordination proposal needing team confirmation."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "per_day": {
+    "2026-07-08": {
+      "messages": 27,
+      "questions": 6
+    }
+  },
+  "category_distribution": {
+    "other": 6
+  },
+  "top_askers": [
+    [
+      "U02HSF3TNBG",
+      3
+    ],
+    [
+      "U04Q93BATTN",
+      1
+    ],
+    [
+      "U04923DBYUU",
+      1
+    ],
+    [
+      "U013W4P3NG3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 6
+  },
+  "questions": [
+    {
+      "ts": "1783518825.878309",
+      "user": "U02HSF3TNBG",
+      "text": "Kevin Silberblatt (Silbs) Do you remember the remaining steps here?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "status_followup",
+      "subtopic": "remaining steps recall",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Needs human context about specific unstated thread and prior work."
+    },
+    {
+      "ts": "1783519532.916619",
+      "user": "U04Q93BATTN",
+      "text": "Can you list one or a few customers for me just for tracking?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "list customers for tracking",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Ambiguous scope but CRM/bot could list customers given context."
+    },
+    {
+      "ts": "1783543036.038539",
+      "user": "U02HSF3TNBG",
+      "text": "Whats included in that, and do we have a list of customers that have mentioned needing?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "customers needing feature",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Vague 'that' referent; needs thread context to identify feature."
+    },
+    {
+      "ts": "1783525641.619599",
+      "user": "U04923DBYUU",
+      "text": "Sry Jemma Baus quick follow up - but is it the same process for UKG?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "UKG process same",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Process comparison could be documented; slight context dependency."
+    },
+    {
+      "ts": "1783545363.668559",
+      "user": "U02HSF3TNBG",
+      "text": "Shensi Ding knows their CEO I think. Do you think we can just ask them?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_outreach",
+      "subtopic": "contact CEO directly",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Judgment/relationship decision requiring human strategic input."
+    },
+    {
+      "ts": "1783547112.798829",
+      "user": "U013W4P3NG3",
+      "text": "whats the acccount under?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "account_lookup",
+      "subtopic": "which account",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Simple lookup but lacks referent; CRM could resolve with context."
+    }
+  ]
+}

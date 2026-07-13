@@ -1,0 +1,57 @@
+{
+  "per_day": {
+    "2026-06-18": {
+      "messages": 12,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ],
+    [
+      "U0ASMSQM3N0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1781799217.476539",
+      "user": "U099MRN2JNA",
+      "text": "Pritak Patel Nishka Chotai - do either of you know what the Teamtailor account name/link is? Sarah is saying merge.dev isn't working and we can't just send the email address?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Teamtailor account name/link",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs specific account credentials from humans."
+    },
+    {
+      "ts": "1781817637.183839",
+      "user": "U0ASMSQM3N0",
+      "text": "Chloe Leblanc did you end up testing in some other account / environment?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Testing environment check",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Status question directed to specific person."
+    }
+  ]
+}

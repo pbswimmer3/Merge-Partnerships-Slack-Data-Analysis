@@ -1,0 +1,77 @@
+{
+  "per_day": {
+    "2026-05-04": {
+      "messages": 15,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1,
+    "other": 2
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      1
+    ],
+    [
+      "U02HSF3TNBG",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 2494.1707701683044,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1777923155.081359",
+      "user": "U099MRN2JNA",
+      "text": "Hii I'm configuring Rippling partner portal for a customer and noticed the scopes look a little different (workers instead of employees). I believe Rippling had migrated their endpoints, but curious if we are supposed to still be selecting endpoints or if there was an update/discussion on this change?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 11,
+      "first_reply_latency_sec": 2494.1707701683044,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "Rippling endpoint migration scopes",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires knowledge of recent partner migration decisions."
+    },
+    {
+      "ts": "1777925649.252129",
+      "user": "U02HSF3TNBG",
+      "text": "Do they roughly map 1->1 to the old ones?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "endpoint mapping equivalence",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Mapping could be documented but needs specific migration reference."
+    },
+    {
+      "ts": "1777920918.284559",
+      "user": "U08KP0PHNG0",
+      "text": "tagging Pritak Patel can you help?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "tagging for help",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple handoff mention, no answerable content."
+    }
+  ]
+}

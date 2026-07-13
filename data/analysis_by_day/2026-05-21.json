@@ -1,0 +1,58 @@
+{
+  "per_day": {
+    "2026-05-21": {
+      "messages": 4,
+      "questions": 2
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U07841HAUKW",
+      1
+    ],
+    [
+      "U02HSF3TNBG",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 55.140729904174805,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1779357593.245099",
+      "user": "U07841HAUKW",
+      "text": "Hello, AON mentioned that Paylocity is asking some of their customers to fill out an additional form (on top of the Web Services form) called \"Paylocity Automate Data Exchange / API\" (adding a copy in the thread). Have we seen this before, or do we know when/why Paylocity might require it?\nIt seems like this adds an extra step to obtaining Paylocity API credentials, so I wanted to check whether we're aware of it and whether we should proactively flag it to other customers working with Paylocity. Pritak Patel Nishka Chotai -- do you have any context here or do we have a good contact to reach out to?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 14,
+      "first_reply_latency_sec": 55.140729904174805,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "Paylocity extra API form",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires partner knowledge about undocumented onboarding requirement."
+    },
+    {
+      "ts": "1779372330.733569",
+      "user": "U02HSF3TNBG",
+      "text": "have not seen this before! Do they need to talk to someone?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "escalation contact question",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Follow-up needing human context on process."
+    }
+  ]
+}

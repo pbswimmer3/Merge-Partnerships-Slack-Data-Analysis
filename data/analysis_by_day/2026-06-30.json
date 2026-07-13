@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-30": {
+      "messages": 3,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "integration_connector": 1
+  },
+  "top_askers": [
+    [
+      "U0B42HJKPE3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1782827061.201469",
+      "user": "U0B42HJKPE3",
+      "text": "Hi! A customer was asking if their existing linked accounts will get disconnected with Hibob marketplace migration. My understanding (based on this thread but not sure if anything has changed since) is existing basic-auth linked accounts are expected to keep working for a period before needing relink. Just wanted to confirm if that is the best thing to respond with for now?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Hibob migration disconnection",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Migration behavior confirmation needs current human verification."
+    }
+  ]
+}

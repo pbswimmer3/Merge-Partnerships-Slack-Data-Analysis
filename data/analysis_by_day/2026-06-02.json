@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-02": {
+      "messages": 2,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U06R97P6LG7",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1780409622.750309",
+      "user": "U06R97P6LG7",
+      "text": "Hi team, did we learn more from Tackle about the process?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_status",
+      "subtopic": "Tackle process update",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague status query needing human context."
+    }
+  ]
+}

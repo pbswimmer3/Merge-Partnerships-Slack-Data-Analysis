@@ -1,0 +1,106 @@
+{
+  "per_day": {
+    "2026-06-04": {
+      "messages": 21,
+      "questions": 5
+    }
+  },
+  "category_distribution": {
+    "other": 5
+  },
+  "top_askers": [
+    [
+      "U0A1961A63X",
+      3
+    ],
+    [
+      "U041R9BHV6H",
+      1
+    ],
+    [
+      "U06LX4SHBGB",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 27.0694899559021,
+    "unanswered_question_count": 4
+  },
+  "questions": [
+    {
+      "ts": "1780581450.431869",
+      "user": "U041R9BHV6H",
+      "text": "can i loop in either of you again lol",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Looping in colleagues",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Casual coordination, no answerable content."
+    },
+    {
+      "ts": "1780586945.884399",
+      "user": "U0A1961A63X",
+      "text": "Having trouble logging in, should i email posthog support?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Login trouble, contact support",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "FAQ could guide login/support escalation steps."
+    },
+    {
+      "ts": "1780587421.271939",
+      "user": "U0A1961A63X",
+      "text": "is it working for you?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Verify if working",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Peer check, no documentable answer."
+    },
+    {
+      "ts": "1780588154.394959",
+      "user": "U0A1961A63X",
+      "text": "weird did the login page look different yesterday?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Login page change",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Observational query needing human confirmation."
+    },
+    {
+      "ts": "1780581864.011639",
+      "user": "U06LX4SHBGB",
+      "text": "are we still trying to pursue a partnership with iCIMS Pritak Patel Nishka Chotai?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 27.0694899559021,
+      "permalink": null,
+      "llm_category": "partnership_status",
+      "subtopic": "iCIMS partnership pursuit",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic status needing internal knowledge."
+    }
+  ]
+}

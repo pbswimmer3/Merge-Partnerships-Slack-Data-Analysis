@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-07-09": {
+      "messages": 8,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U08P41NFP2Q",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 6.723059892654419,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1783623668.140429",
+      "user": "U08P41NFP2Q",
+      "text": "<@U0BBLFYHDFG|PartnerBot> Do customers need their own Slack partnership?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 6.723059892654419,
+      "permalink": null,
+      "llm_category": "partnership_requirement",
+      "subtopic": "customer Slack partnership needed",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Clear policy question answerable from partnership documentation."
+    }
+  ]
+}

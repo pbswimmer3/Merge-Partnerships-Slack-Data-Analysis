@@ -1,0 +1,72 @@
+{
+  "per_day": {
+    "2026-05-27": {
+      "messages": 13,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U041R9BHV6H",
+      2
+    ],
+    [
+      "U02HSF3TNBG",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 4415.791529893875,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1779900911.366189",
+      "user": "U041R9BHV6H",
+      "text": "Pritak Patel Nishka Chotai it looks like our teamtailor sandbox no longer works \u2013 think we might have to reach out to our contact to unblock it. do you have a contact we can use?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 41,
+      "first_reply_latency_sec": 4415.791529893875,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Teamtailor sandbox contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires specific contact info held by humans."
+    },
+    {
+      "ts": "1779907578.622499",
+      "user": "U041R9BHV6H",
+      "text": "thanks nishka, am i good to reach out directly?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Permission to contact directly",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Contextual approval question needing human answer."
+    },
+    {
+      "ts": "1779912866.229619",
+      "user": "U02HSF3TNBG",
+      "text": "can u ask them to create one then",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Request account creation",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Action request directed at humans."
+    }
+  ]
+}

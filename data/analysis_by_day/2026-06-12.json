@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-06-12": {
+      "messages": 4,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U0ALP1SU2UT",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1781291275.498169",
+      "user": "U0ALP1SU2UT",
+      "text": "do we need to reach out to someone else at adp?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Reach out to another ADP contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Escalation decision needing human context."
+    }
+  ]
+}

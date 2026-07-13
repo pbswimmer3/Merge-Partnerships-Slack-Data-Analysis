@@ -259,7 +259,12 @@
       "is_question": true,
       "reply_count": 5,
       "first_reply_latency_sec": 751.1249301433563,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "plan upgrade request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires commercial decision on plan upgrade with vendor."
     },
     {
       "ts": "1776365152.190499",
@@ -269,7 +274,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "credential creation confirmation",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Fragmentary follow-up needing thread context to interpret."
     },
     {
       "ts": "1776389616.315899",
@@ -279,7 +289,12 @@
       "is_question": true,
       "reply_count": 6,
       "first_reply_latency_sec": 43145.409890174866,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "partnership data field access",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Partner-specific terms negotiation requiring human coordination with Rippling."
     },
     {
       "ts": "1776446151.403329",
@@ -289,7 +304,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "ticket request handoff",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Internal task assignment, no factual answer possible by bot."
     },
     {
       "ts": "1776982977.675919",
@@ -299,7 +319,12 @@
       "is_question": true,
       "reply_count": 14,
       "first_reply_latency_sec": 51.93955993652344,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "unexpected notification triage",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague context-dependent query needing human investigation."
     },
     {
       "ts": "1776984163.094849",
@@ -309,7 +334,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "customer status check",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs CRM lookup and thread context to answer."
     },
     {
       "ts": "1776955358.350059",
@@ -319,7 +349,12 @@
       "is_question": true,
       "reply_count": 2,
       "first_reply_latency_sec": 703.6566798686981,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "OAuth scope inspection",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Documentable process for viewing OAuth app scopes."
     },
     {
       "ts": "1777410139.852859",
@@ -329,7 +364,12 @@
       "is_question": true,
       "reply_count": 7,
       "first_reply_latency_sec": 1047.8458800315857,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "end-user test account",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires checking account existence and possibly provisioning."
     },
     {
       "ts": "1777411284.283489",
@@ -339,7 +379,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "test account for bugfix",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Provisioning request needs human action."
     },
     {
       "ts": "1777923155.081359",
@@ -349,7 +394,12 @@
       "is_question": true,
       "reply_count": 11,
       "first_reply_latency_sec": 2494.1707701683044,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "Rippling endpoint migration scopes",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires knowledge of recent partner migration decisions."
     },
     {
       "ts": "1777925649.252129",
@@ -359,7 +409,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "endpoint mapping equivalence",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Mapping could be documented but needs specific migration reference."
     },
     {
       "ts": "1777998360.306339",
@@ -369,7 +424,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "REST API scope approval",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs confirmation from someone about correct scope choice."
     },
     {
       "ts": "1777920918.284559",
@@ -379,7 +439,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "tagging for help",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple handoff mention, no answerable content."
     },
     {
       "ts": "1778019016.626959",
@@ -389,7 +454,12 @@
       "is_question": true,
       "reply_count": 4,
       "first_reply_latency_sec": 123.22595000267029,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Hibob developer portal account",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Account provisioning request requiring human action."
     },
     {
       "ts": "1778076719.431799",
@@ -399,7 +469,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "partner team intro request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires human relationship coordination for introduction."
     },
     {
       "ts": "1778077037.558959",
@@ -409,7 +484,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "intro participant selection",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs human judgment on who to include."
     },
     {
       "ts": "1778077092.979699",
@@ -419,7 +499,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "channel routing request",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple directive, no factual query."
     },
     {
       "ts": "1778512499.291159",
@@ -429,7 +514,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "bug_issue",
+      "subtopic": "Merge Link bug speculation",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires investigation and technical debugging by human."
     },
     {
       "ts": "1778681268.489029",
@@ -439,7 +529,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "rate limit diagnosis",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs log inspection to confirm rate limiting."
     },
     {
       "ts": "1778778904.386709",
@@ -449,7 +544,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "competitive assessment",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Competitive analysis requiring human knowledge and recent conversations."
     },
     {
       "ts": "1778779005.109899",
@@ -459,7 +559,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnerships",
+      "subtopic": "competitiveness clarification",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Nuanced competitive reasoning needs human context."
     },
     {
       "ts": "1779357593.245099",
@@ -469,7 +574,12 @@
       "is_question": true,
       "reply_count": 14,
       "first_reply_latency_sec": 55.140729904174805,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "Paylocity extra API form",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires partner knowledge about undocumented onboarding requirement."
     },
     {
       "ts": "1779372330.733569",
@@ -479,7 +589,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "escalation contact question",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Follow-up needing human context on process."
     },
     {
       "ts": "1783417647.766049",
@@ -489,7 +604,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "Paylocity API fee negotiation",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Historical negotiation precedent needs human institutional knowledge."
     },
     {
       "ts": "1779485789.330599",
@@ -499,7 +619,12 @@
       "is_question": true,
       "reply_count": 25,
       "first_reply_latency_sec": 3676.9302299022675,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "MPOP credits approval process",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires program-specific knowledge about credit approval workflow."
     },
     {
       "ts": "1779489778.413229",
@@ -509,7 +634,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "MPOPP application to private offers",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires internal process knowledge and named person input."
     },
     {
       "ts": "1780409622.750309",
@@ -519,7 +649,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_status",
+      "subtopic": "Tackle process update",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague status query needing human context."
     },
     {
       "ts": "1781010498.832349",
@@ -529,7 +664,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "deadline_timeline",
+      "subtopic": "Renewal ship date",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Specific internal deadline requires human knowledge."
     },
     {
       "ts": "1781544908.069139",
@@ -539,7 +679,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "deadline_timeline",
+      "subtopic": "MPPO shipping status",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Status update request needing human follow-up."
     },
     {
       "ts": "1779900911.366189",
@@ -549,7 +694,12 @@
       "is_question": true,
       "reply_count": 41,
       "first_reply_latency_sec": 4415.791529893875,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Teamtailor sandbox contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires specific contact info held by humans."
     },
     {
       "ts": "1779907578.622499",
@@ -559,7 +709,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Permission to contact directly",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Contextual approval question needing human answer."
     },
     {
       "ts": "1779912866.229619",
@@ -569,7 +724,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Request account creation",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Action request directed at humans."
     },
     {
       "ts": "1780581450.431869",
@@ -579,7 +739,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Looping in colleagues",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Casual coordination, no answerable content."
     },
     {
       "ts": "1781799217.476539",
@@ -589,7 +754,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Teamtailor account name/link",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs specific account credentials from humans."
     },
     {
       "ts": "1782409522.467159",
@@ -599,7 +769,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Updating shared credentials",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Process confirmation needing team agreement."
     },
     {
       "ts": "1780586945.884399",
@@ -609,7 +784,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Login trouble, contact support",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "FAQ could guide login/support escalation steps."
     },
     {
       "ts": "1780587421.271939",
@@ -619,7 +799,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Verify if working",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Peer check, no documentable answer."
     },
     {
       "ts": "1780588154.394959",
@@ -629,7 +814,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Login page change",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Observational query needing human confirmation."
     },
     {
       "ts": "1781117120.820319",
@@ -639,7 +829,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Contact rep for access",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Approval decision requiring human judgment."
     },
     {
       "ts": "1781117872.112949",
@@ -649,7 +844,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Using account for connector testing",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Permission question needing named human input."
     },
     {
       "ts": "1781215994.587799",
@@ -659,7 +859,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Generate project, add members",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Coordination proposal needing team confirmation."
     },
     {
       "ts": "1781817637.183839",
@@ -669,7 +874,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "troubleshooting",
+      "subtopic": "Testing environment check",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Status question directed to specific person."
     },
     {
       "ts": "1780581864.011639",
@@ -679,7 +889,12 @@
       "is_question": true,
       "reply_count": 5,
       "first_reply_latency_sec": 27.0694899559021,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_status",
+      "subtopic": "iCIMS partnership pursuit",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic status needing internal knowledge."
     },
     {
       "ts": "1780689611.444299",
@@ -689,7 +904,12 @@
       "is_question": true,
       "reply_count": 13,
       "first_reply_latency_sec": 1076.2675099372864,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "ADP WFN support contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires specific contact info from humans."
     },
     {
       "ts": "1780690687.711809",
@@ -699,7 +919,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying the question",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Conversational filler, no answerable content."
     },
     {
       "ts": "1780691210.090639",
@@ -709,7 +934,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "data_sync",
+      "subtopic": "Employee vs employer deduction field",
+      "difficulty": 4,
+      "automatable": true,
+      "rationale": "API docs likely specify deduction type fields."
     },
     {
       "ts": "1781291275.498169",
@@ -719,7 +949,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "Reach out to another ADP contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Escalation decision needing human context."
     },
     {
       "ts": "1780670930.021399",
@@ -729,7 +964,12 @@
       "is_question": true,
       "reply_count": 8,
       "first_reply_latency_sec": 120.70082998275757,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "ADP WFN licensing model",
+      "difficulty": 4,
+      "automatable": true,
+      "rationale": "Vendor licensing may be documented publicly."
     },
     {
       "ts": "1780671050.722229",
@@ -739,7 +979,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying product context",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Fragment clarification, no standalone answer."
     },
     {
       "ts": "1780671062.076709",
@@ -749,7 +994,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "Clarifying partner context",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Fragment clarification, no standalone answer."
     },
     {
       "ts": "1780673212.334439",
@@ -759,7 +1009,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "annual and linked account fees",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Pricing structure question answerable from pricing docs/FAQ."
     },
     {
       "ts": "1781033605.664719",
@@ -769,7 +1024,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "security_credentials",
+      "subtopic": "removing default credentials",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Decision requires human judgment on action after investigation."
     },
     {
       "ts": "1781100994.760629",
@@ -779,7 +1039,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "OAuth vs basic auth Hibob",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires confirming internal rollout behavior; needs engineering verification."
     },
     {
       "ts": "1782164883.331669",
@@ -789,7 +1054,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_request",
+      "subtopic": "add me to channel",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple access request but needs human to grant."
     },
     {
       "ts": "1782337404.848889",
@@ -799,7 +1069,12 @@
       "is_question": true,
       "reply_count": 20,
       "first_reply_latency_sec": 493.7532398700714,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "MFA phone number owner",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Sensitive credential info; requires human with account knowledge."
     },
     {
       "ts": "1782337922.483759",
@@ -809,7 +1084,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "vague change request",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "No context; ambiguous referent needs clarification from human."
     },
     {
       "ts": "1782404329.727869",
@@ -819,7 +1099,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Uber contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot from contacts list."
     },
     {
       "ts": "1782325027.086159",
@@ -829,7 +1114,12 @@
       "is_question": true,
       "reply_count": 4,
       "first_reply_latency_sec": 2186.140450000763,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Sage CRE support status",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Roadmap status unclear; needs human with historical knowledge."
     },
     {
       "ts": "1782318474.057539",
@@ -839,7 +1129,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "which agent store",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Ambiguous fragment lacking context; requires clarification."
     },
     {
       "ts": "1782375208.687239",
@@ -849,7 +1144,12 @@
       "is_question": true,
       "reply_count": 2,
       "first_reply_latency_sec": 7063.686480045319,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "gateway-on-gateway listing",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Strategic partnership decision requiring team judgment."
     },
     {
       "ts": "1782516604.594139",
@@ -859,7 +1159,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "navigation suggestion",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague reference to a person; no answerable content."
     },
     {
       "ts": "1782516609.640469",
@@ -869,7 +1174,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "outreach approval",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires human decision on outreach; no context."
     },
     {
       "ts": "1782516614.215369",
@@ -879,7 +1189,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "enabling NetSuite feature",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Clarifying ask; needs human context on specific feature."
     },
     {
       "ts": "1782516651.206229",
@@ -889,7 +1204,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "NetSuite activity codes",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Follow-up clarification lacking standalone context."
     },
     {
       "ts": "1782751433.436879",
@@ -899,7 +1219,12 @@
       "is_question": true,
       "reply_count": 1,
       "first_reply_latency_sec": 16.071190118789673,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Workday contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
     },
     {
       "ts": "1782827061.201469",
@@ -909,7 +1234,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Hibob migration disconnection",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Migration behavior confirmation needs current human verification."
     },
     {
       "ts": "1782939461.426249",
@@ -919,7 +1249,12 @@
       "is_question": true,
       "reply_count": 3,
       "first_reply_latency_sec": 13.333790063858032,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Freshdesk/Freshservice contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
     },
     {
       "ts": "1782939593.003229",
@@ -929,7 +1264,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "partner program signup handoff",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Process approval requiring human sign-off."
     },
     {
       "ts": "1782928429.526869",
@@ -939,7 +1279,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_strategy",
+      "subtopic": "agent auth protocol outreach",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic outreach suggestion needs human decision."
     },
     {
       "ts": "1782871991.836679",
@@ -949,7 +1294,12 @@
       "is_question": true,
       "reply_count": 7,
       "first_reply_latency_sec": 922.9024000167847,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Justworks contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
     },
     {
       "ts": "1782872914.739079",
@@ -959,7 +1309,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "pointer to partnerbot",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Peer response, not a question needing answer."
     },
     {
       "ts": "1782874237.905709",
@@ -969,7 +1324,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Justworks contact for issue",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
     },
     {
       "ts": "1782924681.173979",
@@ -979,7 +1339,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "access_request",
+      "subtopic": "add to slack channel",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Access request needing human to add member."
     },
     {
       "ts": "1783027376.955079",
@@ -989,7 +1354,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "data_management",
+      "subtopic": "add contact to list",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Bot could update contacts list programmatically."
     },
     {
       "ts": "1783011053.402989",
@@ -999,7 +1369,12 @@
       "is_question": true,
       "reply_count": 1,
       "first_reply_latency_sec": 10.1842200756073,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "contact_lookup",
+      "subtopic": "Employment Hero contact",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Contact lookup answerable by bot."
     },
     {
       "ts": "1783364999.959409",
@@ -1009,7 +1384,12 @@
       "is_question": true,
       "reply_count": 1,
       "first_reply_latency_sec": 212.3612699508667,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "credentials_tracking",
+      "subtopic": "OAuth default credentials tracker",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Structured data request; a maintained tracker/doc could answer this fully."
     },
     {
       "ts": "1783518825.878309",
@@ -1019,7 +1399,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "status_followup",
+      "subtopic": "remaining steps recall",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Needs human context about specific unstated thread and prior work."
     },
     {
       "ts": "1783519532.916619",
@@ -1029,7 +1414,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "list customers for tracking",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Ambiguous scope but CRM/bot could list customers given context."
     },
     {
       "ts": "1783543036.038539",
@@ -1039,7 +1429,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "customers needing feature",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Vague 'that' referent; needs thread context to identify feature."
     },
     {
       "ts": "1783458081.798379",
@@ -1049,7 +1444,12 @@
       "is_question": true,
       "reply_count": 17,
       "first_reply_latency_sec": 660.0127899646759,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "Workday preferred partner examples",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires case-study knowledge and nuanced partnership eligibility judgment."
     },
     {
       "ts": "1783458741.811169",
@@ -1059,7 +1459,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "customer_lookup",
+      "subtopic": "confirm customer examples",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Directed at person; relies on individual memory of customers."
     },
     {
       "ts": "1783458947.215719",
@@ -1069,7 +1474,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "Merge vs direct partnership",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Nuanced partnership eligibility question; needs vendor-specific expert insight."
     },
     {
       "ts": "1783459057.393079",
@@ -1079,7 +1489,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_approval",
+      "subtopic": "Workday integration approval process",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Process question answerable via documented approval workflow FAQ."
     },
     {
       "ts": "1783459117.971569",
@@ -1089,7 +1504,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "UKG process differences",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Comparison answerable from documented vendor process notes."
     },
     {
       "ts": "1783525641.619599",
@@ -1099,7 +1519,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_program",
+      "subtopic": "UKG process same",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Process comparison could be documented; slight context dependency."
     },
     {
       "ts": "1783439973.821689",
@@ -1109,7 +1534,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "status_followup",
+      "subtopic": "app review status",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Live status of specific review needs human or ticket lookup."
     },
     {
       "ts": "1783545363.668559",
@@ -1119,7 +1549,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_outreach",
+      "subtopic": "contact CEO directly",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Judgment/relationship decision requiring human strategic input."
     },
     {
       "ts": "1783547112.798829",
@@ -1129,7 +1564,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "account_lookup",
+      "subtopic": "which account",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Simple lookup but lacks referent; CRM could resolve with context."
     },
     {
       "ts": "1783623668.140429",
@@ -1139,7 +1579,12 @@
       "is_question": true,
       "reply_count": 2,
       "first_reply_latency_sec": 6.723059892654419,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "partnership_requirement",
+      "subtopic": "customer Slack partnership needed",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Clear policy question answerable from partnership documentation."
     },
     {
       "ts": "1783726815.513929",
@@ -1149,7 +1594,12 @@
       "is_question": true,
       "reply_count": 5,
       "first_reply_latency_sec": 5.528520107269287,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "off_topic",
+      "subtopic": "casual non-work banter",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Irrelevant joke; bot can trivially deflect."
     },
     {
       "ts": "1783726591.393009",
@@ -1159,7 +1609,12 @@
       "is_question": true,
       "reply_count": 9,
       "first_reply_latency_sec": 18.64033007621765,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "credentials_tracking",
+      "subtopic": "Google connector default credentials",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Specific credential lookup answerable from maintained credentials list."
     },
     {
       "ts": "1783768104.710479",
@@ -1169,7 +1624,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "connectors needed",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague referent 'they'; needs customer context to answer."
     },
     {
       "ts": "1783696559.743569",
@@ -1179,7 +1639,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "integration_scope",
+      "subtopic": "requested scope added",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Directed question requiring specific case knowledge from person."
     },
     {
       "ts": "1783699711.061289",
@@ -1189,7 +1654,12 @@
       "is_question": true,
       "reply_count": 0,
       "first_reply_latency_sec": null,
-      "permalink": null
+      "permalink": null,
+      "llm_category": "task_assignment",
+      "subtopic": "investigate request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Delegation to a person, not an answerable question."
     }
   ]
 }

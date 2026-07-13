@@ -1,0 +1,15 @@
+{
+  "per_day": {
+    "2026-04-29": {
+      "messages": 1,
+      "questions": 0
+    }
+  },
+  "category_distribution": {},
+  "top_askers": [],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 0
+  },
+  "questions": []
+}

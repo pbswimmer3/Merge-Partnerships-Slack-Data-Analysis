@@ -1,0 +1,1842 @@
+ROOT_TS: 1783727387.943029
+--- Reply 1 of 9 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783727394.276049
+That's a partnerships question I'll leave to the real expert.
+--- Reply 2 of 9 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1783727406.785609
+lets goooo
+--- Reply 3 of 9 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1783727420.154889
+subteam ^
+--- Reply 4 of 9 ---
+From: Katie Magnuson <katie.magnuson@merge.dev> (U0B6949FW9G)
+Message TS: 1783727426.181039
+hahahhaha
+--- Reply 5 of 9 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783727438.478989
+fireee
+--- Reply 6 of 9 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783727458.441979
+sensational
+Reactions: joy (3)
+--- Reply 7 of 9 ---
+From: Dammy Adeoti <dammy.adeoti@merge.dev> (U0A1G4H5Z60)
+Message TS: 1783727467.377249
+Wow, PartnerBot knows ball!
+Reactions: scuba-cat (4)
+--- Reply 8 of 9 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1783727666.793719
+sensational
+--- Reply 9 of 9 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1783960346.035989
+omg
+
+ROOT_TS: 1783727091.517729
+--- Reply 1 of 1 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783727101.391639
+I answer Partnership Tracker questions and can point you to the right person on the partnerships team.
+
+ROOT_TS: 1783727063.449359
+--- Reply 1 of 1 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783727068.374799
+I answer Partnership Tracker questions and can point you to the right person on the partnerships team.
+
+ROOT_TS: 1783726815.513929
+--- Reply 1 of 5 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783726821.042449
+I answer Partnership Tracker questions and can point you to the right person on the partnerships team.
+--- Reply 2 of 5 ---
+From: Connector Bot (U0BETHXAKFS)
+Message TS: 1783726823.676739
+Ha, I appreciate the question, but I'm just here to help with Agent Handler connector stuff! I can help with checking if a connector is on our roadmap, what tools and capabilities a connector supports, auth requirements, who requested a connector, default creds readiness, and more.
+--- Reply 3 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783726895.384929
+only you Dammy Adeoti
+--- Reply 4 of 5 ---
+From: Dammy Adeoti <dammy.adeoti@merge.dev> (U0A1G4H5Z60)
+Message TS: 1783727015.042339
+They just don't want to admit it
+Reactions: heart (1)
+--- Reply 5 of 5 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1783727062.174689
+they not like us
+Reactions: damn (4)
+
+ROOT_TS: 1783726591.393009
+--- Reply 1 of 9 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783726610.033339
+Here are the Google integrations with default credentials on file, only 2 out of 12 have them: Google Drive and Google Tasks. All other Google integrations (Calendar, Sheets, BigQuery, Workspace, Meet, Slides, Docs, Places/Maps, Fitbit) have no default credentials recorded in the tracker.
+--- Reply 2 of 9 ---
+From: Katie Magnuson <katie.magnuson@merge.dev> (U0B6949FW9G)
+Message TS: 1783726630.954999
+Connector Bot which google connectors do we have default creds for
+--- Reply 3 of 9 ---
+From: Katie Magnuson <katie.magnuson@merge.dev> (U0B6949FW9G)
+Message TS: 1783726641.355999
+Connector Bot which google connectors do we have default creds for
+--- Reply 4 of 9 ---
+From: Connector Bot (U0BETHXAKFS)
+Message TS: 1783726655.142099
+Out of all our Google connectors, only two have default creds ready: Google BigQuery and Google Tasks. The rest all still show "Not Yet" for default creds.
+--- Reply 5 of 9 ---
+From: Connector Bot (U0BETHXAKFS)
+Message TS: 1783726658.628409
+Out of all our Google connectors, only two have default creds ready: Google BigQuery and Google Tasks. The rest have creds marked as "Not Yet." Google Analytics is still in review too.
+--- Reply 6 of 9 ---
+From: Virna Seminario <virna.seminario@merge.dev> (U08FKFV1953)
+Message TS: 1783726711.582369
+rip, bad news for my prospect
+--- Reply 7 of 9 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1783768104.710479
+What connectors do they need?
+--- Reply 8 of 9 ---
+From: Virna Seminario <virna.seminario@merge.dev> (U08FKFV1953)
+Message TS: 1783955133.072759
+gmail and gcal
+--- Reply 9 of 9 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1783964626.164929
+we were recently approved for Gmail, we just don't have the default creds in yet. but we can add it for your prospect if they want to test soon
+
+ROOT_TS: 1783691585.409519
+--- Reply 1 of 7 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783693199.756309
+PartnerBot can you answer this
+--- Reply 2 of 7 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783693205.240819
+I only answer questions about the Partnership Tracker.
+--- Reply 3 of 7 ---
+From: Aidan Timmerman <aidan.timmerman@merge.dev> (U09F1BB96KC)
+Message TS: 1783696559.743569
+Grace Park what scope do they want added?
+--- Reply 4 of 7 ---
+From: Grace Park <grace.park@merge.dev> (U0B42HJKPE3)
+Message TS: 1783696652.902379
+There's a /custom_fields for employees
+--- Reply 5 of 7 ---
+From: Aidan Timmerman <aidan.timmerman@merge.dev> (U09F1BB96KC)
+Message TS: 1783699711.061289
+Nishka Chotai can you a pass here at investigating?
+--- Reply 6 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783699979.954319
+yup taking a look!
+--- Reply 7 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783701417.354469
+im seeing the same thing michelle is seeing here - i found a contact who has responded to us before, emailing them and cc'ing you grace!
+Reactions: +1 (1)
+
+ROOT_TS: 1783626634.924149
+--- Reply 1 of 3 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783626637.879329
+Priority: ~P2 / not urgent. Connector request from Airtable Customer Feedback (AH team). Customer Ramp is building an agentic bookkeeping platform (POC with Merge) and wants agent access to Toast (POS).
+--- Reply 2 of 3 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783626893.456549
+thanks arthur, will go through the process here
+--- Reply 3 of 3 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783626912.824839
+sg, thank you!
+
+ROOT_TS: 1783623668.140429
+--- Reply 1 of 2 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783623674.863489
+I only answer questions about the Partnership Tracker.
+Reactions: face_exhaling (1)
+--- Reply 2 of 2 ---
+From: Aidan Timmerman <aidan.timmerman@merge.dev> (U09F1BB96KC)
+Message TS: 1783623930.561869
+its on the roadmap!
+
+ROOT_TS: 1783545296.390059
+--- Reply 1 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783545314.459299
+from their chat
+--- Reply 2 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783545363.668559
+Shensi Ding knows their CEO I think. Do you think we can just ask them?
+Reactions: bangbang (1), fire (1)
+--- Reply 3 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783545374.302729
+the support ticket, Issue #36299, you can access by clicking "Support" on the bottom
+--- Reply 4 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783545420.212489
+cc Katie Magnuson
+--- Reply 5 of 12 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1783547030.801599
+i do
+--- Reply 6 of 12 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1783547051.029559
+i can slack
+--- Reply 7 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783547111.740229
+WOO!! Goaaaat
+--- Reply 8 of 12 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1783547112.798829
+whats the acccount under?
+--- Reply 9 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783547119.333759
+sandboxes@merge.dev
+--- Reply 10 of 12 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1783547138.612509
+beautiful
+--- Reply 11 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783547176.208489
+Shensi Ding gets it done just like that! nbd
+Reactions: bangbang (1)
+--- Reply 12 of 12 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1783555274.107749
+fyi account has been upgraded!
+Reactions: thankyou (1)
+
+ROOT_TS: 1783465352.423819
+--- Reply 1 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783518825.878309
+Kevin Silberblatt (Silbs) Do you remember the remaining steps here?
+--- Reply 2 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783518828.821479
+cc Aidan Timmerman
+--- Reply 3 of 11 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1783519145.107009
+I don't recall off the top of my head - but can look into it.
+--- Reply 4 of 11 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783519369.888029
+I have a few customers that have wanted this, so that would be great!
+--- Reply 5 of 11 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1783519532.916619
+Can you list one or a few customers for me just for tracking?
+--- Reply 6 of 11 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1783519543.201429
+actually I'll just come over
+--- Reply 7 of 11 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783542969.366659
+i think if we upgrade its like 40,000 a year to upgrade, so i feel like we'd need to maybe have a broader conversation with their partnerships team
+--- Reply 8 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783543036.038539
+Whats included in that, and do we have a list of customers that have mentioned needing?
+--- Reply 9 of 11 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783543113.677809
+super pricey lol but the ARR of customers ive worked on this with is: 402,520
+--- Reply 10 of 11 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783543131.611509
+(screenshot)
+--- Reply 11 of 11 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783543280.148429
+at the minimum we can just upgrade our workday version, but im wondering if theres a partnerships angle we can take here to make this scalable
+
+ROOT_TS: 1783458081.798379
+--- Reply 1 of 17 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783458741.811169
+Jemma Baus iirc FirstUp did and you may have other customers who have, right?
+--- Reply 2 of 17 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1783458870.294039
+Tim Patag I think CSMs would know or Pritak Patel
+--- Reply 3 of 17 ---
+From: Tim Patag <tim.patag@merge.dev> (U04923DBYUU)
+Message TS: 1783458876.556499
+I saw that Tilt, Unily, OC Tanner, Workhuman, Firstup, and eduMe are in the Workday Partner program.
+Reactions: bangbang (2)
+--- Reply 4 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783458887.590509
+Oh god
+Reactions: bufo-ayy (2), dead (2)
+--- Reply 5 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783458911.584169
+It's really not easy and honestly, it would be great to get some partnerships help on it because it's a lot of work
+Reactions: +1 (1)
+--- Reply 6 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783458939.410429
+But I have this mapping sheet that's required for the immigration.
+--- Reply 7 of 17 ---
+From: Tim Patag <tim.patag@merge.dev> (U04923DBYUU)
+Message TS: 1783458947.215719
+Any idea if its the same using Merge to power the integration vs. them building direct to get a partnership?
+--- Reply 8 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783458975.335919
+They can use us to power the integration but workday has to approve our integration
+--- Reply 9 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783458985.903469
+So it's a lot of back-and-forth between us and customers being like this is how we map X field, etc.
+--- Reply 10 of 17 ---
+From: Tim Patag <tim.patag@merge.dev> (U04923DBYUU)
+Message TS: 1783459057.393079
+Hmm how does workday approve the integration?
+--- Reply 11 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783459084.356379
+We fill out a bunch of stuff for the customer, but it has to come from the customer
+--- Reply 12 of 17 ---
+From: Tim Patag <tim.patag@merge.dev> (U04923DBYUU)
+Message TS: 1783459117.971569
+Sg sg - is UKG any different?
+--- Reply 13 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783459121.304179
+Basically workday gives our customers all these different certifications and requirements. Typically the questions about the integrations are how do we map certain fields and we just answer that for them.
+Reactions: +1 (1)
+--- Reply 14 of 17 ---
+From: Tim Patag <tim.patag@merge.dev> (U04923DBYUU)
+Message TS: 1783525641.619599
+Sry Jemma Baus quick follow up - but is it the same process for UKG?
+--- Reply 15 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783526035.107649
+um i think we have a pretty tight partnership with UKG, so i dont know
+Reactions: +1 (1)
+--- Reply 16 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783526045.416569
+like they know us
+--- Reply 17 of 17 ---
+From: Jemma Baus <jemma.baus@merge.dev> (U040W5LA59R)
+Message TS: 1783526048.021959
+workday.. doesnt
+
+ROOT_TS: 1783439579.182389
+--- Reply 1 of 5 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783439654.507549
+Matthew Doherty Nishka Chotai are already on this
+--- Reply 2 of 5 ---
+From: Matt Mittleman <matt.mittleman@merge.dev> (U08P41NFP2Q)
+Message TS: 1783439973.821689
+Apologies if there's an existing thread already, what is the latest on where we stand in the app review process?
+--- Reply 3 of 5 ---
+From: Aidan Timmerman <aidan.timmerman@merge.dev> (U09F1BB96KC)
+Message TS: 1783440028.776719
+(forwarded link)
+Reactions: tysm (1)
+--- Reply 4 of 5 ---
+From: Matthew Doherty <matthew.doherty@merge.dev> (U034LALDDK4)
+Message TS: 1783443869.515889
+We had our contact at Jules, Ian, reach out internally to see if he could escalate app approvals internally. Those convos date back to the beginning of May, and he's kinda been ghosting us since then.
+--- Reply 5 of 5 ---
+From: Matt Mittleman <matt.mittleman@merge.dev> (U08P41NFP2Q)
+Message TS: 1783444054.836399
+Thanks for the context Matt.
+
+ROOT_TS: 1783364999.959409
+--- Reply 1 of 1 ---
+From: Jacob Kochian <jacob.kochian@merge.dev> (U08MR0MC7DE)
+Message TS: 1783365212.320679
+this is something we have been meaning to do for a whileee for unified, we drafted this and just filled in sharepoint so far.
+Reactions: bangbang (1)
+
+ROOT_TS: 1783027119.083419
+--- Reply 1 of 5 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783027376.955079
+PartnerBot can you add Krista's contact into to our Partnerships contacts lists?
+--- Reply 2 of 5 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783027382.848849
+I only answer questions about the Partnership Tracker.
+--- Reply 3 of 5 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1783027405.238689
+Prad Biswas future feature req: adding new contacts!
+--- Reply 4 of 5 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1783027637.366259
+good idea, I can look into how hard this is to do with the existing n8n workflow. it also depends how often we get new internal contacts.
+Reactions: +1 (1), 100 (1)
+--- Reply 5 of 5 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1783027649.412979
+for now though I'll put this into netsuite row for you
+
+ROOT_TS: 1783011053.402989
+--- Reply 1 of 1 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1783011063.587209
+Yes! We have contacted Employment Hero. There's no owner assigned in the tracker yet.
+
+ROOT_TS: 1782939991.188709
+--- Reply 1 of 1 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782940004.272249
+Unfortunately, the support_contact and notes fields are blank for all Zoho integrations in the tracker.
+
+ROOT_TS: 1782939461.426249
+--- Reply 1 of 3 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782939474.760039
+Neither Freshdesk nor Freshservice has a named contact logged in the tracker.
+--- Reply 2 of 3 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782939593.003229
+Aidan Timmerman are you okay with me filling out the partner program signup and looping/handing off to y'all once I get a response?
+Reactions: +1 (1)
+--- Reply 3 of 3 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782946205.632959
+yep!
+
+ROOT_TS: 1782871991.836679
+--- Reply 1 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782872914.739079
+We do!! Try asking partner bot?
+Reactions: thankyou (1)
+--- Reply 2 of 7 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1782874237.905709
+PartnerBot do we have a Justworks contact who can help with this issue?
+Reactions: merge-rainbow (2)
+--- Reply 3 of 7 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782874248.675159
+Justworks Support Contact and shared Slack channel #shared-justworks-merge.
+--- Reply 4 of 7 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1782924681.173979
+Nishka Chotai Prad Biswas could either of you add me to the shared slack channel?
+--- Reply 5 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782924741.696989
+Pritak Patel can you help here, i'm not in that channel
+--- Reply 6 of 7 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1782924811.764089
+don't have access either pritak will need to add
+--- Reply 7 of 7 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782924968.824739
+added!
+Reactions: heart (2)
+
+ROOT_TS: 1782766664.351829
+--- Reply 1 of 1 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782766831.909789
+sg!!
+
+ROOT_TS: 1782751433.436879
+--- Reply 1 of 1 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782751449.508069
+We have contacted Workday, but the support_contact field is currently blank in the tracker.
+
+ROOT_TS: 1782515866.936969
+--- Reply 1 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782515949.880769
+We don't have connections there
+--- Reply 2 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782515974.057419
+And if we do they're very hostile and have threatened to shut it down
+--- Reply 3 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782515982.355089
+We just need to just outreach support aggressively
+--- Reply 4 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782515988.750739
+And people on LinkedIn for support
+--- Reply 5 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516116.968729
+gotcha, understood - will do
+--- Reply 6 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782516443.708869
+I know rip Oracle is the worst
+--- Reply 7 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782516452.634189
+Allegra Aguiar don't we have consultants or something that could help
+--- Reply 8 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516485.737819
+found this old thread too - will try and dig around
+--- Reply 9 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516563.781079
+Unfortunately never was able to connect with anyone directly from netsuite
+--- Reply 10 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782516604.594139
+Maybe he will know how to navigate this?
+--- Reply 11 of 20 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782516609.640469
+Can we reach out to him?
+--- Reply 12 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516614.215369
+To be clear on the ask- we are trying to enable a feature in netsuite?
+--- Reply 13 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516645.233189
+Yep exactly - this in particular (netsuite docs link)
+--- Reply 14 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516651.206229
+The activity codes specifically?
+Reactions: +1 (1)
+--- Reply 15 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516756.485199
+I'm also in a slack instance about netsuite questions- can try to ask in there as well
+--- Reply 16 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516781.722489
+that would be amazing, ty!
+--- Reply 17 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516809.694789
+just added a bunch of netsuite AMs on linkedin too, hopefully that leads somewhere
+--- Reply 18 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516850.760739
+I can timebox an hourish on Monday to investigate this
+Reactions: sgsgsg (1)
+--- Reply 19 of 20 ---
+From: Allegra Aguiar <allegra.aguiar@merge.dev> (U03SJ5UUAEN)
+Message TS: 1782516871.764929
+If we are still at dead end after that, I'll reach out to our consultant
+--- Reply 20 of 20 ---
+From: Sid Raguraman <sid.raguraman@merge.dev> (U0ASG7M610W)
+Message TS: 1782516905.003319
+sweet will do - appreciate it
+
+ROOT_TS: 1782375208.687239
+--- Reply 1 of 2 ---
+From: Yash Gogri <yash.gogri@merge.dev> (U0395R5EMUN)
+Message TS: 1782382272.373719
+Gateway worlds can be weird, we may integrate with them
+--- Reply 2 of 2 ---
+From: Yash Gogri <yash.gogri@merge.dev> (U0395R5EMUN)
+Message TS: 1782382283.491109
+I'll take a look and can handle
+Reactions: pray (1)
+
+ROOT_TS: 1782343765.089159
+--- Reply 1 of 3 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782343774.638639
+Rippling support contact on file, contacted as of 3/25/2026.
+--- Reply 2 of 3 ---
+From: Nak Nayar <nak.nayar@merge.dev> (U09T37MAFM3)
+Message TS: 1782343790.482369
+so sick Prad Biswas
+Reactions: merge-rainbow (1)
+--- Reply 3 of 3 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1782343912.569859
+yay!! thanks for trying it out
+
+ROOT_TS: 1782337404.848889
+--- Reply 1 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782337898.602129
+lol
+--- Reply 2 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782337905.589799
+its steph
+--- Reply 3 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782337917.911529
+well
+--- Reply 4 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782337921.366929
+that's unfortunate
+--- Reply 5 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782337922.483759
+can we change it
+--- Reply 6 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782338004.284559
+[redacted MFA code]
+--- Reply 7 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782338084.221709
+(screenshot)
+Reactions: kevin-silbs-burn (1)
+--- Reply 8 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782338177.580089
+damn.
+--- Reply 9 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782338190.710469
+I'll contact support
+Reactions: +1 (1)
+--- Reply 10 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782338381.555589
+[redacted MFA code] in case it works
+--- Reply 11 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782338383.615769
+lol
+--- Reply 12 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782338458.272819
+(screenshot)
+--- Reply 13 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782338483.573249
+so weird..
+--- Reply 14 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782404159.941119
+Nishka Chotai do we have a contact at uber, tried to self sign-up but blocked
+--- Reply 15 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782404329.727869
+PartnerBot who is our contact at uber?
+--- Reply 16 of 20 ---
+From: PartnerBot (U0BBLFYHDFG)
+Message TS: 1782404340.314149
+Uber business support contact on file; Uber Eats has none.
+--- Reply 17 of 20 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782404352.523769
+i can email them silbs!
+--- Reply 18 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782405583.715489
+I just emailed and CC'd you
+Reactions: ty2 (1)
+--- Reply 19 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782405875.687249
+I should have also cc'd other lists... oops
+--- Reply 20 of 20 ---
+From: Kevin Silberblatt (Silbs) <kevin.silberblatt@merge.dev> (U04Q93BATTN)
+Message TS: 1782405881.058669
+I'll do it when they respond
+
+ROOT_TS: 1782325027.086159
+--- Reply 1 of 4 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1782327213.226609
+Last I checked with Product (Nov 2025), we will not support Sage CRE 300
+--- Reply 2 of 4 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1782327242.826359
+the above quote was comms sent to a customer that asked about this
+Reactions: thankyou (1)
+--- Reply 3 of 4 ---
+From: Jonathan Ulmer <jonathan.ulmer@merge.dev> (U0AQN0VNZ7Z)
+Message TS: 1782852822.928149
+Expensify followed up to clarify they're asking about Sage CRE, different from Sage CRE 300.
+--- Reply 4 of 4 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1782852877.098869
+gotcha -> in that case, I'd flag it to Product. afaik no plans for Sage CRE atm
+Reactions: thankyou (1)
+
+ROOT_TS: 1782323649.075909
+--- Reply 1 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782323915.992739
+hi amy!!
+--- Reply 2 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782323959.623579
+hmmm it's not in the tracker for some reason, but i do see some sage contacts
+--- Reply 3 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782323988.664469
+i think these are all just sage in general though - which is fine
+--- Reply 4 of 7 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1782324278.202149
+these two people are sage intacct specifically
+--- Reply 5 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782324296.545299
+ooo ty michelle!
+--- Reply 6 of 7 ---
+From: Prad Biswas <prad.biswas@merge.dev> (U0B95J0FBJM)
+Message TS: 1782325504.761509
+adding these to the tracker so agent can answer this next time!
+Reactions: ty2 (3)
+--- Reply 7 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782325521.379739
+i added!!
+
+ROOT_TS: 1782313025.348429
+--- Reply 1 of 3 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782318474.057539
+Which agent store?
+--- Reply 2 of 3 ---
+From: Lev Chekmarov <lev.chekmarov@merge.dev> (U07841HAUKW)
+Message TS: 1782318503.004019
+Microsoft
+--- Reply 3 of 3 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782322705.463069
+Not yet, were working on it - expect a few more weeks
+Reactions: thankyou (1)
+
+ROOT_TS: 1782234457.411649
+--- Reply 1 of 5 ---
+From: Katie Magnuson <katie.magnuson@merge.dev> (U0B6949FW9G)
+Message TS: 1782237603.490739
+omg this is so cool!!! love this
+Reactions: merge-rainbow (1)
+--- Reply 2 of 5 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782238075.040489
+So good, amazing work Prad Biswas!!!
+Reactions: heart (1)
+--- Reply 3 of 5 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1782238183.244139
+WOWW
+Reactions: merge-rainbow (1)
+--- Reply 4 of 5 ---
+From: Anuj Jhunjhunwala <anuj.jhunjhunwala@merge.dev> (U05S47T0JDB)
+Message TS: 1782239778.530039
+so good!!!
+Reactions: merge-rainbow (1)
+--- Reply 5 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782333920.775299
+YAY PRADDDD
+Reactions: merge-rainbow (1)
+
+ROOT_TS: 1782164634.341449
+--- Reply 1 of 2 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1782164831.862899
+posting in the shared channel is good!
+Reactions: heart (1)
+--- Reply 2 of 2 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782164883.331669
+can you add me??
+
+ROOT_TS: 1781100450.932379
+--- Reply 1 of 2 ---
+From: Matthew Doherty <matthew.doherty@merge.dev> (U034LALDDK4)
+Message TS: 1781277392.016189
+cc Michelle Krameisen
+--- Reply 2 of 2 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1781625246.604309
+Spoke live - it is be possible on a case by case basis
+
+ROOT_TS: 1781032747.453949
+--- Reply 1 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781033488.838749
+ugh still not approved
+--- Reply 2 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781033496.442459
+disappointed
+--- Reply 3 of 7 ---
+From: Matthew Doherty <matthew.doherty@merge.dev> (U034LALDDK4)
+Message TS: 1781033605.664719
+ok thanks for checking, should we take this down from default creds for now?
+--- Reply 4 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781033668.490659
+yes we should
+--- Reply 5 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781033672.540859
+ill remove it from cms
+Reactions: +1 (1)
+--- Reply 6 of 7 ---
+From: Matthew Doherty <matthew.doherty@merge.dev> (U034LALDDK4)
+Message TS: 1781033680.204299
+thanks!
+--- Reply 7 of 7 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781033733.523449
+thanks for flagging!!!
+
+ROOT_TS: 1780689611.444299
+--- Reply 1 of 13 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780690687.711809
+yeah whats the question?
+--- Reply 2 of 13 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780690693.634359
+i can forward and cc you
+--- Reply 3 of 13 ---
+From: Kim Chuc <kim.chuc@merge.dev> (U05M5UUCDS9)
+Message TS: 1780691210.090639
+We're currently trying to generate Employee Deduction records for payroll runs/checks. Are there any fields that indicate whether a deduction is an employee or employer deduction?
+Reactions: heart (1)
+--- Reply 4 of 13 ---
+From: Matt Linehan <matt.linehan@merge.dev> (U0ALP1SU2UT)
+Message TS: 1780691297.095359
+CC Ashlin Kneeland
+--- Reply 5 of 13 ---
+From: Matt Linehan <matt.linehan@merge.dev> (U0ALP1SU2UT)
+Message TS: 1780932252.256699
+Checking in on the above
+--- Reply 6 of 13 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1781026400.377039
+They said to open a ticket with the ADP API Readiness team, select Development and API Documentation so it routes correctly.
+--- Reply 7 of 13 ---
+From: Kim Chuc <kim.chuc@merge.dev> (U05M5UUCDS9)
+Message TS: 1781027281.862799
+yeah trying now
+Reactions: heart (1)
+--- Reply 8 of 13 ---
+From: Kim Chuc <kim.chuc@merge.dev> (U05M5UUCDS9)
+Message TS: 1781028196.365399
+Submitted! I cc'd everyone in this thread as well
+Reactions: heart (3)
+--- Reply 9 of 13 ---
+From: Kim Chuc <kim.chuc@merge.dev> (U05M5UUCDS9)
+Message TS: 1781107943.470359
+Sorry for the bump here, Pritak Patel, but would it be possible to follow up on our request with their team? Have a customer checking in for timeline.
+Reactions: +1::skin-tone-4 (1), eyes (1)
+--- Reply 10 of 13 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1781131832.728359
+yeah I checked with them
+Reactions: tysm (3)
+--- Reply 11 of 13 ---
+From: Matt Linehan <matt.linehan@merge.dev> (U0ALP1SU2UT)
+Message TS: 1781291267.471929
+ADP said they don't support file based integrations only marketplace integrations, wait what
+--- Reply 12 of 13 ---
+From: Matt Linehan <matt.linehan@merge.dev> (U0ALP1SU2UT)
+Message TS: 1781291275.498169
+do we need to reach out to someone else at adp?
+--- Reply 13 of 13 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1781291471.279219
+Forwarded and cced u
+Reactions: heart (1)
+
+ROOT_TS: 1780670930.021399
+--- Reply 1 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780671050.722229
+Like as a product?
+--- Reply 2 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780671062.076709
+or as a partner?
+--- Reply 3 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780671077.979369
+as a partner they charge extra by Linked Account
+--- Reply 4 of 8 ---
+From: Andrei Resetnic <andrei.resetnic@merge.dev> (U0832UK1KU5)
+Message TS: 1780673198.121629
+sorry, as partner
+--- Reply 5 of 8 ---
+From: Andrei Resetnic <andrei.resetnic@merge.dev> (U0832UK1KU5)
+Message TS: 1780673212.334439
+so annual fee + fee for every linked account?
+--- Reply 6 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780673553.576459
+most likely but they change pricing for every customer
+--- Reply 7 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780673560.669739
+it needs to be negotiated directly with ADP
+--- Reply 8 of 8 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780673575.580179
+they get all development fees waived by going through Merge though
+Reactions: +1::skin-tone-2 (1)
+
+ROOT_TS: 1780581864.011639
+--- Reply 1 of 5 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780581891.081129
+Yeah but they are delaying until the end of the year. We are already in touch with their SVP of partnerships
+--- Reply 2 of 5 ---
+From: Audrey Hewett <audrey.hewett@merge.dev> (U06LX4SHBGB)
+Message TS: 1780581921.100139
+slayyyyy ok so we could potentially have customers using iCIMS again eventually
+--- Reply 3 of 5 ---
+From: Audrey Hewett <audrey.hewett@merge.dev> (U06LX4SHBGB)
+Message TS: 1780581934.815829
+right now we have it closed off to onboarding because of issues with rate limits and syncing
+--- Reply 4 of 5 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780582372.553969
+it will take a while but potentially yes
+--- Reply 5 of 5 ---
+From: Audrey Hewett <audrey.hewett@merge.dev> (U06LX4SHBGB)
+Message TS: 1780582388.554539
+rip ok got it
+
+ROOT_TS: 1780521468.250939
+--- Reply 1 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780521629.810489
+hi chloe!! yes let me look into it
+Reactions: heart (1)
+--- Reply 2 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780521653.454319
+Thanks!!
+--- Reply 3 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780530166.606229
+(sandbox creds link shared)
+Reactions: heart (1)
+--- Reply 4 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780586945.884399
+Having trouble logging in, should i email posthog support?
+--- Reply 5 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780587211.304449
+chloe can u try logging in without going through google
+Reactions: +1 (1)
+--- Reply 6 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780587218.703399
+like if there's just an email login
+--- Reply 7 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780587359.427989
+only see an option to log in with google
+--- Reply 8 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780587407.886309
+so weird
+--- Reply 9 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780587421.271939
+is it working for you?
+--- Reply 10 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780587457.541839
+just trying to get this info so i connect to AH for testing
+--- Reply 11 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780587758.998669
+this is so odd, i created an account yesterday and now there's no place to input our password
+--- Reply 12 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1780588154.394959
+weird did the login page look different yesterday?
+--- Reply 13 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780588433.402139
+i guess because i made an acct i didn't have to re login
+Reactions: +1 (1)
+--- Reply 14 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780588441.638609
+but i was able to see the entire dashboard
+--- Reply 15 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1781117120.820319
+Should I reach out to the rep to get access?
+--- Reply 16 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781117277.935949
+i filled out a support form that day but i can reach out !!
+--- Reply 17 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781117285.278379
+havent heard back
+--- Reply 18 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1781117513.433609
+all good! trying to test the connector for google Jules
+Reactions: +1 (1)
+--- Reply 19 of 38 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1781117860.888549
+We have our own internal Posthog we can likely use
+--- Reply 20 of 38 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1781117872.112949
+Yash Gogri Max Eagle can we use it just for testing our connector?
+--- Reply 21 of 38 ---
+From: Yash Gogri <yash.gogri@merge.dev> (U0395R5EMUN)
+Message TS: 1781117951.102979
+i created a free account to test the connector a few weeks back
+--- Reply 22 of 38 ---
+From: Yash Gogri <yash.gogri@merge.dev> (U0395R5EMUN)
+Message TS: 1781117961.001239
+unsure on if we are allowed to use our internal posthog
+--- Reply 23 of 38 ---
+From: Yash Gogri <yash.gogri@merge.dev> (U0395R5EMUN)
+Message TS: 1781117978.140439
+that's probably a Gil Feig / Noura Alraddadi / Max Eagle call
+--- Reply 24 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781117998.949169
+If we used our account, I'd just create a separate project for you to work in
+--- Reply 25 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781118021.900689
+Granted there won't be any activity in it
+--- Reply 26 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781118038.721269
+Up to Gil and Noura if we can test in our actual dev and prod projects for PH
+--- Reply 27 of 38 ---
+From: Noura Alraddadi <noura.alraddadi@merge.dev> (U096N7MURJS)
+Message TS: 1781215874.431169
+we shouldn't test in the actual dev/prod projects. we can go with Max's idea of a separate project as long as the API key is scoped only to that project and stored in 1Pass.
+--- Reply 28 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781215994.587799
+Pritak Patel Chloe Leblanc Nishka Chotai sounds like I can generate a project for your use case and add you as members - sound like a plan?
+Reactions: heart (1)
+--- Reply 29 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781216228.128969
+that would be awesome
+--- Reply 30 of 38 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781216231.492269
+thanks max
+--- Reply 31 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781217119.770379
+Just sent
+--- Reply 32 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781217134.676599
+Your project is AH Sandbox
+--- Reply 33 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781817637.183839
+Chloe Leblanc did you end up testing in some other account / environment?
+--- Reply 34 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781817642.531799
+(screenshot)
+--- Reply 35 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1781817700.661049
+Ah not yet, was testing other connectors for jules first.
+--- Reply 36 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781817934.313939
+I'll resend the invite now
+--- Reply 37 of 38 ---
+From: Max Eagle <max.eagle@merge.dev> (U0ASMSQM3N0)
+Message TS: 1781817940.693759
+If you can just accept so that you have access
+Reactions: white_check_mark (1)
+--- Reply 38 of 38 ---
+From: Chloe Leblanc <chloe.leblanc@merge.dev> (U0A1961A63X)
+Message TS: 1781818456.083739
+Awesome, thank you! In now!
+
+ROOT_TS: 1779900911.366189
+--- Reply 1 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779905327.157719
+hi amy!!!
+--- Reply 2 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779905329.542689
+i see the teamtailor support email
+--- Reply 3 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1779907578.622499
+thanks nishka, am i good to reach out directly?
+--- Reply 4 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779907965.407569
+yes!!
+--- Reply 5 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1779912725.937079
+teamtailor is saying they don't have our sandbox email in their system
+Reactions: astonished (1)
+--- Reply 6 of 41 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779912859.975169
+... lol what
+--- Reply 7 of 41 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779912866.229619
+can u ask them to create one then
+--- Reply 8 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1779913446.816389
+haha ok
+--- Reply 9 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1779913453.668199
+i'm ccing you both
+Reactions: heart (1)
+--- Reply 10 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1780581435.883069
+somehow we have gotten here
+--- Reply 11 of 41 ---
+From: Amy Leung <amy.leung@merge.dev> (U041R9BHV6H)
+Message TS: 1780581450.431869
+can i loop in either of you again lol
+--- Reply 12 of 41 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780581461.175549
+Nishka Chotai
+--- Reply 13 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780595659.064009
+emailed!
+Reactions: heart (1)
+--- Reply 14 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694272.426989
+have we heard anything from them by chance
+--- Reply 15 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694300.830519
+customer bumped about the sandbox!
+--- Reply 16 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780694309.221959
+not yet
+--- Reply 17 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694317.969169
+cry
+--- Reply 18 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780694333.386599
+sunglasses cowboy
+--- Reply 19 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694346.905799
+if they do reach out or if u bump can u cc me
+--- Reply 20 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694352.160219
+sad
+--- Reply 21 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780694352.805599
+yesss
+--- Reply 22 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694368.143249
+thanks
+--- Reply 23 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780694370.982279
+sad
+--- Reply 24 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694384.999219
+funny emoji
+--- Reply 25 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1780694417.730049
+funny emoji
+--- Reply 26 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1780694479.673459
+fire
+--- Reply 27 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1781799217.476539
+Pritak Patel Nishka Chotai - do either of you know what the Teamtailor account name/link is? Sarah is saying merge.dev isn't working and we can't just send the email address?
+--- Reply 28 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781802801.198289
+bruhhhhh
+--- Reply 29 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781802803.457289
+i have no idea
+--- Reply 30 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781802828.299859
+i mean we just login via app.teamtailor.com/login
+--- Reply 31 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781803101.453199
+i responded to her
+--- Reply 32 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1781805255.732519
+thanks queen
+--- Reply 33 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782409522.467159
+sarah sent me a new sandbox so i made a new login, should i replace the login info in the 1pass we have?
+--- Reply 34 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782409544.447219
+lets replace the current one we have
+--- Reply 35 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782409549.346649
+since those creds don't work
+--- Reply 36 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782409732.582389
+thumbs up
+--- Reply 37 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782409786.961579
+she has been updated
+--- Reply 38 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782409794.037939
+tyyyy
+--- Reply 39 of 41 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1782409799.977869
+sarah finally pulled thru
+--- Reply 40 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782409801.091999
+idk if the 1 time password still applies
+--- Reply 41 of 41 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1782409803.454469
+sarahhhh my girl
+
+ROOT_TS: 1779485789.330599
+--- Reply 1 of 25 ---
+From: Cam Iadeluca <cam.iadeluca@merge.dev> (U04Q6K05SKU)
+Message TS: 1779489466.260829
+Following
+--- Reply 2 of 25 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779489778.413229
+It should be automatic. Kevin Zhang do you know how the MPOPP gets applied to our private offers?
+--- Reply 3 of 25 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779489789.727289
+cc Nishka Chotai
+--- Reply 4 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1779811980.625959
+Light bump for this week
+--- Reply 5 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1779819387.574199
+From the Tackle/co-sell side we can update on co-sell - operationally, I'm not sure if that is all that is needed.
+--- Reply 6 of 25 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779820095.735879
+sorry just catching up here!!
+--- Reply 7 of 25 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779820129.445549
+from my understanding: we need to submit a fund request per deal through the AWS Partner Funding Portal.
+--- Reply 8 of 25 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779820166.775009
+i don't think it's automatic but yeah let's check w them
+--- Reply 9 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1779892512.041369
+Any updates here? Hoping we can have a clear understanding of this process
+--- Reply 10 of 25 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1779919968.150049
+update: waiting on aws to confirm the process!!
+--- Reply 11 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1780075120.205829
+Just spoke with AWS rep, there is some legwork we need to do before MPPO is shipped.
+--- Reply 12 of 25 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780075200.208709
+Nishka Chotai Kevin Zhang are working through it
+--- Reply 13 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1780322728.152199
+Hi all, let me know if there are any updates so I can get this marketplace private offer shipped.
+--- Reply 14 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1780323612.062709
+We're meeting with Tackle in the afternoon and will send an update then!
+Reactions: +1 (1), thankyou (1)
+--- Reply 15 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1780409622.750309
+Hi team, did we learn more from Tackle about the process?
+--- Reply 16 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1780409916.600469
+They moved our meeting last minute. We are meeting with them today now
+Reactions: +1 (1)
+--- Reply 17 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1780445927.509179
+Okay we got some good information from the Tackle team. We need to migrate to an updated AWS partner platform.
+--- Reply 18 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1780446059.185259
+Sounds good, thanks for the update!
+--- Reply 19 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1781009471.569479
+HI team, is there any update here. Need to get this renewal shipped
+--- Reply 20 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1781010470.536169
+Let me bump foundations team on AWS permissions
+--- Reply 21 of 25 ---
+From: Kevin Zhang <kevin.zhang@merge.dev> (U03GEH32R9A)
+Message TS: 1781010498.832349
+When does the renewal need to ship by?
+--- Reply 22 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1781010566.761089
+Renewal is 6/29
+--- Reply 23 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1781544908.069139
+Do we have any updates here, would love to get the MPPO shipped this week.
+--- Reply 24 of 25 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1781545323.972869
+Yes! Our migration went through, just checking in with AWS to see if we're good to submit today
+Reactions: +1 (1), thankyou (1)
+--- Reply 25 of 25 ---
+From: Chad Klansnic <chad.klansnic@merge.dev> (U06R97P6LG7)
+Message TS: 1781547045.009829
+Ok great! Keep me posted. Thanks
+
+ROOT_TS: 1779357593.245099
+--- Reply 1 of 14 ---
+From: Lev Chekmarov <lev.chekmarov@merge.dev> (U07841HAUKW)
+Message TS: 1779357648.385829
+(pdf attachment)
+--- Reply 2 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779372330.733569
+have not seen this before! Do they need to talk to someone?
+--- Reply 3 of 14 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1779379512.565899
+The end-user is waiting on guidance from us before filling out the form.
+--- Reply 4 of 14 ---
+From: Lev Chekmarov <lev.chekmarov@merge.dev> (U07841HAUKW)
+Message TS: 1779444565.818699
+Pritak Patel bumping this one
+--- Reply 5 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1779458555.974659
+sent
+Reactions: thankyou (2)
+--- Reply 6 of 14 ---
+From: Aidan Timmerman <aidan.timmerman@merge.dev> (U09F1BB96KC)
+Message TS: 1780503662.643899
+Pritak Patel FYI Paylocity is causing more confusion for Aon clients.
+Reactions: plus1 (1), +1::skin-tone-4 (1)
+--- Reply 7 of 14 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1780519304.422109
+Details: Aon's end-users hitting different roadblocks connecting Paylocity. Ask: can we connect Aon directly with Paylocity.
+--- Reply 8 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780521108.997459
+Got it, Arthur Liou can you share this with Daniel
+Reactions: +1 (1)
+--- Reply 9 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1780521113.887399
+and he has the context in that thread too
+--- Reply 10 of 14 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1780521168.617099
+yes, will follow up shortly with Daniel
+--- Reply 11 of 14 ---
+From: Arthur Liou <arthur.liou@merge.dev> (U060YKZR918)
+Message TS: 1781114401.841379
+intro'ed Aon to Daniel just now
+--- Reply 12 of 14 ---
+From: Lev Chekmarov <lev.chekmarov@merge.dev> (U07841HAUKW)
+Message TS: 1783417647.766049
+Pritak Patel it's probably a long shot, but have we helped other customers negotiate Paylocity's API fees in the past?
+Reactions: plus1 (1)
+--- Reply 13 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783432981.332769
+Paylocity seems to be quoting customers random numbers
+Reactions: +1 (1)
+--- Reply 14 of 14 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1783433164.704109
+We havent helped in the past and probably can't influence anything here unfort
+Reactions: +1 (2)
+
+ROOT_TS: 1778778857.678939
+--- Reply 1 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778778904.386709
+I can't tell if this competes with us but have you spoken w/ folks on their side about this recently?
+--- Reply 2 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778778933.442529
+Yep we actually were talking to Auth0 in the past about partnering on this but it didnt make much sense
+Reactions: +1 (1)
+--- Reply 3 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778778936.262359
+not competitive though
+--- Reply 4 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778779005.109899
+oh damn ty, what makes it not competitive?
+--- Reply 5 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778779106.772619
+They only manage the auth for these apps and its just for internal I think
+--- Reply 6 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778779115.088009
+they dont actually provide the connectors themselves
+Reactions: +1 (1)
+--- Reply 7 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778779124.859309
+ah right lol
+--- Reply 8 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778779186.292009
+I feel like I'm running into a bunch of folks who are convinced they'll be fine building their own connectors
+--- Reply 9 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778779229.729759
+sure they can and use public MCPs but the logging, observability, security, etc is harder
+Reactions: +1 (1)
+--- Reply 10 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778779249.832219
+Ya that bit has actually resonated well here
+--- Reply 11 of 12 ---
+From: Aaron Sun <aaron.sun@merge.dev> (U0ASX68HG2V)
+Message TS: 1778779272.140879
+Like we show ppl the logging and DLP rules and it starts to click
+Reactions: heart (1)
+--- Reply 12 of 12 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778779289.203759
+good to know for demos Matthew Doherty!
+Reactions: +1 (1)
+
+ROOT_TS: 1778731102.501639
+--- Reply 1 of 1 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778778873.052419
+let me reach out and see!
+Reactions: heart (1)
+
+ROOT_TS: 1778250069.747019
+--- Reply 1 of 10 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778259640.613549
+emailed and cc'ed you!
+--- Reply 2 of 10 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778512499.291159
+could it be a bug in Merge Link?
+--- Reply 3 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1778512606.295619
+I think so, something very weird is happening here. Sandbox account doesn't work on Merge link but I can access the api with the same api key from postman.
+--- Reply 4 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1778512615.561579
+will dig further and get back.
+Reactions: +1::skin-tone-4 (1)
+--- Reply 5 of 10 ---
+From: Jack Cavalier <jack.cavalier@merge.dev> (U03UR4YUHMX)
+Message TS: 1778681268.489029
+Is it not that we're hitting rate limits?
+--- Reply 6 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1778682822.949679
+it's very weird. normal API calls from Postman go through but sandbox account doesn't link from linking flow
+--- Reply 7 of 10 ---
+From: Matt Mittleman <matt.mittleman@merge.dev> (U08P41NFP2Q)
+Message TS: 1779810798.190389
+Pranav Revankar Do you know if this was resolved? I can't seem to link a test account.
+--- Reply 8 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1779810834.969009
+Nope!
+--- Reply 9 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1779811633.228859
+need to debug on what's causing this
+--- Reply 10 of 10 ---
+From: Pranav Revankar <pranav.revankar@merge.dev> (U09JEC5NLJ2)
+Message TS: 1779874435.437549
+Found the issue - it's because this sandbox account is hitting rate limits. Have written to BambooHR team.
+
+ROOT_TS: 1778076659.838689
+--- Reply 1 of 9 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1778076719.431799
+can he get us an intro with their team first
+Reactions: heart (1)
+--- Reply 2 of 9 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1778076724.654539
+we need the meeting for ZDR / api access
+--- Reply 3 of 9 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1778076728.648389
+and then Aakash Gupte can help add!!!
+--- Reply 4 of 9 ---
+From: Aakash Gupte <aakash.gupte@merge.dev> (U0AJR7CBB32)
+Message TS: 1778076757.943769
+Ahhhh yes! That would be so awesome
+--- Reply 5 of 9 ---
+From: Jessica Sadow <jessica.sadow@merge.dev> (U082R8BGV7H)
+Message TS: 1778077037.558959
+Adding in Marcos Placona!! Who should be included in the intro?
+--- Reply 6 of 9 ---
+From: Jessica Sadow <jessica.sadow@merge.dev> (U082R8BGV7H)
+Message TS: 1778077059.959629
+rip i need noura to add him
+--- Reply 7 of 9 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1778077092.979699
+can you do this in the gateway marketing channel
+--- Reply 8 of 9 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1778077098.565429
+i'd rather restrict contractor channel access
+Reactions: +1 (1)
+--- Reply 9 of 9 ---
+From: Jessica Sadow <jessica.sadow@merge.dev> (U082R8BGV7H)
+Message TS: 1778077159.892159
+done!
+
+ROOT_TS: 1778027053.485679
+--- Reply 1 of 1 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1778071575.650659
+I'll talk to them!
+Reactions: heart (2)
+
+ROOT_TS: 1778019016.626959
+--- Reply 1 of 4 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1778019139.852909
+steph is it this one (hibob login link)
+--- Reply 2 of 4 ---
+From: Steph Mark <stephanie.mark@merge.dev> (U08VAUU4Z2M)
+Message TS: 1778019213.902399
+Unfort I believe it's a different portal
+--- Reply 3 of 4 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1778019388.478289
+lol
+Reactions: joy (1)
+--- Reply 4 of 4 ---
+From: Steph Mark <stephanie.mark@merge.dev> (U08VAUU4Z2M)
+Message TS: 1778019461.315289
+warning sadblob warning
+
+ROOT_TS: 1777923155.081359
+--- Reply 1 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1777925649.252129
+Do they roughly map 1->1 to the old ones?
+--- Reply 2 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777925834.248789
+naur
+--- Reply 3 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777925848.815729
+there's just workers read while before there were individual employee scopes
+--- Reply 4 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777925911.378149
+some overlap in company scopes but not entirely
+--- Reply 5 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777925929.646019
+i emailed a rippling person i was on an ongoing thread with but wanted to check here too
+--- Reply 6 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1777926023.363299
+They didnt say anything specific about this switch so that thread is our best bet
+--- Reply 7 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777926043.763639
+ahhh haha okay!!
+--- Reply 8 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777998299.987309
+Rippling: the scopes you listed align with Legacy API (V1); new partners get REST API (V2) scopes by default.
+--- Reply 9 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777998360.306339
+are we good to proceed with the REST API scopes?
+--- Reply 10 of 11 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1777998431.390549
+Yep!
+--- Reply 11 of 11 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1777998437.447169
+amazing ty
+
+ROOT_TS: 1777920313.482999
+--- Reply 1 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1777920918.284559
+tagging Pritak Patel can you help?
+--- Reply 2 of 5 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1777921096.949929
+Nishka Chotai mind covering this? Ill send you card details in DM
+Reactions: +1 (1)
+--- Reply 3 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1777921103.256629
+yes!
+--- Reply 4 of 5 ---
+From: Cindy Long <cindy.long@merge.dev> (U0781DKF291)
+Message TS: 1777921117.384589
+ty both!
+--- Reply 5 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1777921793.218569
+[redacted price info]
+
+ROOT_TS: 1777564208.434399
+--- Reply 1 of 2 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1777564844.002839
+I'll take a look!
+Reactions: heart (2)
+--- Reply 2 of 2 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1777921699.451589
+update I submitted a bug for it! It's working in Dev but not in Prod
+Reactions: heart (1)
+
+ROOT_TS: 1777410139.852859
+--- Reply 1 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777411187.698739
+my account
+--- Reply 2 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777411188.550109
+lol
+--- Reply 3 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777411195.313329
+we can give you an account too
+--- Reply 4 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777411202.609199
+we all just use our own rip
+--- Reply 5 of 7 ---
+From: Steph Mark <stephanie.mark@merge.dev> (U08VAUU4Z2M)
+Message TS: 1777411284.283489
+ooh okay yes could I get an account to test a bug fix?
+--- Reply 6 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777419464.066029
+yes sec
+--- Reply 7 of 7 ---
+From: Shensi Ding <shensi@merge.dev> (U013W4P3NG3)
+Message TS: 1777419515.124759
+done
+Reactions: tysm (1)
+
+ROOT_TS: 1776982977.675919
+--- Reply 1 of 14 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776983029.615479
+sussss
+--- Reply 2 of 14 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776983061.852109
+Noura Alraddadi
+--- Reply 3 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776983080.866159
+ohhh am i getting phished lmaoooo
+--- Reply 4 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776983087.668929
+they got meeeeeeee
+--- Reply 5 of 14 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776983088.437899
+fish
+--- Reply 6 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776983092.842339
+i didn't click any links doe
+--- Reply 7 of 14 ---
+From: Noura Alraddadi <noura.alraddadi@merge.dev> (U096N7MURJS)
+Message TS: 1776983098.484619
+forward it to me pls
+--- Reply 8 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776983108.116619
+otay !
+--- Reply 9 of 14 ---
+From: Noura Alraddadi <noura.alraddadi@merge.dev> (U096N7MURJS)
+Message TS: 1776984158.619319
+so it's not phishing but not sure why u got it
+Reactions: thinking_face (1)
+--- Reply 10 of 14 ---
+From: Noura Alraddadi <noura.alraddadi@merge.dev> (U096N7MURJS)
+Message TS: 1776984163.094849
+is it a customer?
+--- Reply 11 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776984400.404759
+no i think it's because we're their customer
+--- Reply 12 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776984417.984719
+so i read this as them setting up like a partnership meeting
+--- Reply 13 of 14 ---
+From: Noura Alraddadi <noura.alraddadi@merge.dev> (U096N7MURJS)
+Message TS: 1776985045.522739
+yeah then it's just a standard account review so nothing you need to do unless we actually want to meet with them.
+--- Reply 14 of 14 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776985195.626829
+bett
+
+ROOT_TS: 1776965177.149309
+--- Reply 1 of 3 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776965401.068179
+Yes, contact provided. Can you do the reachout and intro Vanta and say they would like a sandbox
+--- Reply 2 of 3 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776965402.561359
+cc me too
+--- Reply 3 of 3 ---
+From: Matt Mittleman <matt.mittleman@merge.dev> (U08P41NFP2Q)
+Message TS: 1776965801.613699
+Yes, thank you!
+
+ROOT_TS: 1776955358.350059
+--- Reply 1 of 2 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1776956062.006739
+Merge is requesting access to Bitbucket account info, repos, pipelines, etc.
+--- Reply 2 of 2 ---
+From: Michelle Krameisen <michelle@merge.dev> (U02EXQ8T1JL)
+Message TS: 1776956070.963989
+(screenshot)
+
+ROOT_TS: 1776389616.315899
+--- Reply 1 of 6 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776432761.725789
+If thats the case, the SA can make the request for the additional scope in the customer's Rippling account
+Reactions: +1 (1)
+--- Reply 2 of 6 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776432780.001009
+Whos the CSM/SA for this
+--- Reply 3 of 6 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776432788.186649
+Usually they just reject them
+--- Reply 4 of 6 ---
+From: Pritak Patel <pritak@merge.dev> (U02HSF3TNBG)
+Message TS: 1776432791.647689
+but i guess not anymore
+--- Reply 5 of 6 ---
+From: Thomas Johnson <thomas.johnson@merge.dev> (U09DQENB7PX)
+Message TS: 1776446151.403329
+cc Ariya Patel Ashwin Prakash for this ticket - could you make the request?
+--- Reply 6 of 6 ---
+From: Ariya Patel <ariya.patel@merge.dev> (U099MRN2JNA)
+Message TS: 1776446182.043569
+yuppers
+Reactions: heart (1)
+
+ROOT_TS: 1776364246.950929
+--- Reply 1 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776364998.075859
+hi steph
+--- Reply 2 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776365017.103979
+im reaching out to their support team
+Reactions: heart (1)
+--- Reply 3 of 5 ---
+From: Steph Mark <stephanie.mark@merge.dev> (U08VAUU4Z2M)
+Message TS: 1776365122.932549
+thank you
+Reactions: heart (1)
+--- Reply 4 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776365152.190499
+but was able to create creds?
+--- Reply 5 of 5 ---
+From: Nishka Chotai <nishka.chotai@merge.dev> (U08KP0PHNG0)
+Message TS: 1776365180.484319
+(1password link redacted)

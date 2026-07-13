@@ -8,11 +8,13 @@ from typing import List, Optional
 BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = BASE_DIR / "data" / "raw"
 ANALYSIS_DIR = BASE_DIR / "data" / "analysis"
+DAILY_ANALYSIS_DIR = BASE_DIR / "data" / "analysis_by_day"
 
 
 def _ensure_dirs() -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
+    DAILY_ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def raw_path(date_str: str) -> Path:
@@ -23,6 +25,11 @@ def raw_path(date_str: str) -> Path:
 def analysis_path(date_str: str) -> Path:
     _ensure_dirs()
     return ANALYSIS_DIR / f"{date_str}.json"
+
+
+def daily_analysis_path(date_str: str) -> Path:
+    _ensure_dirs()
+    return DAILY_ANALYSIS_DIR / f"{date_str}.json"
 
 
 def write_raw(messages: List[dict], date_str: str) -> Path:
@@ -68,6 +75,17 @@ def read_all_analysis() -> List[dict]:
     _ensure_dirs()
     results = []
     for path in sorted(ANALYSIS_DIR.glob("*.json")):
+        data = read_json(path)
+        if data is not None:
+            results.append(data)
+    return results
+
+
+def read_all_daily_analysis() -> List[dict]:
+    """Load every cached analysis JSON file under data/analysis_by_day/, sorted by filename."""
+    _ensure_dirs()
+    results = []
+    for path in sorted(DAILY_ANALYSIS_DIR.glob("*.json")):
         data = read_json(path)
         if data is not None:
             results.append(data)

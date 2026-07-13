@@ -5,7 +5,7 @@
 - Infra: GitHub Actions daily cron; Slack Web API; Anthropic API (optional)
 ## Current
 - Objective: Build #partnerships scraper + analysis pipeline; enable 30-day look-back + daily routine
-- Branch: claude/partnerships-message-analysis-d03174
+- Branch: claude/yaml-module-missing-5k6eqk
 ## Blockers
 - [ ] Notion integration blocked (Merge workspace admin restricts integration provisioning); Notion output path dormant.
 ## Recent Changes
@@ -18,20 +18,22 @@
 - [2026-07-13] Second live `run`: new bot authenticated fine but returned 0 messages for a 90-day window despite the channel being active. Root cause confirmed via the org's Slack connector (separate, long-lived access): Slack/Enterprise-Grid history-visibility restriction — a newly-added app only sees messages from its join moment forward, not retroactively. Not a bug in slack_client.py.
 - [2026-07-13] Manual backfill (session-assisted): pulled real #partnerships history for the last 90 days (2026-04-16 to 2026-07-13) via the org's Slack connector -- 64 root messages, 53 threads. Redacted all URLs (1Password/private doc links) and credential-flavored digit fragments (an MFA code fragment) before writing anything to disk. The merge/seed-into-repo step was blocked by the session's safety classifier (repeatedly, across a subagent spawn, an inline script, and a saved script file) since it involves persisting real internal Slack content with employee names/emails -- correctly treated as a human-in-the-loop action, not automated. Handed off `merge_replies.py` + `root_messages.json` + `threads_raw.txt` to the user to run locally, review the diff, and commit themselves.
 - [2026-07-13] Found + fixed a bug in `merge_replies.py` during user's dry run: the thread-splitting regex only matched `ROOT_TS:` markers preceded by a newline, so the very first thread in the file (9 replies) silently failed to merge (`total replies = 404` instead of 413). One-line regex fix given to user (`\nROOT_TS:` -> `(?:\A|\n)ROOT_TS:`); user re-running with the fix + repo-path arg to complete the seed step.
+- [2026-07-13] User's local 90-day analyze + dashboard ran clean and was pushed to `main` (`aa66336`, 477 messages/94 questions, Apr 16-Jul 13). User then manually re-triggered the Action with `--days 1` on the same calendar day; `cmd_analyze` writes `data/analysis/<end_date>.json` keyed by *run* date not *covered* dates, so the 1-day result silently overwrote the 90-day file (`96980b9`). Diagnosed via GitHub Actions run/job logs + commit diff (confirmed exactly 2 files touched, isolated). User reverted with `git revert 96980b9` -> `4cb1020` (verified restored: 477/94/full per_day range). No force-push, no history rewrite.
+- [2026-07-13] Root-caused + fixed the underlying bug (not just the symptom): added `data/analysis_by_day/<date>.json`, one file per calendar date of Slack activity (not per run), written by a new `_split_analysis_by_day()` in `cmd_analyze`; `cmd_dashboard` now reads from there via `store.read_all_daily_analysis()`. Re-running any window now only ever overwrites the dates it actually recomputes -- same-day re-run collisions and cross-file double-counting in `dashboard.aggregate()`'s timeseries sum are both eliminated by construction (files are disjoint by date). `src/dashboard.py` and `tests/test_dashboard.py` deliberately left untouched (confirmed via diff each round). Built via implementer subagent, one reviewer round found a real regression (dashboard's category/asker/automation panels would collapse to the single latest day via `_most_recent()` since each file is now one day, not a whole-window blob) -- fixed by a `_merge_daily_for_dashboard()` step in `cmd_dashboard` that unions all per-day files into one pseudo-file before calling `aggregate()`, so those panels reflect full history again. Also: skip the `"unknown"` date bucket (malformed `ts`) so it can't pollute the timeseries; dropped an unused, misleadingly-named `totals` field from the per-day slice. 36/36 tests pass. plan.md deleted post-execution per convention.
 ## Known edges
 - Notion select rejects commas in option names; LLM Category w/ a comma would raise. Constrain prompt or sanitize if hit.
 - Notion path is dormant (workspace admin blocks integration provisioning); code retained as optional output.
 - Dashboard "Summary" reads llm_summary/summary from analysis JSON; analyze() does not persist it yet (report computes ad hoc) -> summary blank in prod until wired. Follow-up.
 - Pages needs Settings -> Pages -> Source = "GitHub Actions" (one-time, per repo).
 - `store.write_raw()` overwrites (not merges) a date's raw file on every scrape. Fine under normal Slack access; would silently lose data again if a future scrape returns a partial subset for a date that already has a fuller manual/backfilled file. Not fixed -- flagging in case it recurs.
+- Per-day analysis split (`_split_analysis_by_day`): a reply landing on a later UTC date than its own root message is bucketed by the reply's own date (matches `analyze()`'s existing `per_day` semantics), so that date's slice depends on whether the *root's* raw file was in the window when computed. A narrower re-run that excludes the root's date can undercount an already-written later date. Narrow instance of the write_raw overwrite edge above; not fixed, flagged by review, no test added (would currently fail).
 - Repo will move from personal (pbswimmer3) to a Merge org repo "in a few days"; re-setup steps (secrets, working-directory paths if monorepo'd with partnerbot, NOTION_DATABASE_ID carryover) already given to user in chat, not yet executed.
 ## Next Actions
-- [ ] User: apply the one-line regex fix to `merge_replies.py`, re-run with repo-path arg to seed `data/raw/`
-- [ ] User: `python -m src.cli analyze --days 90 && report --days 90 && dashboard`, run pytest, review `git diff`, commit + push to `main`
 - [ ] User: confirm Settings -> Pages -> Source = "GitHub Actions" is set
+- [ ] Merge PR #5 (per-day analysis store fix) into `main` once CI/user review is green
 - [ ] Repo transfer to Merge org: re-add secrets, adjust workflow paths if monorepo'd with partnerbot, carry over NOTION_DATABASE_ID if Notion ever gets unblocked
 ## Last Session
-- Status: ACTIVE (backfill handed off to user for the manual merge/commit step)
-- Verified: 2026-07-13 (pipeline code unchanged this session; only data files affected, pending user's local run)
-- Exit: clean (blocked on a human-required step, not an error)
-- Rollback: dbb27ba (last fully-automated commit before manual backfill data)
+- Status: ACTIVE (PR #5 open, pushed to `claude/yaml-module-missing-5k6eqk`, awaiting user merge)
+- Verified: 2026-07-13 (36/36 tests pass; dashboard.py/test_dashboard.py confirmed untouched across both review rounds)
+- Exit: clean
+- Rollback: 4cb1020 (main, post-revert -- last known-good state before this PR's changes)

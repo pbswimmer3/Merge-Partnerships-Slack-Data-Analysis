@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "bug_issue",
-      "subtopic": "Merge Link bug speculation",
+      "subtopic": "Merge Link possible bug",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires investigation and technical debugging by human."
+      "rationale": "Diagnosing a bug requires investigation and engineering input."
     }
   ]
 }

@@ -39,10 +39,10 @@
       "first_reply_latency_sec": 1076.2675099372864,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "ADP WFN support contact",
+      "subtopic": "ADP WFN technical contact",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires specific contact info from humans."
+      "rationale": "Needs specific partner contact info from team."
     },
     {
       "ts": "1780690687.711809",
@@ -53,11 +53,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "Clarifying the question",
+      "llm_category": "process_workflow",
+      "subtopic": "Clarifying question",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Conversational filler, no answerable content."
+      "rationale": "Conversational clarification, no answerable content."
     },
     {
       "ts": "1780691210.090639",
@@ -69,10 +69,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "data_sync",
-      "subtopic": "Employee vs employer deduction field",
+      "subtopic": "Employee vs employer deduction fields",
       "difficulty": 4,
       "automatable": true,
-      "rationale": "API docs likely specify deduction type fields."
+      "rationale": "API schema field question answerable from documentation."
     },
     {
       "ts": "1780670930.021399",
@@ -84,10 +84,10 @@
       "first_reply_latency_sec": 120.70082998275757,
       "permalink": null,
       "llm_category": "pricing_commercial",
-      "subtopic": "ADP WFN licensing model",
+      "subtopic": "ADP WFN licensing API pricing",
       "difficulty": 4,
       "automatable": true,
-      "rationale": "Vendor licensing may be documented publicly."
+      "rationale": "Vendor licensing model potentially documented publicly or in FAQ."
     },
     {
       "ts": "1780671050.722229",
@@ -98,11 +98,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "Clarifying product context",
+      "llm_category": "process_workflow",
+      "subtopic": "Clarifying as product",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Fragment clarification, no standalone answer."
+      "rationale": "Conversational clarification fragment."
     },
     {
       "ts": "1780671062.076709",
@@ -113,11 +113,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "Clarifying partner context",
+      "llm_category": "process_workflow",
+      "subtopic": "Clarifying as partner",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Fragment clarification, no standalone answer."
+      "rationale": "Conversational clarification fragment."
     },
     {
       "ts": "1780673212.334439",
@@ -129,10 +129,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "pricing_commercial",
-      "subtopic": "annual and linked account fees",
+      "subtopic": "fee structure clarification",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Pricing structure question answerable from pricing docs/FAQ."
+      "rationale": "Pricing question answerable from a documented fee schedule or FAQ."
     }
   ]
 }

@@ -29,10 +29,10 @@
       "first_reply_latency_sec": 6.723059892654419,
       "permalink": null,
       "llm_category": "partnership_requirement",
-      "subtopic": "customer Slack partnership needed",
+      "subtopic": "customer Slack partnership need",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Clear policy question answerable from partnership documentation."
+      "rationale": "Policy question answerable via FAQ or bot."
     }
   ]
 }

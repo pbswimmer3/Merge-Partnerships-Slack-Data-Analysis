@@ -31,8 +31,8 @@
       "llm_category": "api_technical",
       "subtopic": "rate limit diagnosis",
       "difficulty": 3,
-      "automatable": false,
-      "rationale": "Needs log inspection to confirm rate limiting."
+      "automatable": true,
+      "rationale": "Rate limit checks documentable, but may need log review."
     }
   ]
 }

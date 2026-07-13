@@ -30,10 +30,10 @@
       "first_reply_latency_sec": 43145.409890174866,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "partnership data field access",
+      "subtopic": "partnership data access scope",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Partner-specific terms negotiation requiring human coordination with Rippling."
+      "rationale": "Requires partner-specific negotiation knowledge and internal decision-making."
     },
     {
       "ts": "1776446151.403329",
@@ -45,10 +45,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "ticket request handoff",
+      "subtopic": "ticket request tagging",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Internal task assignment, no factual answer possible by bot."
+      "rationale": "Coordination/action request needing human to file ticket."
     }
   ]
 }

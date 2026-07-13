@@ -33,10 +33,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "api_technical",
-      "subtopic": "REST API scope approval",
+      "subtopic": "REST API scope confirmation",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Needs confirmation from someone about correct scope choice."
+      "rationale": "Needs internal confirmation on approved integration approach."
     },
     {
       "ts": "1778019016.626959",
@@ -47,11 +47,11 @@
       "reply_count": 4,
       "first_reply_latency_sec": 123.22595000267029,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "Hibob developer portal account",
+      "llm_category": "api_technical",
+      "subtopic": "developer portal account access",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Account provisioning request requiring human action."
+      "rationale": "Requires provisioning shared dev portal account by human."
     }
   ]
 }

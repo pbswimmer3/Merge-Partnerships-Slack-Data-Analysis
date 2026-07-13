@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "Generate project, add members",
+      "subtopic": "Generate project add members",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Coordination proposal needing team confirmation."
+      "rationale": "Coordination confirmation between people."
     }
   ]
 }

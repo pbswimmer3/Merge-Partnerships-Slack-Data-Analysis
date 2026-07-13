@@ -36,11 +36,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
+      "llm_category": "process_workflow",
       "subtopic": "Looping in colleagues",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Casual coordination, no answerable content."
+      "rationale": "Casual internal coordination request."
     },
     {
       "ts": "1780586945.884399",
@@ -51,11 +51,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "troubleshooting",
-      "subtopic": "Login trouble, contact support",
+      "llm_category": "access_permissions",
+      "subtopic": "Login trouble PostHog support",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "FAQ could guide login/support escalation steps."
+      "rationale": "Standard troubleshooting/escalation path can be documented."
     },
     {
       "ts": "1780587421.271939",
@@ -67,10 +67,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "troubleshooting",
-      "subtopic": "Verify if working",
+      "subtopic": "Confirm working for others",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Peer check, no documentable answer."
+      "rationale": "Real-time peer check, no static answer."
     },
     {
       "ts": "1780588154.394959",
@@ -82,10 +82,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "troubleshooting",
-      "subtopic": "Login page change",
+      "subtopic": "Login page changed",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Observational query needing human confirmation."
+      "rationale": "Vague observation needing peer confirmation."
     },
     {
       "ts": "1780581864.011639",
@@ -100,7 +100,7 @@
       "subtopic": "iCIMS partnership pursuit",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Strategic status needing internal knowledge."
+      "rationale": "Strategic status question needing internal knowledge."
     }
   ]
 }

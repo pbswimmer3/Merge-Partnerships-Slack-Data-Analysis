@@ -38,10 +38,10 @@
       "first_reply_latency_sec": 2494.1707701683044,
       "permalink": null,
       "llm_category": "api_technical",
-      "subtopic": "Rippling endpoint migration scopes",
+      "subtopic": "Rippling endpoint scope migration",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires knowledge of recent partner migration decisions."
+      "rationale": "Requires up-to-date partner migration knowledge and internal discussion."
     },
     {
       "ts": "1777925649.252129",
@@ -56,7 +56,7 @@
       "subtopic": "endpoint mapping equivalence",
       "difficulty": 3,
       "automatable": true,
-      "rationale": "Mapping could be documented but needs specific migration reference."
+      "rationale": "Mapping details could exist in migration docs if maintained."
     },
     {
       "ts": "1777920918.284559",
@@ -68,10 +68,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "tagging for help",
+      "subtopic": "help request tag",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Simple handoff mention, no answerable content."
+      "rationale": "Simple person tag requiring human response."
     }
   ]
 }

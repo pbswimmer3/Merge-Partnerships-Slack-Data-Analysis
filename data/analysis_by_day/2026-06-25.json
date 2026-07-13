@@ -37,10 +37,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "Updating shared credentials",
+      "subtopic": "Update sandbox credentials 1Password",
       "difficulty": 2,
-      "automatable": false,
-      "rationale": "Process confirmation needing team agreement."
+      "automatable": true,
+      "rationale": "Credential-storage convention could be documented in playbook."
     },
     {
       "ts": "1782404329.727869",
@@ -51,11 +51,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "contact_lookup",
-      "subtopic": "Uber contact",
-      "difficulty": 1,
+      "llm_category": "partner_contact",
+      "subtopic": "Uber contact lookup",
+      "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable by bot from contacts list."
+      "rationale": "Contact lookup answerable from a maintained partner contacts database."
     },
     {
       "ts": "1782375208.687239",
@@ -70,7 +70,7 @@
       "subtopic": "gateway-on-gateway listing",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Strategic partnership decision requiring team judgment."
+      "rationale": "Strategic judgment call requiring team alignment on architecture tradeoffs."
     }
   ]
 }

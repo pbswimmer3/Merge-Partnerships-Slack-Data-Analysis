@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "deadline_timeline",
+      "llm_category": "process_timeline",
       "subtopic": "MPPO shipping status",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Status update request needing human follow-up."
+      "rationale": "Needs current internal status update."
     }
   ]
 }

@@ -41,11 +41,11 @@
       "reply_count": 20,
       "first_reply_latency_sec": 493.7532398700714,
       "permalink": null,
-      "llm_category": "contact_lookup",
-      "subtopic": "MFA phone number owner",
-      "difficulty": 2,
+      "llm_category": "account_credentials",
+      "subtopic": "MFA phone lookup",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Sensitive credential info; requires human with account knowledge."
+      "rationale": "Sensitive PII lookup, requires human verification and access."
     },
     {
       "ts": "1782337922.483759",
@@ -57,10 +57,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "vague change request",
+      "subtopic": "ambiguous change request",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "No context; ambiguous referent needs clarification from human."
+      "rationale": "No context on what 'it' refers to; unanswerable alone."
     },
     {
       "ts": "1782325027.086159",
@@ -75,7 +75,7 @@
       "subtopic": "Sage CRE support status",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Roadmap status unclear; needs human with historical knowledge."
+      "rationale": "Requires internal roadmap knowledge; status unclear and unrecorded."
     },
     {
       "ts": "1782318474.057539",
@@ -90,7 +90,7 @@
       "subtopic": "which agent store",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Ambiguous fragment lacking context; requires clarification."
+      "rationale": "Too little context to identify what's being asked."
     }
   ]
 }

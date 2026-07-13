@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_request",
-      "subtopic": "add me to channel",
+      "subtopic": "add to channel/list",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Simple access request but needs human to grant."
+      "rationale": "Vague access request needing human to grant permission."
     }
   ]
 }

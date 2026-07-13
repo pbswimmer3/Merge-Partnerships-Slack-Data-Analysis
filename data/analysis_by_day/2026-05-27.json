@@ -36,7 +36,7 @@
       "subtopic": "Teamtailor sandbox contact",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires specific contact info held by humans."
+      "rationale": "Requires specific vendor contact info held by team."
     },
     {
       "ts": "1779907578.622499",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_permissions",
+      "llm_category": "process_workflow",
       "subtopic": "Permission to contact directly",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Contextual approval question needing human answer."
+      "rationale": "Approval question requiring human judgment on process."
     },
     {
       "ts": "1779912866.229619",
@@ -62,11 +62,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_permissions",
+      "llm_category": "process_workflow",
       "subtopic": "Request account creation",
-      "difficulty": 2,
+      "difficulty": 1,
       "automatable": false,
-      "rationale": "Action request directed at humans."
+      "rationale": "Directive to a colleague, no doc answers it."
     }
   ]
 }

@@ -38,10 +38,10 @@
       "first_reply_latency_sec": 5.528520107269287,
       "permalink": null,
       "llm_category": "off_topic",
-      "subtopic": "casual non-work banter",
+      "subtopic": "casual bot chatter",
       "difficulty": 1,
       "automatable": true,
-      "rationale": "Irrelevant joke; bot can trivially deflect."
+      "rationale": "Trivial non-work banter directed at bot."
     },
     {
       "ts": "1783726591.393009",
@@ -52,11 +52,11 @@
       "reply_count": 9,
       "first_reply_latency_sec": 18.64033007621765,
       "permalink": null,
-      "llm_category": "credentials_tracking",
+      "llm_category": "credentials_lookup",
       "subtopic": "Google connector default credentials",
-      "difficulty": 2,
+      "difficulty": 3,
       "automatable": true,
-      "rationale": "Specific credential lookup answerable from maintained credentials list."
+      "rationale": "Bot could answer from credentials tracker data."
     },
     {
       "ts": "1783696559.743569",
@@ -67,11 +67,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "integration_scope",
-      "subtopic": "requested scope added",
-      "difficulty": 3,
+      "llm_category": "scope_lookup",
+      "subtopic": "requested scope details",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Directed question requiring specific case knowledge from person."
+      "rationale": "Person-directed, context-specific; needs human input."
     },
     {
       "ts": "1783699711.061289",
@@ -83,10 +83,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "task_assignment",
-      "subtopic": "investigate request",
+      "subtopic": "investigation request",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Delegation to a person, not an answerable question."
+      "rationale": "Direct task delegation to individual, not automatable."
     }
   ]
 }

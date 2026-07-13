@@ -33,10 +33,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "navigation suggestion",
-      "difficulty": 3,
+      "subtopic": "vague follow-up",
+      "difficulty": 4,
       "automatable": false,
-      "rationale": "Vague reference to a person; no answerable content."
+      "rationale": "No referent for 'he' or 'this'; not answerable."
     },
     {
       "ts": "1782516609.640469",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "contact_lookup",
+      "llm_category": "partner_contact",
       "subtopic": "outreach approval",
-      "difficulty": 3,
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Requires human decision on outreach; no context."
+      "rationale": "Requires human decision on outreach; ambiguous referent."
     },
     {
       "ts": "1782516614.215369",
@@ -63,10 +63,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "integration_connector",
-      "subtopic": "enabling NetSuite feature",
+      "subtopic": "NetSuite feature enablement",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Clarifying ask; needs human context on specific feature."
+      "rationale": "Clarifying request needing context on specific feature and setup."
     },
     {
       "ts": "1782516651.206229",
@@ -78,10 +78,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "integration_connector",
-      "subtopic": "NetSuite activity codes",
-      "difficulty": 3,
+      "subtopic": "activity codes clarification",
+      "difficulty": 4,
       "automatable": false,
-      "rationale": "Follow-up clarification lacking standalone context."
+      "rationale": "Fragment lacking context; unclear system and intent."
     }
   ]
 }

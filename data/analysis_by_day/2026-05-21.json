@@ -37,7 +37,7 @@
       "subtopic": "Paylocity extra API form",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires partner knowledge about undocumented onboarding requirement."
+      "rationale": "New partner process needs investigation and internal context."
     },
     {
       "ts": "1779372330.733569",
@@ -49,10 +49,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "escalation contact question",
-      "difficulty": 2,
+      "subtopic": "contact routing question",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Follow-up needing human context on process."
+      "rationale": "Requires human knowledge of who to contact."
     }
   ]
 }

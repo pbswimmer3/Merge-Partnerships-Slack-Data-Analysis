@@ -46,7 +46,7 @@
       "subtopic": "Paylocity API fee negotiation",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Historical negotiation precedent needs human institutional knowledge."
+      "rationale": "Historical negotiation experience needs human recollection and judgment."
     },
     {
       "ts": "1783458081.798379",
@@ -57,11 +57,11 @@
       "reply_count": 17,
       "first_reply_latency_sec": 660.0127899646759,
       "permalink": null,
-      "llm_category": "partnership_program",
+      "llm_category": "partnership_eligibility",
       "subtopic": "Workday preferred partner examples",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires case-study knowledge and nuanced partnership eligibility judgment."
+      "rationale": "Needs case examples and partnership policy knowledge; human insight required."
     },
     {
       "ts": "1783458741.811169",
@@ -73,10 +73,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "customer_lookup",
-      "subtopic": "confirm customer examples",
-      "difficulty": 3,
+      "subtopic": "customer confirmation FirstUp",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Directed at person; relies on individual memory of customers."
+      "rationale": "Person-directed recall question; not documentable."
     },
     {
       "ts": "1783458947.215719",
@@ -87,11 +87,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_program",
-      "subtopic": "Merge vs direct partnership",
+      "llm_category": "partnership_eligibility",
+      "subtopic": "Merge-powered vs direct partnership",
       "difficulty": 4,
-      "automatable": false,
-      "rationale": "Nuanced partnership eligibility question; needs vendor-specific expert insight."
+      "automatable": true,
+      "rationale": "Policy comparison could be documented in partnership FAQ."
     },
     {
       "ts": "1783459057.393079",
@@ -106,7 +106,7 @@
       "subtopic": "Workday integration approval process",
       "difficulty": 3,
       "automatable": true,
-      "rationale": "Process question answerable via documented approval workflow FAQ."
+      "rationale": "Process explainable via documentation if maintained."
     },
     {
       "ts": "1783459117.971569",
@@ -117,11 +117,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_program",
+      "llm_category": "partnership_eligibility",
       "subtopic": "UKG process differences",
       "difficulty": 3,
       "automatable": true,
-      "rationale": "Comparison answerable from documented vendor process notes."
+      "rationale": "Comparison documentable but needs vendor-specific detail."
     },
     {
       "ts": "1783439973.821689",
@@ -134,9 +134,9 @@
       "permalink": null,
       "llm_category": "status_followup",
       "subtopic": "app review status",
-      "difficulty": 4,
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Live status of specific review needs human or ticket lookup."
+      "rationale": "Real-time status needs human or live tracker."
     }
   ]
 }

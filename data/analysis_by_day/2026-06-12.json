@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "Reach out to another ADP contact",
+      "subtopic": "Escalate contact at ADP",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Escalation decision needing human context."
+      "rationale": "Depends on internal contact knowledge."
     }
   ]
 }

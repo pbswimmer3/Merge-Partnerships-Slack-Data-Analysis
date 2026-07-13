@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnerships",
+      "llm_category": "other",
       "subtopic": "competitive assessment",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Competitive analysis requiring human knowledge and recent conversations."
+      "rationale": "Competitive analysis requires human strategic judgment."
     },
     {
       "ts": "1778779005.109899",
@@ -43,8 +43,8 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnerships",
-      "subtopic": "competitiveness clarification",
+      "llm_category": "other",
+      "subtopic": "competitiveness rationale",
       "difficulty": 4,
       "automatable": false,
       "rationale": "Nuanced competitive reasoning needs human context."

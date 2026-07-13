@@ -38,10 +38,10 @@
       "first_reply_latency_sec": 51.93955993652344,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "unexpected notification triage",
+      "subtopic": "unexpected notification query",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Vague context-dependent query needing human investigation."
+      "rationale": "Vague; needs human to recognize context of message."
     },
     {
       "ts": "1776984163.094849",
@@ -53,10 +53,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "customer status check",
+      "subtopic": "customer identity check",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Needs CRM lookup and thread context to answer."
+      "rationale": "Requires internal lookup with no clear referent."
     },
     {
       "ts": "1776955358.350059",
@@ -68,10 +68,10 @@
       "first_reply_latency_sec": 703.6566798686981,
       "permalink": null,
       "llm_category": "api_technical",
-      "subtopic": "OAuth scope inspection",
+      "subtopic": "OAuth scopes visibility",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Documentable process for viewing OAuth app scopes."
+      "rationale": "How to view OAuth scopes is documentable in FAQ."
     }
   ]
 }

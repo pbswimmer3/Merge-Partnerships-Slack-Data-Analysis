@@ -32,11 +32,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "data_management",
+      "llm_category": "process_workflow",
       "subtopic": "add contact to list",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Bot could update contacts list programmatically."
+      "rationale": "Data entry task a bot with write access could perform."
     },
     {
       "ts": "1783011053.402989",
@@ -47,11 +47,11 @@
       "reply_count": 1,
       "first_reply_latency_sec": 10.1842200756073,
       "permalink": null,
-      "llm_category": "contact_lookup",
-      "subtopic": "Employment Hero contact",
-      "difficulty": 1,
+      "llm_category": "partner_contact",
+      "subtopic": "Employment Hero contact lookup",
+      "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable by bot."
+      "rationale": "Contact lookup answerable from partner contacts database."
     }
   ]
 }

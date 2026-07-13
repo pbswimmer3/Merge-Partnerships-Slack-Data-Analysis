@@ -36,7 +36,7 @@
       "subtopic": "Teamtailor account name/link",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Needs specific account credentials from humans."
+      "rationale": "Needs specific account details from teammates."
     },
     {
       "ts": "1781817637.183839",
@@ -48,10 +48,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "troubleshooting",
-      "subtopic": "Testing environment check",
+      "subtopic": "Testing in other environment",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Status question directed to specific person."
+      "rationale": "Requires colleague's specific testing status."
     }
   ]
 }

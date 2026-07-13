@@ -32,7 +32,7 @@
       "subtopic": "Tackle process update",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Vague status query needing human context."
+      "rationale": "Requires status update from ongoing partner conversation."
     }
   ]
 }

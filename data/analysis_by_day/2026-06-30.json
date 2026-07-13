@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "integration_connector",
-      "subtopic": "Hibob migration disconnection",
+      "subtopic": "HiBob migration disconnection",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Migration behavior confirmation needs current human verification."
+      "rationale": "Needs current migration policy confirmation, may have changed."
     }
   ]
 }

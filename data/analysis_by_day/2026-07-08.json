@@ -41,10 +41,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "status_followup",
-      "subtopic": "remaining steps recall",
-      "difficulty": 4,
+      "subtopic": "remaining steps recollection",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Needs human context about specific unstated thread and prior work."
+      "rationale": "Vague context-dependent question needing specific person's memory."
     },
     {
       "ts": "1783519532.916619",
@@ -56,10 +56,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "customer_lookup",
-      "subtopic": "list customers for tracking",
-      "difficulty": 3,
-      "automatable": true,
-      "rationale": "Ambiguous scope but CRM/bot could list customers given context."
+      "subtopic": "customer list for tracking",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Ambiguous scope; needs internal data access and human judgment."
     },
     {
       "ts": "1783543036.038539",
@@ -71,10 +71,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "customer_lookup",
-      "subtopic": "customers needing feature",
-      "difficulty": 4,
+      "subtopic": "feature scope and customers",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Vague 'that' referent; needs thread context to identify feature."
+      "rationale": "Missing referent; unclear what 'that' means without context."
     },
     {
       "ts": "1783525641.619599",
@@ -85,11 +85,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_program",
-      "subtopic": "UKG process same",
+      "llm_category": "integration_approval",
+      "subtopic": "UKG approval process",
       "difficulty": 3,
       "automatable": true,
-      "rationale": "Process comparison could be documented; slight context dependency."
+      "rationale": "Process question answerable from partner docs."
     },
     {
       "ts": "1783545363.668559",
@@ -100,11 +100,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_outreach",
-      "subtopic": "contact CEO directly",
+      "llm_category": "outreach_decision",
+      "subtopic": "asking CEO directly",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Judgment/relationship decision requiring human strategic input."
+      "rationale": "Judgment/relationship decision, not documentable."
     },
     {
       "ts": "1783547112.798829",
@@ -116,10 +116,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "account_lookup",
-      "subtopic": "which account",
-      "difficulty": 3,
-      "automatable": true,
-      "rationale": "Simple lookup but lacks referent; CRM could resolve with context."
+      "subtopic": "account ownership",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Vague reference; needs CRM lookup and context."
     }
   ]
 }

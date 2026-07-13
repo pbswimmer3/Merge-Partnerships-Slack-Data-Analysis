@@ -6,6 +6,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import statistics
 import sys
 import time
@@ -47,9 +48,16 @@ def _group_by_date(messages: List[dict]) -> dict:
     return grouped
 
 
-def cmd_scrape(config: Config, export_dir: Optional[str] = None) -> List[str]:
+def cmd_scrape(config: Config, export_dir: Optional[str] = None, seed_file: Optional[str] = None) -> List[str]:
     """Fetch messages and cache them per-day under data/raw/. Returns list of date strs written."""
-    if export_dir:
+    if seed_file:
+        try:
+            with open(seed_file, "r", encoding="utf-8") as f:
+                messages = json.load(f)
+        except (OSError, ValueError) as exc:
+            print(f"ERROR: could not read --seed-file {seed_file}: {exc}", file=sys.stderr)
+            sys.exit(1)
+    elif export_dir:
         messages = load_export(export_dir)
     else:
         if not config.slack_token:
@@ -166,7 +174,15 @@ def cmd_dashboard() -> Path:
     valid page, even with zero analysis files (empty-state)."""
     analysis_files = store.read_all_daily_analysis()
     merged = _merge_daily_for_dashboard(analysis_files)
-    model = run_aggregate([merged] if analysis_files else [])
+
+    user_directory_path = BASE_DIR / "data" / "user_directory.json"
+    try:
+        with open(user_directory_path, "r", encoding="utf-8") as f:
+            user_directory = json.load(f)
+    except (OSError, ValueError):
+        user_directory = {}
+
+    model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     markup = render_html(model, generated_at)
 
@@ -222,6 +238,7 @@ def _add_global_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--post", action="store_true", help="Post the rendered digest to SLACK_POST_CHANNEL_ID.")
     p.add_argument("--notion", action="store_true", help="Write analyzed questions to the Notion database.")
     p.add_argument("--export-dir", type=str, default=None, help="Use an offline Slack export directory instead of the live API.")
+    p.add_argument("--seed-file", type=str, default=None, help="Load a pre-normalized JSON message list from PATH (same shape as python-backfill/merged_messages.json) into data/raw/ instead of scraping Slack live.")
     p.add_argument("--dashboard", action="store_true", help="Also (re)build the static dashboard at site/index.html.")
 
 
@@ -251,7 +268,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     if command == "scrape":
-        written = cmd_scrape(config, export_dir=args.export_dir)
+        written = cmd_scrape(config, export_dir=args.export_dir, seed_file=args.seed_file)
         print(f"Scraped and cached raw messages for: {', '.join(written) if written else '(none)'}")
         return 0
 
@@ -275,7 +292,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     if command == "run":
-        cmd_scrape(config, export_dir=args.export_dir)
+        cmd_scrape(config, export_dir=args.export_dir, seed_file=args.seed_file)
         cmd_analyze(config, today_str)
         report_path = cmd_report(config, today_str)
         if args.post:

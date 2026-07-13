@@ -149,7 +149,7 @@ def _automation_opportunities(difficulty_by_category: List[dict]) -> (List[dict]
     return opportunities, automation_candidate_count
 
 
-def aggregate(analysis_files: List[dict]) -> dict:
+def aggregate(analysis_files: List[dict], user_directory: Optional[dict] = None) -> dict:
     analysis_files = analysis_files or []
 
     timeseries = _merge_timeseries(analysis_files)
@@ -193,6 +193,8 @@ def aggregate(analysis_files: List[dict]) -> dict:
     )
 
     top_askers = _normalize_top_askers(most_recent.get("top_askers"))
+    for item in top_askers:
+        item["display_name"] = (user_directory or {}).get(item["user"], item["user"])
 
     summary = most_recent.get("llm_summary") or most_recent.get("summary") or ""
 
@@ -364,7 +366,7 @@ _SCRIPT = r"""
       container.innerHTML = '<p class="empty-note">No time series data available.</p>';
       return;
     }
-    var w = container.clientWidth || 900, h = 260;
+    var w = container.clientWidth || 900, h = 280;
     var padL = 40, padR = 16, padT = 12, padB = 28;
     var plotW = w - padL - padR, plotH = h - padT - padB;
     var maxVal = 1;
@@ -375,13 +377,31 @@ _SCRIPT = r"""
 
     var svg = el('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, style: 'display:block' });
 
-    // grid lines
-    var gridColor = css('--grid'), baseline = css('--baseline');
+    // grid lines + y-axis tick labels
+    var gridColor = css('--grid'), baseline = css('--baseline'), textColor = css('--text-secondary');
     for (var g = 0; g <= 4; g++) {
       var gy = padT + (plotH / 4) * g;
       el('line', { x1: padL, x2: w - padR, y1: gy, y2: gy, stroke: gridColor, 'stroke-width': 1 }, svg);
+      var tickVal = Math.round(maxVal * (4 - g) / 4);
+      var tickLabel = el('text', {
+        x: padL - 8, y: gy + 4, 'text-anchor': 'end', fill: textColor, 'font-size': 11,
+        style: 'font-variant-numeric:tabular-nums'
+      }, svg);
+      tickLabel.textContent = tickVal.toLocaleString();
     }
     el('line', { x1: padL, x2: w - padR, y1: padT + plotH, y2: padT + plotH, stroke: baseline, 'stroke-width': 1 }, svg);
+
+    // x-axis date tick labels
+    var xTickIdxs = [];
+    for (var ti = 0; ti <= 5; ti++) {
+      var idx = Math.round(ti * (n - 1) / 5);
+      if (xTickIdxs.indexOf(idx) === -1) xTickIdxs.push(idx);
+    }
+    xTickIdxs.forEach(function (idx) {
+      el('text', {
+        x: x(idx), y: padT + plotH + 18, 'text-anchor': 'middle', fill: textColor, 'font-size': 11
+      }, svg).textContent = series[idx].date;
+    });
 
     function pathFor(key) {
       return series.map(function (d, i) { return (i === 0 ? 'M' : 'L') + x(i) + ',' + y(d[key]); }).join(' ');
@@ -425,9 +445,10 @@ _SCRIPT = r"""
       container.innerHTML = '<p class="empty-note">No categorized questions available.</p>';
       return;
     }
-    var rowH = 28, gap = 2;
+    var rowH = 28, gap = 2, axisH = 20;
     var w = container.clientWidth || 900;
-    var h = categories.length * (rowH + gap);
+    var barsH = categories.length * (rowH + gap);
+    var h = barsH + axisH;
     var padL = 140, padR = 50;
     var plotW = w - padL - padR;
     var maxVal = Math.max.apply(null, categories.map(function (c) { return c.count; })) || 1;
@@ -436,6 +457,14 @@ _SCRIPT = r"""
     container.innerHTML = '';
     container.appendChild(svg);
     var tip = makeTooltip(container);
+
+    var gridColor = css('--grid'), textColor = css('--text-secondary');
+    for (var t = 0; t <= 3; t++) {
+      var tickVal = Math.round(maxVal * t / 3);
+      var tx = padL + (tickVal / maxVal) * plotW;
+      el('line', { x1: tx, x2: tx, y1: 0, y2: barsH, stroke: gridColor, 'stroke-width': 1 }, svg);
+      el('text', { x: tx, y: barsH + 14, 'text-anchor': 'middle', fill: textColor, 'font-size': 11 }, svg).textContent = tickVal.toLocaleString();
+    }
 
     categories.forEach(function (c, i) {
       var barY = i * (rowH + gap);
@@ -466,13 +495,25 @@ _SCRIPT = r"""
     var maxCount = Math.max.apply(null, opportunities.map(function (o) { return o.count; })) || 1;
 
     var svg = el('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, style: 'display:block' });
-    var gridColor = css('--grid');
-    for (var g = 0; g <= 4; g++) {
-      var gy = padT + (plotH / 4) * g;
-      el('line', { x1: padL, x2: w - padR, y1: gy, y2: gy, stroke: gridColor, 'stroke-width': 1 }, svg);
+    var gridColor = css('--grid'), textColor = css('--text-secondary');
+
+    // x-axis: volume ticks + gridlines
+    for (var t = 0; t <= 3; t++) {
+      var tickVal = Math.round(maxCount * t / 3);
+      var tx = padL + (tickVal / maxCount) * plotW;
+      el('line', { x1: tx, x2: tx, y1: padT, y2: padT + plotH, stroke: gridColor, 'stroke-width': 1 }, svg);
+      el('text', { x: tx, y: padT + plotH + 16, 'text-anchor': 'middle', fill: textColor, 'font-size': 11 }, svg).textContent = tickVal.toLocaleString();
     }
-    el('text', { x: padL, y: h - 6, fill: css('--text-secondary'), 'font-size': 11 }, svg).textContent = 'Volume (count) ->';
-    el('text', { x: 8, y: padT + 10, fill: css('--text-secondary'), 'font-size': 11 }, svg).textContent = hasDifficulty ? 'Easier (automate) ^' : '';
+    el('text', { x: padL, y: h - 4, fill: textColor, 'font-size': 11 }, svg).textContent = 'Volume (count)';
+
+    // y-axis: difficulty ticks (1-5), only when difficulty scoring is available
+    if (hasDifficulty) {
+      for (var dv = 1; dv <= 5; dv++) {
+        var dy = padT + ((dv - 1) / 4) * plotH;
+        el('text', { x: padL - 8, y: dy + 4, 'text-anchor': 'end', fill: textColor, 'font-size': 11 }, svg).textContent = dv;
+      }
+    }
+    el('text', { x: 8, y: padT + 10, fill: textColor, 'font-size': 11 }, svg).textContent = hasDifficulty ? 'Easier (automate)' : '';
 
     container.innerHTML = '';
     container.appendChild(svg);
@@ -608,7 +649,8 @@ def render_html(model: dict, generated_at: str) -> str:
     max_asker_count = max((a.get("count", 0) for a in top_askers), default=0) or 1
     if top_askers:
         askers_html = "".join(
-            f'<div class="asker-bar-row"><div class="name">{html.escape(str(a.get("user", "")))}</div>'
+            f'<div class="asker-bar-row"><div class="name">'
+            f'{html.escape(str(a.get("display_name") or a.get("user", "")))}</div>'
             f'<div class="asker-bar-track"><div class="asker-bar-fill" '
             f'style="width:{100.0 * a.get("count", 0) / max_asker_count:.1f}%"></div></div>'
             f'<div class="count">{a.get("count", 0)}</div></div>'
@@ -656,7 +698,7 @@ def render_html(model: dict, generated_at: str) -> str:
       <span><span class="swatch" style="background:var(--series-1)"></span>Messages</span>
       <span><span class="swatch" style="background:var(--series-2)"></span>Questions</span>
     </div>
-    <div id="chart-volume" class="chart-wrap" style="min-height:260px"></div>
+    <div id="chart-volume" class="chart-wrap" style="min-height:280px"></div>
   </div>
 
   <div class="viz-section">

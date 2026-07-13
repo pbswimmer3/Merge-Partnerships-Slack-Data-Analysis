@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from typing import List
 
 CLASSIFY_SYSTEM_PROMPT = (
@@ -59,7 +60,8 @@ def classify_questions(questions: List[dict], config) -> List[dict]:
 
     try:
         client = anthropic.Anthropic(api_key=api_key, base_url=getattr(config, "anthropic_base_url", None))
-    except Exception:
+    except Exception as exc:
+        print(f"WARNING: could not construct Anthropic client ({type(exc).__name__}: {exc}); skipping LLM classification.", file=sys.stderr)
         return questions
 
     model = getattr(config, "llm_model", "claude-opus-4-8")
@@ -102,8 +104,8 @@ def classify_questions(questions: List[dict], config) -> List[dict]:
                 q["difficulty"] = item.get("difficulty")
                 q["automatable"] = item.get("automatable")
                 q["rationale"] = item.get("rationale")
-        except Exception:
-            # Leave this batch unaugmented; continue with the rest.
+        except Exception as exc:
+            print(f"WARNING: LLM classification batch failed ({type(exc).__name__}: {exc}); leaving it unaugmented.", file=sys.stderr)
             continue
 
     return result
@@ -146,5 +148,6 @@ def summarize_trends(analysis: dict, config) -> str:
         return "".join(
             block.text for block in response.content if getattr(block, "type", None) == "text"
         ).strip()
-    except Exception:
+    except Exception as exc:
+        print(f"WARNING: LLM summary generation failed ({type(exc).__name__}: {exc}); leaving summary blank.", file=sys.stderr)
         return ""

@@ -6,8 +6,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import statistics
 import sys
 import time
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import List, Optional
@@ -15,7 +17,7 @@ from typing import List, Optional
 from src.config import Config
 from src.slack_client import SlackScraper, load_export
 from src import store
-from src.analyze import analyze as run_analyze
+from src.analyze import analyze as run_analyze, _ts_to_date
 from src.llm import classify_questions, summarize_trends
 from src.report import render_markdown
 from src.dashboard import aggregate as run_aggregate, render_html
@@ -65,6 +67,33 @@ def cmd_scrape(config: Config, export_dir: Optional[str] = None) -> List[str]:
     return written
 
 
+def _split_analysis_by_day(analysis: dict) -> None:
+    """Slice a whole-window analysis dict into one self-contained file per
+    calendar date under data/analysis_by_day/, keyed by the date the data is
+    *about* rather than the date the CLI ran, so re-running any overlapping
+    window only ever overwrites that date's own file."""
+    for date_str, day_counts in analysis.get("per_day", {}).items():
+        if date_str == "unknown":
+            continue
+        day_questions = [
+            q for q in analysis.get("questions", []) if _ts_to_date(q.get("ts")) == date_str
+        ]
+        latencies = [
+            q["first_reply_latency_sec"] for q in day_questions if q.get("first_reply_latency_sec") is not None
+        ]
+        day_slice = {
+            "per_day": {date_str: day_counts},
+            "category_distribution": dict(Counter(q.get("category") for q in day_questions)),
+            "top_askers": Counter(q.get("user") for q in day_questions).most_common(10),
+            "response": {
+                "median_first_reply_latency_sec": statistics.median(latencies) if latencies else None,
+                "unanswered_question_count": sum(1 for q in day_questions if (q.get("reply_count", 0) or 0) == 0),
+            },
+            "questions": day_questions,
+        }
+        store.write_json(day_slice, store.daily_analysis_path(date_str))
+
+
 def cmd_analyze(config: Config, end_date_str: str) -> dict:
     """Read cached raw messages for the look-back window ending end_date_str, analyze, cache result."""
     end_date = datetime.strptime(end_date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
@@ -83,6 +112,7 @@ def cmd_analyze(config: Config, end_date_str: str) -> dict:
         analysis["questions"] = classify_questions(analysis["questions"], config)
 
     store.write_json(analysis, store.analysis_path(end_date_str))
+    _split_analysis_by_day(analysis)
     return analysis
 
 
@@ -105,11 +135,38 @@ def cmd_report(config: Config, end_date_str: str) -> Path:
     return report_path
 
 
+def _merge_daily_for_dashboard(daily_files: List[dict]) -> dict:
+    """Merge per-day analysis files (each disjoint by date, by construction of
+    _split_analysis_by_day) into a single pseudo-file so dashboard.aggregate()'s
+    _most_recent() picks up the full history for category/asker/difficulty
+    panels instead of just the latest day."""
+    merged_per_day: dict = {}
+    merged_questions: List[dict] = []
+    for f in daily_files:
+        merged_per_day.update(f.get("per_day") or {})
+        merged_questions.extend(f.get("questions") or [])
+
+    latencies = [
+        q["first_reply_latency_sec"] for q in merged_questions if q.get("first_reply_latency_sec") is not None
+    ]
+    return {
+        "per_day": merged_per_day,
+        "category_distribution": dict(Counter(q.get("category") for q in merged_questions)),
+        "top_askers": Counter(q.get("user") for q in merged_questions).most_common(10),
+        "response": {
+            "median_first_reply_latency_sec": statistics.median(latencies) if latencies else None,
+            "unanswered_question_count": sum(1 for q in merged_questions if (q.get("reply_count", 0) or 0) == 0),
+        },
+        "questions": merged_questions,
+    }
+
+
 def cmd_dashboard() -> Path:
     """Aggregate all cached analysis files into site/index.html. Always writes a
     valid page, even with zero analysis files (empty-state)."""
-    analysis_files = store.read_all_analysis()
-    model = run_aggregate(analysis_files)
+    analysis_files = store.read_all_daily_analysis()
+    merged = _merge_daily_for_dashboard(analysis_files)
+    model = run_aggregate([merged] if analysis_files else [])
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     markup = render_html(model, generated_at)
 

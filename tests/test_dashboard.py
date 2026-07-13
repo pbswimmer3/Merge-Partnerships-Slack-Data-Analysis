@@ -115,6 +115,28 @@ def test_aggregate_missing_summary_defaults_empty_string():
     assert model["summary"] == ""
 
 
+def test_aggregate_top_askers_uses_user_directory_display_name():
+    f = _file(
+        {"2026-06-01": {"messages": 1, "questions": 1}},
+        top_askers=[("U1", 3)],
+    )
+    model = aggregate([f], user_directory={"U1": "Alice"})
+    asker = model["top_askers"][0]
+    assert asker["user"] == "U1"
+    assert asker["display_name"] == "Alice"
+
+
+def test_aggregate_top_askers_falls_back_to_raw_id_when_missing_from_directory():
+    f = _file(
+        {"2026-06-01": {"messages": 1, "questions": 1}},
+        top_askers=[("U2", 1)],
+    )
+    model = aggregate([f], user_directory={"U1": "Alice"})
+    asker = model["top_askers"][0]
+    assert asker["user"] == "U2"
+    assert asker["display_name"] == "U2"
+
+
 def test_render_html_smoke():
     f = _file(
         {"2026-06-01": {"messages": 3, "questions": 2}},

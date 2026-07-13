@@ -1,0 +1,65 @@
+# Requires repo Settings -> Pages -> Source = GitHub Actions.
+# One-time/on-demand backfill from the committed python-backfill export, not a
+# recurring job — re-run manually only if that seed file ever changes.
+name: Backfill LLM Analysis
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run partnerships analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL }}
+        run: python -m src.cli run --seed-file python-backfill/merged_messages.json --days 91 --dashboard
+
+      - name: Commit and push report if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/ data/analysis/ data/analysis_by_day/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: backfill LLM analysis for 90-day history"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy:
+    needs: analyze
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

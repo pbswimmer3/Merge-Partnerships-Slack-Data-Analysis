@@ -209,6 +209,36 @@ Required repository secrets:
   omit to skip Notion output; `NOTION_DATABASE_ID` is only needed after the
   first run creates the database)
 
+## Publishing the latest data (one click)
+
+```
+make publish
+```
+
+or
+
+```
+./scripts/publish.sh [days]
+```
+
+This triggers the existing daily workflow (`daily-partnerships-analysis.yml`)
+remotely via the `gh` CLI: it pulls recent Slack messages, runs the Anthropic
+analysis, rebuilds the dashboard, commits the results, and redeploys GitHub
+Pages — all in CI. The optional `days` argument (default `1`) sets the
+look-back window passed to the workflow's `days` input. This needs zero
+secrets on your machine: run `gh auth login` once, and `gh` handles the
+authenticated call to kick off and watch the run.
+
+## One-time 90-day LLM backfill
+
+`.github/workflows/backfill-llm-analysis.yml` is a `workflow_dispatch`-only
+workflow that re-runs the committed 90-day history in
+`python-backfill/merged_messages.json` through the Anthropic LLM classifier
+(the original seed export was heuristics-only). It rebuilds
+`data/analysis/`, `data/analysis_by_day/`, and the dashboard, then commits and
+redeploys, without touching Slack or Notion. Only re-trigger it manually if
+`python-backfill/merged_messages.json` itself is ever regenerated or changed.
+
 ## Tests
 
 ```

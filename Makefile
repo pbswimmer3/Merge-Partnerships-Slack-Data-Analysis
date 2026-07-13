@@ -1,4 +1,6 @@
-.PHONY: install run test lint
+.PHONY: install run test lint publish
+
+DAYS ?= 1
 
 install:
 	pip install -r requirements.txt
@@ -11,3 +13,6 @@ test:
 
 lint:
 	python -m compileall src
+
+publish:
+	./scripts/publish.sh $(DAYS)

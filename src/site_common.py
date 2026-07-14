@@ -191,6 +191,7 @@ STYLE = """
 .theme-toggle {
   background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
   border-radius: 6px; padding: .4rem .75rem; font-size: .85rem; cursor: pointer;
+  text-decoration: none; display: inline-block; line-height: 1.2;
 }
 .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; margin-bottom: 1.75rem; }
 .kpi-tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }

@@ -94,6 +94,20 @@ def read_all_daily_analysis() -> List[dict]:
     return results
 
 
+def read_all_spend_ledger() -> List[dict]:
+    """Load and flatten every entry from data/spend/ledger/*.json (monthly
+    files), sorted ascending by run_at. Missing/empty dir -> []."""
+    entries: List[dict] = []
+    if not SPEND_LEDGER_DIR.exists():
+        return entries
+    for path in sorted(SPEND_LEDGER_DIR.glob("*.json")):
+        data = read_json(path)
+        if isinstance(data, list):
+            entries.extend(e for e in data if isinstance(e, dict))
+    entries.sort(key=lambda e: e.get("run_at") or "")
+    return entries
+
+
 def append_spend_ledger(
     run_at: str,
     command: str,
@@ -104,6 +118,7 @@ def append_spend_ledger(
     cache_read_input_tokens: int,
     est_cost_usd: Optional[float],
     dates_analyzed: List[str],
+    questions_analyzed: Optional[int] = None,
 ) -> Path:
     """Append an entry to the monthly spend ledger (data/spend/ledger/YYYY-MM.json).
 
@@ -146,6 +161,8 @@ def append_spend_ledger(
         "est_cost_usd": est_cost_usd,
         "dates_analyzed": dates_analyzed,
     }
+    if questions_analyzed is not None:
+        entry["questions_analyzed"] = questions_analyzed
     ledger.append(entry)
 
     # Write back

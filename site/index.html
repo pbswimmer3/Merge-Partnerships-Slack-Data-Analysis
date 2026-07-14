@@ -103,6 +103,7 @@
 .theme-toggle {
   background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
   border-radius: 6px; padding: .4rem .75rem; font-size: .85rem; cursor: pointer;
+  text-decoration: none; display: inline-block; line-height: 1.2;
 }
 .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; margin-bottom: 1.75rem; }
 .kpi-tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }
@@ -144,14 +145,14 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
   <div class="site-header-inner">
     <div class="site-header-title">
       <h1>#partnerships — Question Analysis</h1>
-      <div class="meta">Date range: 2026-04-16 to 2026-07-13 &middot; Updated 2026-07-14T02:25:50Z</div>
+      <div class="meta">Date range: 2026-04-16 to 2026-07-13 &middot; Updated 2026-07-14T02:35:37Z</div>
     </div>
     <nav class="site-nav">
       <a href="./index.html" class="active">Overview</a>
       <a href="./automation.html">Automation</a>
     </nav>
     <div class="site-header-actions">
-      <button id="spend-btn" class="theme-toggle" type="button" hidden>Spend</button>
+      <a id="spend-btn" class="theme-toggle" href="./automation.html#spend">Spend</a>
       <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
     </div>
   </div>
@@ -201,7 +202,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
 
   <div class="viz-footer">
     Data sourced from committed <code>data/analysis/*.json</code> files.<br>
-    Generated at 2026-07-14T02:25:50Z.
+    Generated at 2026-07-14T02:35:37Z.
   </div>
 
 </div>

@@ -741,7 +741,7 @@ def render_html(model: dict, generated_at: str) -> str:
       <a href="./automation.html">Automation</a>
     </nav>
     <div class="site-header-actions">
-      <button id="spend-btn" class="theme-toggle" type="button" hidden>Spend</button>
+      <a id="spend-btn" class="theme-toggle" href="./automation.html#spend">Spend</a>
       <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
     </div>
   </div>

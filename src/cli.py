@@ -23,6 +23,7 @@ from src.llm import classify_questions, summarize_trends
 from src.report import render_markdown
 from src.dashboard import aggregate as run_aggregate, render_html
 from src import automation_page
+from src import spend as spend_module
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 REPORTS_DIR = BASE_DIR / "reports"
@@ -151,6 +152,7 @@ def cmd_analyze(config: Config, end_date_str: str) -> dict:
             cache_read_input_tokens=total_usage["cache_read_input_tokens"],
             est_cost_usd=est_cost_usd,
             dates_analyzed=dates_analyzed,
+            questions_analyzed=len(analysis.get("questions") or []),
         )
 
     return analysis
@@ -221,8 +223,10 @@ def cmd_dashboard() -> Path:
     model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     markup = render_html(model, generated_at)
 
+    spend_model = spend_module.build_spend_model()
+
     automation_model = automation_page.build_model(
-        merged if analysis_files else {}, user_directory=user_directory
+        merged if analysis_files else {}, user_directory=user_directory, spend_model=spend_model
     )
     automation_markup = automation_page.render_html(automation_model, generated_at)
 

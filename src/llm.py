@@ -58,35 +58,39 @@ def _extract_json_array(text: str):
     return json.loads(text)
 
 
-def classify_questions(questions: List[dict], config) -> List[dict]:
+def classify_questions(questions: List[dict], config) -> tuple:
     """Augments each question dict in-place-ish (returns new list) with:
     llm_category, subtopic, difficulty, automatable, rationale.
     On any error or when disabled, returns questions unchanged.
+
+    Returns: (questions_list, usage_dict) where usage_dict contains:
+    {"calls": int, "input_tokens": int, "output_tokens": int, "cache_read_input_tokens": int}
     """
     if not questions:
-        return questions
+        return questions, {}
     if not getattr(config, "llm_enabled", False):
-        return questions
+        return questions, {}
 
     try:
         import anthropic
     except ImportError:
-        return questions
+        return questions, {}
 
     api_key = getattr(config, "anthropic_key", None)
     if not api_key:
-        return questions
+        return questions, {}
 
     try:
         client = anthropic.Anthropic(api_key=api_key, base_url=getattr(config, "anthropic_base_url", None))
     except Exception as exc:
         print(f"WARNING: could not construct Anthropic client ({type(exc).__name__}: {exc}); skipping LLM classification.", file=sys.stderr)
-        return questions
+        return questions, {}
 
     model = getattr(config, "llm_model", "claude-opus-4-8")
     batch_size = getattr(config, "llm_batch_size", 25) or 25
 
     result = [dict(q) for q in questions]
+    usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0}
 
     for start in range(0, len(result), batch_size):
         batch = result[start:start + batch_size]
@@ -109,6 +113,13 @@ def classify_questions(questions: List[dict], config) -> List[dict]:
                     }
                 ],
             )
+            # Capture usage from response
+            if hasattr(response, "usage"):
+                usage["calls"] += 1
+                usage["input_tokens"] += getattr(response.usage, "input_tokens", 0)
+                usage["output_tokens"] += getattr(response.usage, "output_tokens", 0)
+                usage["cache_read_input_tokens"] += getattr(response.usage, "cache_read_input_tokens", 0)
+
             content_text = "".join(
                 block.text for block in response.content if getattr(block, "type", None) == "text"
             )
@@ -127,22 +138,26 @@ def classify_questions(questions: List[dict], config) -> List[dict]:
             print(f"WARNING: LLM classification batch failed ({type(exc).__name__}: {exc}); leaving it unaugmented.", file=sys.stderr)
             continue
 
-    return result
+    return result, usage
 
 
-def summarize_trends(analysis: dict, config) -> str:
-    """Short narrative string summarizing trends. Returns "" on any failure."""
+def summarize_trends(analysis: dict, config) -> tuple:
+    """Short narrative string summarizing trends. Returns ("", {}) on any failure.
+
+    Returns: (summary_string, usage_dict) where usage_dict contains:
+    {"calls": int, "input_tokens": int, "output_tokens": int, "cache_read_input_tokens": int}
+    """
     if not getattr(config, "llm_enabled", False):
-        return ""
+        return "", {}
 
     try:
         import anthropic
     except ImportError:
-        return ""
+        return "", {}
 
     api_key = getattr(config, "anthropic_key", None)
     if not api_key:
-        return ""
+        return "", {}
 
     try:
         client = anthropic.Anthropic(api_key=api_key, base_url=getattr(config, "anthropic_base_url", None))
@@ -164,9 +179,18 @@ def summarize_trends(analysis: dict, config) -> str:
                 }
             ],
         )
-        return "".join(
+        # Capture usage from response
+        usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0}
+        if hasattr(response, "usage"):
+            usage["calls"] = 1
+            usage["input_tokens"] = getattr(response.usage, "input_tokens", 0)
+            usage["output_tokens"] = getattr(response.usage, "output_tokens", 0)
+            usage["cache_read_input_tokens"] = getattr(response.usage, "cache_read_input_tokens", 0)
+
+        summary_text = "".join(
             block.text for block in response.content if getattr(block, "type", None) == "text"
         ).strip()
+        return summary_text, usage
     except Exception as exc:
         print(f"WARNING: LLM summary generation failed ({type(exc).__name__}: {exc}); leaving summary blank.", file=sys.stderr)
-        return ""
+        return "", {}

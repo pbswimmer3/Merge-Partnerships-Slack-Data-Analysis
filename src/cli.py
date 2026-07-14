@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import List, Optional
 
-from src.config import Config
+from src.config import Config, estimate_cost_usd
 from src.slack_client import SlackScraper, load_export
 from src import store
 from src.analyze import analyze as run_analyze, _ts_to_date
@@ -116,11 +116,42 @@ def cmd_analyze(config: Config, end_date_str: str) -> dict:
 
     analysis = run_analyze(all_messages, config)
 
+    # Accumulate LLM usage across all calls
+    total_usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0}
+
     if config.llm_enabled:
-        analysis["questions"] = classify_questions(analysis["questions"], config)
+        analysis["questions"], classify_usage = classify_questions(analysis["questions"], config)
+        total_usage["calls"] += classify_usage.get("calls", 0)
+        total_usage["input_tokens"] += classify_usage.get("input_tokens", 0)
+        total_usage["output_tokens"] += classify_usage.get("output_tokens", 0)
+        total_usage["cache_read_input_tokens"] += classify_usage.get("cache_read_input_tokens", 0)
 
     store.write_json(analysis, store.analysis_path(end_date_str))
     _split_analysis_by_day(analysis)
+
+    # Write ledger entry if any LLM calls were made
+    if config.llm_enabled and total_usage["calls"] > 0:
+        dates_analyzed = sorted([
+            date_str for date_str in analysis.get("per_day", {}).keys() if date_str != "unknown"
+        ])
+        est_cost_usd = estimate_cost_usd(
+            config.llm_model,
+            total_usage["input_tokens"],
+            total_usage["output_tokens"],
+            total_usage["cache_read_input_tokens"],
+        )
+        store.append_spend_ledger(
+            run_at=datetime.now(timezone.utc).isoformat() + "Z",
+            command=f"analyze --days {config.lookback_days}",
+            model=config.llm_model,
+            calls=total_usage["calls"],
+            input_tokens=total_usage["input_tokens"],
+            output_tokens=total_usage["output_tokens"],
+            cache_read_input_tokens=total_usage["cache_read_input_tokens"],
+            est_cost_usd=est_cost_usd,
+            dates_analyzed=dates_analyzed,
+        )
+
     return analysis
 
 
@@ -132,7 +163,7 @@ def cmd_report(config: Config, end_date_str: str) -> Path:
 
     llm_summary = ""
     if config.llm_enabled:
-        llm_summary = summarize_trends(analysis, config)
+        llm_summary, _ = summarize_trends(analysis, config)
 
     markdown = render_markdown(analysis, llm_summary, config, end_date_str)
 

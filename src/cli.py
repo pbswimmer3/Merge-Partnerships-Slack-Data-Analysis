@@ -22,6 +22,7 @@ from src.analyze import analyze as run_analyze, _ts_to_date
 from src.llm import classify_questions, summarize_trends
 from src.report import render_markdown
 from src.dashboard import aggregate as run_aggregate, render_html
+from src import automation_page
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 REPORTS_DIR = BASE_DIR / "reports"
@@ -201,8 +202,10 @@ def _merge_daily_for_dashboard(daily_files: List[dict]) -> dict:
 
 
 def cmd_dashboard() -> Path:
-    """Aggregate all cached analysis files into site/index.html. Always writes a
-    valid page, even with zero analysis files (empty-state)."""
+    """Aggregate all cached analysis files into site/index.html and
+    site/automation.html from the same merged model inputs. Always writes
+    valid pages, even with zero analysis files (empty-state). Returns the
+    index.html path (automation.html is written alongside it)."""
     analysis_files = store.read_all_daily_analysis()
     merged = _merge_daily_for_dashboard(analysis_files)
 
@@ -213,14 +216,25 @@ def cmd_dashboard() -> Path:
     except (OSError, ValueError):
         user_directory = {}
 
-    model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     markup = render_html(model, generated_at)
+
+    automation_model = automation_page.build_model(
+        merged if analysis_files else {}, user_directory=user_directory
+    )
+    automation_markup = automation_page.render_html(automation_model, generated_at)
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)
     index_path = SITE_DIR / "index.html"
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(markup)
+
+    automation_path = SITE_DIR / "automation.html"
+    with open(automation_path, "w", encoding="utf-8") as f:
+        f.write(automation_markup)
+
     return index_path
 
 

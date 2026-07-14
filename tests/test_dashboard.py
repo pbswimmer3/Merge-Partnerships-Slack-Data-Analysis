@@ -171,3 +171,15 @@ def test_model_json_escapes_script_breakout():
     out = render_html(aggregate(analysis, {"U1": "</script>name"}), "2026-07-14T00:00:00Z")
     assert "</script><b" not in out
     assert "\\u003c/script" in out
+
+
+def test_category_color_map_deterministic_across_pages():
+    from src.site_common import category_color_map
+    # Same categories, different order / different field on each page -> same slots.
+    a = category_color_map(["partnership_process", "other", "api_technical", "newcat"])
+    b = category_color_map(["api_technical", "newcat", "partnership_process", "other"])
+    assert a == b
+    assert a["partnership_process"] == "series-4"
+    assert a["api_technical"] == "series-1"
+    assert a["other"] == "muted"       # bucket, never a hue
+    assert a["newcat"] == "muted"      # beyond the 8 fixed slots -> gray

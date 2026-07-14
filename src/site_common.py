@@ -18,43 +18,38 @@ from typing import Dict, List, Optional
 # itself, always falls back to the muted gray sentinel.
 # ---------------------------------------------------------------------------
 
+# The validated categorical palette has exactly 8 slots. With the widened
+# taxonomy (13 categories) we can't give every category a distinct hue, so we
+# assign the 8 slots to a FIXED, data-independent set of the most prominent
+# categories; everything else (and `other`) renders in `--muted` gray, with the
+# ranked/explorer tables as the accessible fallback. Being a pure static lookup,
+# the mapping is identical across both pages regardless of which category field
+# or ordering they feed in (no rank- or input-dependent slots).
 _FIXED_CATEGORY_SLOTS = {
     "api_technical": "series-1",
     "integration_connector": "series-2",
     "pricing_commercial": "series-3",
-    "data_sync": "series-4",
+    "partnership_process": "series-4",
     "access_permissions": "series-5",
     "bug_issue": "series-6",
+    "auth_scopes": "series-7",
+    "internal_ops": "series-8",
 }
-_EXTRA_CATEGORY_SLOTS = ["series-7", "series-8"]
 _MUTED_SLOT = "muted"
 
 
 def category_color_map(category_names: List[str]) -> Dict[str, str]:
-    """Assign a stable color slot to each category name. Order of
-    `category_names` does not matter for fixed categories; unknown categories
-    are assigned slot 7/8 in alphabetical order, further extras -> muted."""
+    """Map each seen category name to a stable color slot. Fixed categories get
+    their dedicated slot; every other category (including `other`) -> muted.
+    Purely a static lookup: independent of input order and identical on both
+    pages, so a given category always renders in the same color."""
     seen: List[str] = []
     seen_set = set()
     for cat in category_names or []:
         if cat and cat not in seen_set:
             seen_set.add(cat)
             seen.append(cat)
-
-    mapping: Dict[str, str] = {}
-    unknown = []
-    for cat in seen:
-        if cat == "other":
-            mapping[cat] = _MUTED_SLOT
-        elif cat in _FIXED_CATEGORY_SLOTS:
-            mapping[cat] = _FIXED_CATEGORY_SLOTS[cat]
-        else:
-            unknown.append(cat)
-
-    for i, cat in enumerate(sorted(unknown)):
-        mapping[cat] = _EXTRA_CATEGORY_SLOTS[i] if i < len(_EXTRA_CATEGORY_SLOTS) else _MUTED_SLOT
-
-    return mapping
+    return {cat: _FIXED_CATEGORY_SLOTS.get(cat, _MUTED_SLOT) for cat in seen}
 
 
 def difficulty_dots_html(avg_difficulty: Optional[float]) -> str:

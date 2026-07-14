@@ -71,10 +71,16 @@ def _normalize_top_askers(raw) -> List[dict]:
     return out
 
 
+def _effective_category(q: dict) -> str:
+    """Prefer the LLM category (widened taxonomy) over the heuristic one so the
+    overview reflects the richer classification when LLM analysis is present."""
+    return q.get("llm_category") or q.get("category") or "other"
+
+
 def _difficulty_by_category(questions: List[dict]) -> List[dict]:
     stats: Dict[str, dict] = {}
     for q in questions or []:
-        cat = q.get("category") or "other"
+        cat = _effective_category(q)
         s = stats.setdefault(cat, {"count": 0, "difficulties": [], "automatable_flags": []})
         s["count"] += 1
         diff = q.get("difficulty")
@@ -223,7 +229,18 @@ def aggregate(analysis_files: List[dict], user_directory: Optional[dict] = None)
     )
 
     most_recent = _most_recent(analysis_files)
-    category_distribution = most_recent.get("category_distribution") or {}
+    recent_questions = most_recent.get("questions") or []
+    # Prefer the LLM category distribution when LLM analysis is present (its
+    # widened taxonomy is far more informative than the heuristic bucket);
+    # fall back to the precomputed heuristic distribution otherwise.
+    if any(q.get("llm_category") for q in recent_questions):
+        counter: Dict[str, int] = {}
+        for q in recent_questions:
+            cat = _effective_category(q)
+            counter[cat] = counter.get(cat, 0) + 1
+        category_distribution = counter
+    else:
+        category_distribution = most_recent.get("category_distribution") or {}
     total_recent_categorized = sum(category_distribution.values()) or 1
     categories = [
         {

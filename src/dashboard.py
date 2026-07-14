@@ -390,7 +390,7 @@ _SCRIPT = r"""
       crosshair.setAttribute('x2', x(idx));
       crosshair.setAttribute('opacity', 1);
       showTip(tip, container, x(idx), y(Math.max(d.messages, d.questions)),
-        '<strong>' + d.date + '</strong><br>Messages: ' + d.messages + ' (avg ' + messagesAvg[idx].toFixed(1) + ')' +
+        '<strong>' + esc(d.date) + '</strong><br>Messages: ' + d.messages + ' (avg ' + messagesAvg[idx].toFixed(1) + ')' +
         '<br>Questions: ' + d.questions + ' (avg ' + questionsAvg[idx].toFixed(1) + ')');
     });
     hitArea.addEventListener('mouseleave', function () { crosshair.setAttribute('opacity', 0); hideTip(tip); });
@@ -430,7 +430,7 @@ _SCRIPT = r"""
 
     var colorFn = opts.colorFn || function () { return css('--series-1'); };
     var labelFn = opts.labelFn || function (c) { return c.count.toLocaleString(); };
-    var tooltipFn = opts.tooltipFn || function (c) { return '<strong>' + c.name + '</strong><br>Count: ' + c.count; };
+    var tooltipFn = opts.tooltipFn || function (c) { return '<strong>' + esc(c.name) + '</strong><br>Count: ' + c.count; };
 
     items.forEach(function (c, i) {
       var barY = i * (rowH + gap);
@@ -507,7 +507,7 @@ _SCRIPT = r"""
         var diffStr = o.avg_difficulty != null ? o.avg_difficulty.toFixed(1) : 'n/a';
         var autoStr = o.automatable_pct != null ? o.automatable_pct.toFixed(0) + '%' : 'n/a';
         showTip(tip, container, evt.clientX - rect.left, evt.clientY - rect.top,
-          '<strong>' + o.category + '</strong><br>Count: ' + o.count + '<br>Avg difficulty: ' + diffStr +
+          '<strong>' + esc(o.category) + '</strong><br>Count: ' + o.count + '<br>Avg difficulty: ' + diffStr +
           '<br>Automatable: ' + autoStr + (o.is_candidate ? '<br><em>Automation candidate</em>' : ''));
       });
       hit.addEventListener('mouseleave', function () { hideTip(tip); });
@@ -579,7 +579,7 @@ _SCRIPT = r"""
     renderBarChart('chart-categories', categoryItems, {
       colorFn: function (c) { return categoryColor(c.name); },
       labelFn: function (c) { return c.count.toLocaleString() + ' (' + c.pct.toFixed(1) + '%)'; },
-      tooltipFn: function (c) { return '<strong>' + c.name + '</strong><br>Count: ' + c.count.toLocaleString() + '<br>' + c.pct.toFixed(1) + '%'; },
+      tooltipFn: function (c) { return '<strong>' + esc(c.name) + '</strong><br>Count: ' + c.count.toLocaleString() + '<br>' + c.pct.toFixed(1) + '%'; },
       emptyMessage: 'No categorized questions available.'
     });
 
@@ -594,7 +594,7 @@ _SCRIPT = r"""
     renderBarChart('chart-top-askers', askerItems, {
       colorFn: function () { return css('--series-1'); },
       labelFn: function (a) { return a.count.toLocaleString(); },
-      tooltipFn: function (a) { return '<strong>' + a.name + '</strong><br>Count: ' + a.count.toLocaleString(); },
+      tooltipFn: function (a) { return '<strong>' + esc(a.name) + '</strong><br>Count: ' + a.count.toLocaleString(); },
       emptyMessage: 'No question askers recorded.'
     });
 
@@ -717,7 +717,7 @@ def render_html(model: dict, generated_at: str) -> str:
         else ""
     )
 
-    model_json = json.dumps(model, default=str)
+    model_json = json.dumps(model, default=str).replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
 
     return f"""<!DOCTYPE html>
 <html lang="en">

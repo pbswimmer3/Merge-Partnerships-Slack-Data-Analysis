@@ -143,7 +143,7 @@ def cmd_analyze(config: Config, end_date_str: str) -> dict:
             total_usage["cache_read_input_tokens"],
         )
         store.append_spend_ledger(
-            run_at=datetime.now(timezone.utc).isoformat() + "Z",
+            run_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             command=f"analyze --days {config.lookback_days}",
             model=config.llm_model,
             calls=total_usage["calls"],

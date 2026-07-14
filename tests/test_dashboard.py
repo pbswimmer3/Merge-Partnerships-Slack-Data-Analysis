@@ -156,3 +156,18 @@ def test_render_html_empty_state_smoke():
     markup = render_html(model, "2026-06-02T00:00:00Z")
     assert "<html" in markup
     assert "empty-note" in markup
+
+
+def test_model_json_escapes_script_breakout():
+    from src.dashboard import aggregate, render_html
+    analysis = [{
+        "per_day": {"2026-07-01": {"messages": 1, "questions": 1}},
+        "category_distribution": {"</script><b>": 1},
+        "top_askers": [["</script>evil", 1]],
+        "response": {"unanswered_question_count": 0},
+        "questions": [{"ts": "1.1", "user": "U1", "text": "</script>",
+                       "category": "</script><b>", "is_question": True}],
+    }]
+    out = render_html(aggregate(analysis, {"U1": "</script>name"}), "2026-07-14T00:00:00Z")
+    assert "</script><b" not in out
+    assert "\\u003c/script" in out

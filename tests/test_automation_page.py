@@ -602,3 +602,16 @@ def test_clustering_with_mixed_categories():
     by_cat = {c["category"]: c for c in clusters}
     assert by_cat["api_technical"]["count"] == 2
     assert by_cat["pricing_commercial"]["count"] == 1
+
+
+def test_model_json_escapes_script_breakout():
+    from src.automation_page import build_model, render_html
+    analysis = {"questions": [{
+        "ts": "1.1", "user": "U1", "text": "</script><img src=x onerror=alert(1)>",
+        "category": "other", "is_question": True, "reply_count": 0,
+        "subtopic": "x</script>y", "difficulty": 2, "automatable": True,
+        "rationale": "docs</script>", "first_reply_latency_sec": 60,
+    }]}
+    out = render_html(build_model(analysis, {}), "2026-07-14T00:00:00Z")
+    assert "</script><img" not in out
+    assert "\\u003c/script" in out

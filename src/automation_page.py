@@ -556,7 +556,7 @@ def render_html(model: dict, generated_at: str) -> str:
     spend_heading = "Spend tracker"
     spend_panel_body_html = _spend_panel_html(spend_model)
 
-    model_json = json.dumps(model, default=str)
+    model_json = json.dumps(model, default=str).replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
 
     script = "(function () {\n" + _COMMON_JS + _PAGE_SCRIPT
 

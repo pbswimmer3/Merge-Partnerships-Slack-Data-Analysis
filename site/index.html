@@ -145,7 +145,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
   <div class="site-header-inner">
     <div class="site-header-title">
       <h1>#partnerships — Question Analysis</h1>
-      <div class="meta">Date range: 2026-04-16 to 2026-07-13 &middot; Updated 2026-07-14T02:37:45Z</div>
+      <div class="meta">Date range: 2026-04-16 to 2026-07-13 &middot; Updated 2026-07-14T02:44:00Z</div>
     </div>
     <nav class="site-nav">
       <a href="./index.html" class="active">Overview</a>
@@ -202,7 +202,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
 
   <div class="viz-footer">
     Data sourced from committed <code>data/analysis/*.json</code> files.<br>
-    Generated at 2026-07-14T02:37:45Z.
+    Generated at 2026-07-14T02:44:00Z.
   </div>
 
 </div>
@@ -257,6 +257,11 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
     tip.className = 'viz-tooltip';
     container.appendChild(tip);
     return tip;
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   function showTip(tip, container, x, y, htmlContent) {
@@ -420,7 +425,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
       crosshair.setAttribute('x2', x(idx));
       crosshair.setAttribute('opacity', 1);
       showTip(tip, container, x(idx), y(Math.max(d.messages, d.questions)),
-        '<strong>' + d.date + '</strong><br>Messages: ' + d.messages + ' (avg ' + messagesAvg[idx].toFixed(1) + ')' +
+        '<strong>' + esc(d.date) + '</strong><br>Messages: ' + d.messages + ' (avg ' + messagesAvg[idx].toFixed(1) + ')' +
         '<br>Questions: ' + d.questions + ' (avg ' + questionsAvg[idx].toFixed(1) + ')');
     });
     hitArea.addEventListener('mouseleave', function () { crosshair.setAttribute('opacity', 0); hideTip(tip); });
@@ -460,7 +465,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
 
     var colorFn = opts.colorFn || function () { return css('--series-1'); };
     var labelFn = opts.labelFn || function (c) { return c.count.toLocaleString(); };
-    var tooltipFn = opts.tooltipFn || function (c) { return '<strong>' + c.name + '</strong><br>Count: ' + c.count; };
+    var tooltipFn = opts.tooltipFn || function (c) { return '<strong>' + esc(c.name) + '</strong><br>Count: ' + c.count; };
 
     items.forEach(function (c, i) {
       var barY = i * (rowH + gap);
@@ -537,7 +542,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
         var diffStr = o.avg_difficulty != null ? o.avg_difficulty.toFixed(1) : 'n/a';
         var autoStr = o.automatable_pct != null ? o.automatable_pct.toFixed(0) + '%' : 'n/a';
         showTip(tip, container, evt.clientX - rect.left, evt.clientY - rect.top,
-          '<strong>' + o.category + '</strong><br>Count: ' + o.count + '<br>Avg difficulty: ' + diffStr +
+          '<strong>' + esc(o.category) + '</strong><br>Count: ' + o.count + '<br>Avg difficulty: ' + diffStr +
           '<br>Automatable: ' + autoStr + (o.is_candidate ? '<br><em>Automation candidate</em>' : ''));
       });
       hit.addEventListener('mouseleave', function () { hideTip(tip); });
@@ -609,7 +614,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
     renderBarChart('chart-categories', categoryItems, {
       colorFn: function (c) { return categoryColor(c.name); },
       labelFn: function (c) { return c.count.toLocaleString() + ' (' + c.pct.toFixed(1) + '%)'; },
-      tooltipFn: function (c) { return '<strong>' + c.name + '</strong><br>Count: ' + c.count.toLocaleString() + '<br>' + c.pct.toFixed(1) + '%'; },
+      tooltipFn: function (c) { return '<strong>' + esc(c.name) + '</strong><br>Count: ' + c.count.toLocaleString() + '<br>' + c.pct.toFixed(1) + '%'; },
       emptyMessage: 'No categorized questions available.'
     });
 
@@ -624,7 +629,7 @@ table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: 
     renderBarChart('chart-top-askers', askerItems, {
       colorFn: function () { return css('--series-1'); },
       labelFn: function (a) { return a.count.toLocaleString(); },
-      tooltipFn: function (a) { return '<strong>' + a.name + '</strong><br>Count: ' + a.count.toLocaleString(); },
+      tooltipFn: function (a) { return '<strong>' + esc(a.name) + '</strong><br>Count: ' + a.count.toLocaleString(); },
       emptyMessage: 'No question askers recorded.'
     });
 

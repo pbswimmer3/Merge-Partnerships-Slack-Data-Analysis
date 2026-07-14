@@ -284,6 +284,11 @@ COMMON_JS = r"""
     return tip;
   }
 
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
   function showTip(tip, container, x, y, htmlContent) {
     tip.innerHTML = htmlContent;
     tip.style.opacity = '1';

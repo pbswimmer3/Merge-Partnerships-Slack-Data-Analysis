@@ -8,6 +8,7 @@ no CDNs/network calls).
 """
 from __future__ import annotations
 
+import datetime
 import html
 import json
 import math
@@ -205,15 +206,32 @@ def _sparkline(timeseries: List[dict], key: str, window: int = 30) -> List[int]:
 
 
 def _window_delta(timeseries: List[dict], key: str, window: int = 30) -> dict:
-    n = len(timeseries)
-    w = min(window, n)
-    if w <= 0:
-        return {"pct": None, "current": 0, "previous": 0, "window": window}
-    current = sum(row[key] for row in timeseries[-w:])
-    prev_rows = timeseries[-2 * w:-w] if n > w else []
-    previous = sum(row[key] for row in prev_rows)
-    pct = 100.0 * (current - previous) / previous if prev_rows and previous else None
-    return {"pct": pct, "current": current, "previous": previous, "window": w}
+    # Calendar-day windows, not row counts: rows only exist for days with
+    # activity, so slicing by row would silently compare "active days".
+    empty = {"pct": None, "current": 0, "previous": 0, "window": window}
+    if not timeseries:
+        return empty
+    try:
+        end = datetime.date.fromisoformat(timeseries[-1]["date"])
+        first = datetime.date.fromisoformat(timeseries[0]["date"])
+    except (KeyError, ValueError):
+        return empty
+    cur_start = end - datetime.timedelta(days=window - 1)
+    prev_start = cur_start - datetime.timedelta(days=window)
+    if first > prev_start:
+        return empty  # data does not cover the full previous window
+    current = previous = 0
+    for row in timeseries:
+        try:
+            d = datetime.date.fromisoformat(row["date"])
+        except (KeyError, ValueError):
+            continue
+        if d >= cur_start:
+            current += row[key]
+        elif d >= prev_start:
+            previous += row[key]
+    pct = 100.0 * (current - previous) / previous if previous else None
+    return {"pct": pct, "current": current, "previous": previous, "window": window}
 
 
 def aggregate(analysis_files: List[dict], user_directory: Optional[dict] = None) -> dict:
@@ -815,10 +833,15 @@ _SCRIPT = r"""
   if (document.readyState !== 'loading') init();
 
   var toggle = document.getElementById('theme-toggle');
+  function effectiveTheme() {
+    var explicit = root.getAttribute('data-theme');
+    if (explicit) return explicit;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
   if (toggle) {
+    toggle.textContent = effectiveTheme() === 'dark' ? 'Light mode' : 'Dark mode';
     toggle.addEventListener('click', function () {
-      var current = root.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
+      var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       toggle.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
       setTimeout(init, 0);
@@ -976,7 +999,7 @@ def render_html(model: dict, generated_at: str) -> str:
 <style>{_STYLE}</style>
 </head>
 <body>
-<div class="viz-root" data-theme="light">
+<div class="viz-root">
 
 <header class="site-header">
   <div class="site-header-inner">

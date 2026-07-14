@@ -1,15 +1,58 @@
 {
   "per_day": {
     "2026-07-13": {
-      "messages": 3,
-      "questions": 0
+      "messages": 15,
+      "questions": 2
     }
   },
-  "category_distribution": {},
-  "top_askers": [],
+  "category_distribution": {
+    "integration_connector": 1,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      1
+    ],
+    [
+      "U0ASG7M610W",
+      1
+    ]
+  ],
   "response": {
-    "median_first_reply_latency_sec": null,
+    "median_first_reply_latency_sec": 13.80878496170044,
     "unanswered_question_count": 0
   },
-  "questions": []
+  "questions": [
+    {
+      "ts": "1783973286.341509",
+      "user": "U060YKZR918",
+      "text": "<@U0BETHXAKFS> do we have a SmartHR connector on the roadmap? if not, can that be added?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 14.908819913864136,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1783973286341509?thread_ts=1783973286.341509&cid=C03NXTWBQKT",
+      "llm_category": "integration_connector",
+      "subtopic": "SmartHR connector roadmap request",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Roadmap and feature-request decisions require internal product/human input to answer."
+    },
+    {
+      "ts": "1783970771.407199",
+      "user": "U0ASG7M610W",
+      "text": "<@U0BBLFYHDFG> What is the extent of our partnership with Carta?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 8,
+      "first_reply_latency_sec": 12.708750009536743,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1783970771407199?thread_ts=1783970771.407199&cid=C03NXTWBQKT",
+      "llm_category": "partnership_scope",
+      "subtopic": "Carta partnership extent",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Partnership details are often nuanced and confidential, requiring human clarification."
+    }
+  ]
 }

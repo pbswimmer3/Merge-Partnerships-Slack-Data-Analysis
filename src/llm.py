@@ -10,13 +10,32 @@ import re
 import sys
 from typing import List
 
+CLASSIFY_CATEGORIES = [
+    "api_technical",
+    "integration_connector",
+    "data_sync",
+    "pricing_commercial",
+    "access_permissions",
+    "bug_issue",
+    "auth_scopes",
+    "partnership_process",
+    "customer_request",
+    "feature_request",
+    "sales_marketing",
+    "internal_ops",
+    "other",
+]
+
 CLASSIFY_SYSTEM_PROMPT = (
     "You are a support/partnerships analyst. For each question you are given, "
     "return a JSON object with fields: index (int, matching input index), "
-    "llm_category (short snake_case category label), subtopic (short free text, "
+    "llm_category (one of the following exact snake_case labels: "
+    + ", ".join(CLASSIFY_CATEGORIES) + "), subtopic (short free text, "
     "max 6 words), difficulty (integer 1-5, 1=trivial 5=very hard/ambiguous), "
     "automatable (boolean, true if a doc/FAQ/bot could answer this without a human), "
     "rationale (max 20 words explaining difficulty/automatable). "
+    "Always choose the single most specific matching category from the list. "
+    "Only use 'other' as a last resort when none of the other categories reasonably apply. "
     "Respond ONLY with a JSON array of these objects, no prose, no markdown fences."
 )
 

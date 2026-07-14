@@ -37,11 +37,11 @@
       "reply_count": 11,
       "first_reply_latency_sec": 2494.1707701683044,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "Rippling endpoint scope migration",
+      "llm_category": "auth_scopes",
+      "subtopic": "Rippling scope migration",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires up-to-date partner migration knowledge and internal discussion."
+      "rationale": "Endpoint migration changes require internal knowledge and clarification."
     },
     {
       "ts": "1777925649.252129",
@@ -52,11 +52,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "endpoint mapping equivalence",
+      "llm_category": "integration_connector",
+      "subtopic": "scope mapping old to new",
       "difficulty": 3,
-      "automatable": true,
-      "rationale": "Mapping details could exist in migration docs if maintained."
+      "automatable": false,
+      "rationale": "Mapping old endpoints to new needs technical context."
     },
     {
       "ts": "1777920918.284559",
@@ -67,11 +67,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "help request tag",
+      "llm_category": "internal_ops",
+      "subtopic": "tagging for help",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Simple person tag requiring human response."
+      "rationale": "Internal ping requesting assistance; no answerable content."
     }
   ]
 }

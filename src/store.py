@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import List, Optional
 
@@ -9,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = BASE_DIR / "data" / "raw"
 ANALYSIS_DIR = BASE_DIR / "data" / "analysis"
 DAILY_ANALYSIS_DIR = BASE_DIR / "data" / "analysis_by_day"
+SPEND_LEDGER_DIR = BASE_DIR / "data" / "spend" / "ledger"
 
 
 def _ensure_dirs() -> None:
@@ -90,3 +92,82 @@ def read_all_daily_analysis() -> List[dict]:
         if data is not None:
             results.append(data)
     return results
+
+
+def read_all_spend_ledger() -> List[dict]:
+    """Load and flatten every entry from data/spend/ledger/*.json (monthly
+    files), sorted ascending by run_at. Missing/empty dir -> []."""
+    entries: List[dict] = []
+    if not SPEND_LEDGER_DIR.exists():
+        return entries
+    for path in sorted(SPEND_LEDGER_DIR.glob("*.json")):
+        data = read_json(path)
+        if isinstance(data, list):
+            entries.extend(e for e in data if isinstance(e, dict))
+    entries.sort(key=lambda e: e.get("run_at") or "")
+    return entries
+
+
+def append_spend_ledger(
+    run_at: str,
+    command: str,
+    model: str,
+    calls: int,
+    input_tokens: int,
+    output_tokens: int,
+    cache_read_input_tokens: int,
+    est_cost_usd: Optional[float],
+    dates_analyzed: List[str],
+    questions_analyzed: Optional[int] = None,
+) -> Path:
+    """Append an entry to the monthly spend ledger (data/spend/ledger/YYYY-MM.json).
+
+    Handles corrupt/unreadable ledger files by backing them up as .bak and starting fresh,
+    with a warning to stderr.
+    """
+    # Extract YYYY-MM from run_at (ISO8601 format)
+    month_key = run_at[:7]  # "2026-07"
+
+    SPEND_LEDGER_DIR.mkdir(parents=True, exist_ok=True)
+    ledger_path = SPEND_LEDGER_DIR / f"{month_key}.json"
+
+    # Try to read existing ledger
+    ledger = []
+    if ledger_path.exists():
+        try:
+            with open(ledger_path, "r", encoding="utf-8") as f:
+                ledger = json.load(f)
+            if not isinstance(ledger, list):
+                ledger = []
+        except (OSError, ValueError) as exc:
+            # Backup corrupt file and start fresh
+            backup_path = ledger_path.parent / f"{ledger_path.name}.bak"
+            try:
+                ledger_path.rename(backup_path)
+                print(f"WARNING: Corrupt ledger file backed up to {backup_path}; starting fresh.", file=sys.stderr)
+            except OSError as e:
+                print(f"WARNING: Could not back up corrupt ledger: {e}; starting fresh.", file=sys.stderr)
+            ledger = []
+
+    # Append new entry
+    entry = {
+        "run_at": run_at,
+        "command": command,
+        "model": model,
+        "calls": calls,
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "cache_read_input_tokens": cache_read_input_tokens,
+        "est_cost_usd": est_cost_usd,
+        "dates_analyzed": dates_analyzed,
+    }
+    if questions_analyzed is not None:
+        entry["questions_analyzed"] = questions_analyzed
+    ledger.append(entry)
+
+    # Write back
+    with open(ledger_path, "w", encoding="utf-8") as f:
+        json.dump(ledger, f, indent=2)
+        f.write("\n")
+
+    return ledger_path

@@ -36,7 +36,7 @@
       "subtopic": "vague follow-up",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "No referent for 'he' or 'this'; not answerable."
+      "rationale": "No context, conversational fragment, unclassifiable."
     },
     {
       "ts": "1782516609.640469",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partner_contact",
+      "llm_category": "partnership_process",
       "subtopic": "outreach approval",
-      "difficulty": 2,
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires human decision on outreach; ambiguous referent."
+      "rationale": "Requires human decision on contacting a person."
     },
     {
       "ts": "1782516614.215369",
@@ -66,7 +66,7 @@
       "subtopic": "NetSuite feature enablement",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Clarifying request needing context on specific feature and setup."
+      "rationale": "Clarifying scope on NetSuite config; needs human context."
     },
     {
       "ts": "1782516651.206229",
@@ -81,7 +81,7 @@
       "subtopic": "activity codes clarification",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Fragment lacking context; unclear system and intent."
+      "rationale": "Fragment with no context, likely connector field detail."
     }
   ]
 }

@@ -38,11 +38,11 @@
       "reply_count": 13,
       "first_reply_latency_sec": 1076.2675099372864,
       "permalink": null,
-      "llm_category": "access_permissions",
+      "llm_category": "partnership_process",
       "subtopic": "ADP WFN technical contact",
-      "difficulty": 3,
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Needs specific partner contact info from team."
+      "rationale": "Requesting partner contact info, requires human directory knowledge."
     },
     {
       "ts": "1780690687.711809",
@@ -53,11 +53,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
-      "subtopic": "Clarifying question",
+      "llm_category": "internal_ops",
+      "subtopic": "Clarifying the question",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Conversational clarification, no answerable content."
+      "rationale": "Conversational filler, no answerable content."
     },
     {
       "ts": "1780691210.090639",
@@ -68,11 +68,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "data_sync",
-      "subtopic": "Employee vs employer deduction fields",
+      "llm_category": "api_technical",
+      "subtopic": "Employee vs employer deduction field",
       "difficulty": 4,
       "automatable": true,
-      "rationale": "API schema field question answerable from documentation."
+      "rationale": "Specific API schema question answerable from ADP docs."
     },
     {
       "ts": "1780670930.021399",
@@ -84,10 +84,10 @@
       "first_reply_latency_sec": 120.70082998275757,
       "permalink": null,
       "llm_category": "pricing_commercial",
-      "subtopic": "ADP WFN licensing API pricing",
+      "subtopic": "ADP WFN licensing model",
       "difficulty": 4,
       "automatable": true,
-      "rationale": "Vendor licensing model potentially documented publicly or in FAQ."
+      "rationale": "Licensing/API consumption question potentially documented in vendor pricing docs."
     },
     {
       "ts": "1780671050.722229",
@@ -98,11 +98,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
-      "subtopic": "Clarifying as product",
+      "llm_category": "internal_ops",
+      "subtopic": "Clarifying product context",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Conversational clarification fragment."
+      "rationale": "Conversational clarification, no standalone answer."
     },
     {
       "ts": "1780671062.076709",
@@ -113,11 +113,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
-      "subtopic": "Clarifying as partner",
+      "llm_category": "internal_ops",
+      "subtopic": "Clarifying partner context",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Conversational clarification fragment."
+      "rationale": "Conversational clarification, no standalone answer."
     },
     {
       "ts": "1780673212.334439",
@@ -132,7 +132,7 @@
       "subtopic": "fee structure clarification",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Pricing question answerable from a documented fee schedule or FAQ."
+      "rationale": "Pricing question answerable via pricing doc, but lacks context on product."
     }
   ]
 }

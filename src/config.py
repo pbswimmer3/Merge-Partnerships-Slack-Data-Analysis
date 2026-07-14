@@ -13,6 +13,40 @@ from dotenv import load_dotenv
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
 NOTION_STATE_PATH = Path(__file__).resolve().parent.parent / "notion_state.json"
 
+# Model pricing: USD per 1M tokens (input, output)
+# Cache-read tokens are billed at 0.1× the input rate
+PRICING = {
+    "claude-opus-4-8": {"input": 5.0, "output": 25.0},
+    "claude-sonnet-5": {"input": 3.0, "output": 15.0},
+    "claude-haiku-4-5": {"input": 1.0, "output": 5.0},
+}
+
+
+def estimate_cost_usd(
+    model: str,
+    input_tokens: int,
+    output_tokens: int,
+    cache_read_input_tokens: int = 0,
+) -> Optional[float]:
+    """Estimate cost in USD for an LLM call.
+
+    Cache-read tokens are billed at 0.1× the input rate.
+    Unknown models return None, never raise.
+    """
+    if model not in PRICING:
+        return None
+
+    pricing = PRICING[model]
+    input_price_per_mtok = pricing["input"]
+    output_price_per_mtok = pricing["output"]
+
+    # Calculate costs (prices are per 1M tokens)
+    input_cost = (input_tokens / 1_000_000) * input_price_per_mtok
+    output_cost = (output_tokens / 1_000_000) * output_price_per_mtok
+    cache_read_cost = (cache_read_input_tokens / 1_000_000) * input_price_per_mtok * 0.1
+
+    return input_cost + output_cost + cache_read_cost
+
 
 def read_notion_state(path: Path = NOTION_STATE_PATH) -> Optional[str]:
     """Return the database_id from the committed state file pointer, or None."""

@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_request",
-      "subtopic": "add to channel/list",
+      "llm_category": "access_permissions",
+      "subtopic": "add to channel",
       "difficulty": 1,
-      "automatable": false,
-      "rationale": "Vague access request needing human to grant permission."
+      "automatable": true,
+      "rationale": "Simple access request, no context but routine."
     }
   ]
 }

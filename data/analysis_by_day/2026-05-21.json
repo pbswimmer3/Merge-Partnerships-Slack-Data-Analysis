@@ -37,7 +37,7 @@
       "subtopic": "Paylocity extra API form",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "New partner process needs investigation and internal context."
+      "rationale": "Unfamiliar vendor requirement; needs contact and investigation."
     },
     {
       "ts": "1779372330.733569",
@@ -48,11 +48,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "contact routing question",
-      "difficulty": 3,
+      "llm_category": "partnership_process",
+      "subtopic": "contact needed clarification",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Requires human knowledge of who to contact."
+      "rationale": "Asks if customer needs to talk to someone; human coordination."
     }
   ]
 }

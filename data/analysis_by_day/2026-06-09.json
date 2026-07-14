@@ -33,11 +33,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_timeline",
+      "llm_category": "partnership_process",
       "subtopic": "Renewal ship deadline",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Depends on specific deal context not in docs."
+      "rationale": "Timeline question needing internal knowledge, no clear doc source."
     },
     {
       "ts": "1781033605.664719",
@@ -48,11 +48,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "security_config",
+      "llm_category": "auth_scopes",
       "subtopic": "default credentials removal",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires human decision on security action, needs context and approval."
+      "rationale": "Requires human decision on security/auth configuration change."
     }
   ]
 }

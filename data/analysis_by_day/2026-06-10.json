@@ -38,10 +38,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "Contact rep for access",
-      "difficulty": 2,
-      "automatable": true,
-      "rationale": "Access-request process could be documented in FAQ."
+      "subtopic": "Reach out for access",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Approval decision needing human input on access process."
     },
     {
       "ts": "1781117872.112949",
@@ -53,10 +53,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "integration_connector",
-      "subtopic": "Use account for connector testing",
-      "difficulty": 3,
+      "subtopic": "Using account for connector testing",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Permission/scope question needing named contacts' judgment."
+      "rationale": "Permission question about testing environment, needs team decision."
     },
     {
       "ts": "1781100994.760629",
@@ -67,11 +67,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "integration_connector",
-      "subtopic": "OAuth-only new accounts",
+      "llm_category": "auth_scopes",
+      "subtopic": "OAuth-only for new accounts",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires confirming internal rollout policy and account behavior with team."
+      "rationale": "Needs confirmation of internal auth policy for connector, human verification."
     }
   ]
 }

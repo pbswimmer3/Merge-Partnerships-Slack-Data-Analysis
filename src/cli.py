@@ -15,13 +15,15 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import List, Optional
 
-from src.config import Config
+from src.config import Config, estimate_cost_usd
 from src.slack_client import SlackScraper, load_export
 from src import store
 from src.analyze import analyze as run_analyze, _ts_to_date
 from src.llm import classify_questions, summarize_trends
 from src.report import render_markdown
 from src.dashboard import aggregate as run_aggregate, render_html
+from src import automation_page
+from src import spend as spend_module
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 REPORTS_DIR = BASE_DIR / "reports"
@@ -116,11 +118,43 @@ def cmd_analyze(config: Config, end_date_str: str) -> dict:
 
     analysis = run_analyze(all_messages, config)
 
+    # Accumulate LLM usage across all calls
+    total_usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0}
+
     if config.llm_enabled:
-        analysis["questions"] = classify_questions(analysis["questions"], config)
+        analysis["questions"], classify_usage = classify_questions(analysis["questions"], config)
+        total_usage["calls"] += classify_usage.get("calls", 0)
+        total_usage["input_tokens"] += classify_usage.get("input_tokens", 0)
+        total_usage["output_tokens"] += classify_usage.get("output_tokens", 0)
+        total_usage["cache_read_input_tokens"] += classify_usage.get("cache_read_input_tokens", 0)
 
     store.write_json(analysis, store.analysis_path(end_date_str))
     _split_analysis_by_day(analysis)
+
+    # Write ledger entry if any LLM calls were made
+    if config.llm_enabled and total_usage["calls"] > 0:
+        dates_analyzed = sorted([
+            date_str for date_str in analysis.get("per_day", {}).keys() if date_str != "unknown"
+        ])
+        est_cost_usd = estimate_cost_usd(
+            config.llm_model,
+            total_usage["input_tokens"],
+            total_usage["output_tokens"],
+            total_usage["cache_read_input_tokens"],
+        )
+        store.append_spend_ledger(
+            run_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            command=f"analyze --days {config.lookback_days}",
+            model=config.llm_model,
+            calls=total_usage["calls"],
+            input_tokens=total_usage["input_tokens"],
+            output_tokens=total_usage["output_tokens"],
+            cache_read_input_tokens=total_usage["cache_read_input_tokens"],
+            est_cost_usd=est_cost_usd,
+            dates_analyzed=dates_analyzed,
+            questions_analyzed=len(analysis.get("questions") or []),
+        )
+
     return analysis
 
 
@@ -132,7 +166,7 @@ def cmd_report(config: Config, end_date_str: str) -> Path:
 
     llm_summary = ""
     if config.llm_enabled:
-        llm_summary = summarize_trends(analysis, config)
+        llm_summary, _ = summarize_trends(analysis, config)
 
     markdown = render_markdown(analysis, llm_summary, config, end_date_str)
 
@@ -170,8 +204,10 @@ def _merge_daily_for_dashboard(daily_files: List[dict]) -> dict:
 
 
 def cmd_dashboard() -> Path:
-    """Aggregate all cached analysis files into site/index.html. Always writes a
-    valid page, even with zero analysis files (empty-state)."""
+    """Aggregate all cached analysis files into site/index.html and
+    site/automation.html from the same merged model inputs. Always writes
+    valid pages, even with zero analysis files (empty-state). Returns the
+    index.html path (automation.html is written alongside it)."""
     analysis_files = store.read_all_daily_analysis()
     merged = _merge_daily_for_dashboard(analysis_files)
 
@@ -182,14 +218,27 @@ def cmd_dashboard() -> Path:
     except (OSError, ValueError):
         user_directory = {}
 
-    model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    model = run_aggregate([merged] if analysis_files else [], user_directory=user_directory)
     markup = render_html(model, generated_at)
+
+    spend_model = spend_module.build_spend_model()
+
+    automation_model = automation_page.build_model(
+        merged if analysis_files else {}, user_directory=user_directory, spend_model=spend_model
+    )
+    automation_markup = automation_page.render_html(automation_model, generated_at)
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)
     index_path = SITE_DIR / "index.html"
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(markup)
+
+    automation_path = SITE_DIR / "automation.html"
+    with open(automation_path, "w", encoding="utf-8") as f:
+        f.write(automation_markup)
+
     return index_path
 
 

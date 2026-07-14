@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "Escalate contact at ADP",
-      "difficulty": 2,
+      "llm_category": "partnership_process",
+      "subtopic": "Reach out to ADP",
+      "difficulty": 1,
       "automatable": false,
-      "rationale": "Depends on internal contact knowledge."
+      "rationale": "Escalation decision requiring human judgment."
     }
   ]
 }

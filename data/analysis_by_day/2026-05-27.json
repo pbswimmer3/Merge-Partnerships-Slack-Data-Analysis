@@ -32,11 +32,11 @@
       "reply_count": 41,
       "first_reply_latency_sec": 4415.791529893875,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "Teamtailor sandbox contact",
+      "llm_category": "integration_connector",
+      "subtopic": "Teamtailor sandbox broken",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires specific vendor contact info held by team."
+      "rationale": "Needs partner contact to unblock sandbox; human action required."
     },
     {
       "ts": "1779907578.622499",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
+      "llm_category": "partnership_process",
       "subtopic": "Permission to contact directly",
-      "difficulty": 2,
+      "difficulty": 1,
       "automatable": false,
-      "rationale": "Approval question requiring human judgment on process."
+      "rationale": "Simple approval question requiring human confirmation."
     },
     {
       "ts": "1779912866.229619",
@@ -62,11 +62,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
-      "subtopic": "Request account creation",
+      "llm_category": "partnership_process",
+      "subtopic": "Request to create account",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Directive to a colleague, no doc answers it."
+      "rationale": "Delegated action request, needs human execution."
     }
   ]
 }

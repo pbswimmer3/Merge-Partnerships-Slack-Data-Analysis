@@ -36,8 +36,8 @@
       "llm_category": "pricing_commercial",
       "subtopic": "plan upgrade request",
       "difficulty": 2,
-      "automatable": true,
-      "rationale": "Plan upgrade info likely in pricing docs or self-serve portal."
+      "automatable": false,
+      "rationale": "Requires commercial decision on upgrading a specific vendor plan."
     },
     {
       "ts": "1776365152.190499",
@@ -48,11 +48,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "ambiguous credential followup",
-      "difficulty": 4,
+      "llm_category": "auth_scopes",
+      "subtopic": "credential creation confirmation",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Fragmentary context; needs human to interpret prior conversation."
+      "rationale": "Fragment lacking context; refers to credential creation, needs human clarification."
     }
   ]
 }

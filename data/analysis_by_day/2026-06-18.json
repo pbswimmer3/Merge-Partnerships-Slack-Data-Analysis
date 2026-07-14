@@ -32,11 +32,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "Teamtailor account name/link",
-      "difficulty": 3,
+      "llm_category": "integration_connector",
+      "subtopic": "Teamtailor account details",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Needs specific account details from teammates."
+      "rationale": "Needs specific account info from team; merge.dev connector issue."
     },
     {
       "ts": "1781817637.183839",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "troubleshooting",
-      "subtopic": "Testing in other environment",
-      "difficulty": 2,
+      "llm_category": "integration_connector",
+      "subtopic": "Testing environment check",
+      "difficulty": 1,
       "automatable": false,
-      "rationale": "Requires colleague's specific testing status."
+      "rationale": "Follow-up on testing status, requires colleague response."
     }
   ]
 }

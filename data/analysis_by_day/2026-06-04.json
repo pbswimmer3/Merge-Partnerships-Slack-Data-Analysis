@@ -36,11 +36,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
+      "llm_category": "internal_ops",
       "subtopic": "Looping in colleagues",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Casual internal coordination request."
+      "rationale": "Casual coordination message, no informational answer possible."
     },
     {
       "ts": "1780586945.884399",
@@ -51,11 +51,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "Login trouble PostHog support",
+      "llm_category": "bug_issue",
+      "subtopic": "PostHog login trouble",
       "difficulty": 2,
-      "automatable": true,
-      "rationale": "Standard troubleshooting/escalation path can be documented."
+      "automatable": false,
+      "rationale": "Login failure, unclear if support needed; requires troubleshooting."
     },
     {
       "ts": "1780587421.271939",
@@ -66,11 +66,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "troubleshooting",
-      "subtopic": "Confirm working for others",
+      "llm_category": "bug_issue",
+      "subtopic": "Confirming issue reproduces",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Real-time peer check, no static answer."
+      "rationale": "Peer check on issue, no documentable answer."
     },
     {
       "ts": "1780588154.394959",
@@ -81,11 +81,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "troubleshooting",
+      "llm_category": "bug_issue",
       "subtopic": "Login page changed",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Vague observation needing peer confirmation."
+      "rationale": "Observation about UI change, needs human confirmation."
     },
     {
       "ts": "1780581864.011639",
@@ -96,11 +96,11 @@
       "reply_count": 5,
       "first_reply_latency_sec": 27.0694899559021,
       "permalink": null,
-      "llm_category": "partnership_status",
-      "subtopic": "iCIMS partnership pursuit",
+      "llm_category": "partnership_process",
+      "subtopic": "Pursuing iCIMS partnership",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Strategic status question needing internal knowledge."
+      "rationale": "Strategic partnership status decision, needs internal knowledge."
     }
   ]
 }

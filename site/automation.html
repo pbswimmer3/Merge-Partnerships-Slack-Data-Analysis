@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#partnerships — Automation Deep-Dive</title>
+<style>
+:root { color-scheme: light dark; }
+.viz-root {
+  --surface-1: #fcfcfb;
+  --page: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --baseline: #c3c2b7;
+  --border: rgba(11,11,11,.10);
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #eda100;
+  --series-4: #008300;
+  --series-5: #4a3aa7;
+  --series-6: #e34948;
+  --series-7: #e87ba4;
+  --series-8: #eb6834;
+  --good: #0ca30c;
+  background: var(--page);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 0 3rem 0;
+}
+@media (prefers-color-scheme: dark) {
+  .viz-root {
+    --surface-1: #1a1a19;
+    --page: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255,255,255,.10);
+    --series-1: #3987e5;
+    --series-2: #199e70;
+    --series-3: #c98500;
+    --series-4: #008300;
+    --series-5: #9085e9;
+    --series-6: #e66767;
+    --series-7: #d55181;
+    --series-8: #d95926;
+  }
+}
+.viz-root[data-theme="dark"] {
+  --surface-1: #1a1a19;
+  --page: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --grid: #2c2c2a;
+  --baseline: #383835;
+  --border: rgba(255,255,255,.10);
+  --series-1: #3987e5;
+  --series-2: #199e70;
+  --series-3: #c98500;
+  --series-4: #008300;
+  --series-5: #9085e9;
+  --series-6: #e66767;
+  --series-7: #d55181;
+  --series-8: #d95926;
+}
+.viz-root[data-theme="light"] {
+  --surface-1: #fcfcfb;
+  --page: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --grid: #e1e0d9;
+  --baseline: #c3c2b7;
+  --border: rgba(11,11,11,.10);
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #eda100;
+  --series-4: #008300;
+  --series-5: #4a3aa7;
+  --series-6: #e34948;
+  --series-7: #e87ba4;
+  --series-8: #eb6834;
+}
+* { box-sizing: border-box; }
+.viz-container { max-width: 1080px; margin: 0 auto; padding: 1.5rem; }
+.site-header {
+  position: sticky; top: 0; z-index: 30; background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+}
+.site-header-inner {
+  max-width: 1080px; margin: 0 auto; padding: .85rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.site-header-title h1 { font-size: 1.2rem; margin: 0 0 .2rem 0; }
+.site-header-title .meta { color: var(--text-secondary); font-size: .8rem; }
+.site-nav { display: flex; gap: 1rem; font-size: .85rem; }
+.site-nav a { color: var(--text-secondary); text-decoration: none; }
+.site-nav a.active { color: var(--text-primary); font-weight: 600; }
+.site-header-actions { display: flex; gap: .5rem; align-items: center; }
+.theme-toggle {
+  background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 6px; padding: .4rem .75rem; font-size: .85rem; cursor: pointer;
+  text-decoration: none; display: inline-block; line-height: 1.2;
+}
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; margin-bottom: 1.75rem; }
+.kpi-tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }
+.kpi-tile .value { font-size: 1.6rem; font-weight: 600; color: var(--text-primary); line-height: 1.15; }
+.kpi-tile .label { font-size: .78rem; color: var(--muted); margin-top: .2rem; }
+.kpi-tile .kpi-delta { font-size: .74rem; color: var(--text-secondary); margin-top: .3rem; }
+.kpi-tile .kpi-subline { font-size: .74rem; color: var(--text-secondary); margin-top: .3rem; }
+.kpi-spark { width: 100%; height: 28px; margin-top: .4rem; }
+.viz-section { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.2rem; margin-bottom: 1.25rem; }
+.viz-section h2 { font-size: 1rem; margin: 0 0 .85rem 0; color: var(--text-primary); }
+.empty-note { color: var(--muted); font-size: .85rem; font-style: italic; }
+.legend { display: flex; gap: 1.25rem; font-size: .8rem; color: var(--text-secondary); margin-bottom: .5rem; }
+.legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: .4rem; vertical-align: middle; }
+.viz-tooltip {
+  position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 6px; padding: .4rem .6rem; font-size: .75rem; color: var(--text-primary); box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  white-space: nowrap; opacity: 0; transition: opacity .08s ease; z-index: 10;
+}
+.chart-wrap { position: relative; }
+table.viz-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+table.viz-table th, table.viz-table td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+table.viz-table th { color: var(--text-secondary); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .02em; }
+.candidate-tag { color: var(--good); font-size: .72rem; font-weight: 600; margin-left: .35rem; }
+.viz-footer { color: var(--muted); font-size: .78rem; margin-top: 2rem; text-align: center; }
+.summary-text { color: var(--text-primary); font-size: .92rem; line-height: 1.5; }
+.cat-chip-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: .4rem; vertical-align: middle; }
+.diff-dots { display: inline-flex; align-items: center; gap: 2px; }
+.diff-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--grid); display: inline-block; }
+.diff-dot.filled { background: var(--text-secondary); }
+.auto-meter { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.auto-meter-track { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--grid); overflow: hidden; }
+.auto-meter-fill { display: block; height: 100%; border-radius: 3px; background: var(--text-secondary); }
+
+.info-line { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+  padding: .6rem 1rem; font-size: .85rem; color: var(--text-secondary); margin-bottom: 1.25rem; }
+.notable-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1rem; }
+.notable-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--page); }
+.notable-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .4rem; }
+.notable-head h3 { font-size: .98rem; margin: 0; color: var(--text-primary); }
+.notable-chip { font-size: .78rem; color: var(--text-secondary); white-space: nowrap; }
+.notable-meta { display: flex; align-items: center; gap: .9rem; font-size: .82rem; color: var(--text-secondary); margin-bottom: .5rem; }
+.notable-est { font-size: .85rem; color: var(--text-primary); margin-bottom: .5rem; }
+.fix-tag { display: inline-block; background: var(--grid); color: var(--text-primary); border-radius: 12px;
+  padding: .15rem .6rem; font-size: .74rem; margin-bottom: .5rem; }
+.notable-example { margin: 0 0 .6rem 0; padding-left: .7rem; border-left: 2px solid var(--border);
+  color: var(--text-secondary); font-size: .85rem; font-style: italic; }
+.show-matching { font-size: .8rem; color: var(--text-primary); text-decoration: underline; cursor: pointer; }
+.explorer-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-bottom: .85rem; }
+.explorer-controls input[type="text"] {
+  background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 6px; padding: .35rem .6rem; font-size: .85rem; min-width: 220px;
+}
+.explorer-controls label { font-size: .82rem; color: var(--text-secondary); display: flex; align-items: center; gap: .3rem; }
+.explorer-controls select {
+  background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 6px; padding: .3rem .4rem; font-size: .82rem;
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip-toggle {
+  display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--page); color: var(--muted); font-size: .78rem; padding: .2rem .6rem .2rem .5rem;
+  cursor: pointer;
+}
+.chip-toggle.active { color: var(--text-primary); background: var(--surface-1); }
+#clear-cluster-filter {
+  border: 1px solid var(--border); border-radius: 12px; background: var(--page); color: var(--text-secondary);
+  font-size: .78rem; padding: .2rem .6rem; cursor: pointer;
+}
+.q-text-clamp {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  max-width: 46ch; line-height: 1.35;
+}
+table.viz-table tbody tr.q-row { cursor: pointer; }
+table.viz-table tbody tr.q-row:hover { background: var(--page); }
+tr.q-detail-row td { background: var(--page); }
+.q-detail { padding: .3rem 0; font-size: .85rem; line-height: 1.4; color: var(--text-primary); white-space: pre-wrap; }
+.q-rationale { margin-top: .4rem; color: var(--text-secondary); font-style: italic; }
+.explorer-count { font-size: .82rem; color: var(--muted); margin-bottom: .5rem; }
+
+/* Spend slide-over panel (plan.md §5, Phase C3) */
+.spend-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 40; }
+.spend-panel {
+  position: fixed; top: 0; right: 0; height: 100vh; width: 480px; max-width: 100%;
+  background: var(--surface-1); border-left: 1px solid var(--border); z-index: 41;
+  transform: translateX(100%); transition: transform .18s ease; overflow-y: auto;
+  box-shadow: -4px 0 16px rgba(0,0,0,.12);
+}
+.spend-panel[data-open="true"] { transform: translateX(0); }
+@media (max-width: 560px) { .spend-panel { width: 100%; } }
+.spend-panel-head {
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  padding: 1rem 1.25rem; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--surface-1); z-index: 1;
+}
+.spend-panel-head h2 { font-size: 1rem; margin: 0; color: var(--text-primary); line-height: 1.3; }
+.spend-close {
+  background: none; border: none; font-size: 1.5rem; line-height: 1; color: var(--text-secondary);
+  cursor: pointer; padding: 0 .25rem; flex-shrink: 0;
+}
+.spend-panel-body { padding: 1rem 1.25rem 2rem; }
+.spend-since { font-size: .8rem; color: var(--text-secondary); margin: 0 0 1rem 0; }
+.spend-kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: .6rem; margin-bottom: 1.1rem; }
+.spend-kpi { background: var(--page); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem; }
+.spend-kpi .value { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); }
+.spend-kpi .label { font-size: .7rem; color: var(--muted); margin-top: .15rem; }
+.spend-section { margin-bottom: 1.35rem; }
+.spend-section h3 { font-size: .82rem; margin: 0 0 .5rem 0; color: var(--text-primary); }
+.spend-runs-table { font-size: .76rem; }
+.spend-rec { border: 1px solid var(--border); border-radius: 8px; padding: .6rem .75rem; margin-bottom: .6rem; }
+.spend-rec-head { display: flex; justify-content: space-between; gap: .5rem; align-items: baseline; }
+.spend-rec-title { font-weight: 600; font-size: .84rem; color: var(--text-primary); }
+.spend-rec-savings { font-size: .8rem; color: var(--text-primary); white-space: nowrap; }
+.spend-rec-detail { font-size: .78rem; color: var(--text-secondary); margin-top: .3rem; line-height: 1.4; }
+table.spend-mini-table { width: 100%; font-size: .76rem; margin-top: .5rem; border-collapse: collapse; }
+table.spend-mini-table th, table.spend-mini-table td { text-align: left; padding: .25rem .4rem; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="viz-root">
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-header-title">
+      <h1>#partnerships — Automation Deep-Dive</h1>
+      <div class="meta">Updated 2026-07-14T05:55:17Z</div>
+    </div>
+    <nav class="site-nav">
+      <a href="./index.html">Overview</a>
+      <a href="./automation.html" class="active">Automation</a>
+    </nav>
+    <div class="site-header-actions">
+      <button id="spend-btn" class="theme-toggle" type="button">Spend</button>
+      <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<div id="spend-overlay" class="spend-overlay" hidden></div>
+<aside id="spend-panel" class="spend-panel" aria-hidden="true">
+  <div class="spend-panel-head">
+    <h2>Spend tracker</h2>
+    <button id="spend-close" class="spend-close" type="button" aria-label="Close spend panel">&times;</button>
+  </div>
+  <div class="spend-panel-body">
+    <p class="empty-note">Spend tracking starts with the next analyze run — no LLM runs recorded yet.</p>
+  </div>
+</aside>
+
+<div class="viz-container">
+
+  <div class="kpi-row">
+    <div class="kpi-tile"><div class="value">22</div><div class="label">Automatable questions</div><div class="kpi-subline">23.4% of 94 questions</div></div><div class="kpi-tile"><div class="value">0.6 h</div><div class="label">Reply time on automatable Qs</div></div><div class="kpi-tile"><div class="value">22</div><div class="label">Question clusters</div></div><div class="kpi-tile"><div class="value">partnership_process</div><div class="label">Top category</div></div>
+  </div>
+
+  
+
+  <div class="viz-section"><h2>Notable opportunities</h2><p class="empty-note">No repeated automatable subtopics yet (clusters need ≥ 2 similar questions).</p></div>
+
+  <div class="viz-section">
+    <h2>Question explorer</h2>
+    <div class="explorer-controls">
+      <input type="text" id="q-search" placeholder="Search question or subtopic...">
+      <div class="chip-row" id="category-chip-toggles"></div>
+      <label><input type="checkbox" id="automatable-only"> Automatable only</label>
+      <label>Difficulty <select id="diff-min"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select> to <select id="diff-max"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option></select></label>
+      <button id="clear-cluster-filter" type="button" hidden>Clear cluster filter ×</button>
+    </div>
+    <div class="explorer-count" id="question-count"></div>
+    <p class="empty-note" id="refine-notice" hidden></p>
+    <div style="overflow-x:auto">
+      <table class="viz-table" id="question-table">
+        <thead><tr><th data-key="date">Date</th><th data-key="text">Question</th><th data-key="display_name">Asker</th><th data-key="category">Category</th><th data-key="subtopic">Subtopic</th><th data-key="difficulty">Difficulty</th><th data-key="automatable">Automatable</th><th data-key="reply_count">Replies</th><th data-key="first_reply_min">First reply (min)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="viz-footer">
+    Data sourced from committed <code>data/analysis/*.json</code> files.<br>
+    Generated at 2026-07-14T05:55:17Z.
+  </div>
+
+</div>
+</div>
+
+<script type="application/json" id="model">{"questions": [{"ts": "1783768104.710479", "date": "2026-07-11", "user": "U02EXQ8T1JL", "display_name": "michelle", "text": "What connectors do they need?", "category": "integration_connector", "subtopic": "required connectors", "difficulty": 3.0, "automatable": false, "rationale": "Vague reference to 'they'; needs customer context.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783726815.513929", "date": "2026-07-10", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "\u003c@U0BBLFYHDFG|PartnerBot\u003e \u003c@U0BETHXAKFS|Connector Bot\u003e are you a drake fan?", "category": "other", "subtopic": "off-topic chatter", "difficulty": 1.0, "automatable": true, "rationale": "Non-work joke question, trivially handled or ignored by bot.", "reply_count": 5, "first_reply_latency_sec": 5.528520107269287, "first_reply_min": 0.09214200178782145}, {"ts": "1783726591.393009", "date": "2026-07-10", "user": "U0A1G4H5Z60", "display_name": "dammy.adeoti", "text": "\u003c@U0BBLFYHDFG|PartnerBot\u003e what Default app credentials do we have for Google product connectors?", "category": "auth_scopes", "subtopic": "Google default credentials", "difficulty": 2.0, "automatable": true, "rationale": "Bot query about default app credentials, answerable from data.", "reply_count": 9, "first_reply_latency_sec": 18.64033007621765, "first_reply_min": 0.31067216793696084}, {"ts": "1783699711.061289", "date": "2026-07-10", "user": "U09F1BB96KC", "display_name": "aidan", "text": "Nishka Chotai can you a pass here at investigating?", "category": "internal_ops", "subtopic": "investigation assignment", "difficulty": 3.0, "automatable": false, "rationale": "Task delegation to person; not answerable by doc/bot.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783696559.743569", "date": "2026-07-10", "user": "U09F1BB96KC", "display_name": "aidan", "text": "Grace Park what scope do they want added?", "category": "auth_scopes", "subtopic": "requested scope", "difficulty": 3.0, "automatable": false, "rationale": "Requires customer-specific info about desired scope.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783623668.140429", "date": "2026-07-09", "user": "U08P41NFP2Q", "display_name": "matt.mittleman", "text": "\u003c@U0BBLFYHDFG|PartnerBot\u003e Do customers need their own Slack partnership?", "category": "partnership_process", "subtopic": "customer Slack partnership", "difficulty": 2.0, "automatable": true, "rationale": "Directed at bot; likely answerable from partnership documentation.", "reply_count": 2, "first_reply_latency_sec": 6.723059892654419, "first_reply_min": 0.11205099821090699}, {"ts": "1783547112.798829", "date": "2026-07-08", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "whats the acccount under?", "category": "internal_ops", "subtopic": "account ownership", "difficulty": 2.0, "automatable": true, "rationale": "Simple lookup of account owner from CRM if accessible.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783545363.668559", "date": "2026-07-08", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Shensi Ding knows their CEO I think. Do you think we can just ask them?", "category": "partnership_process", "subtopic": "contacting partner CEO", "difficulty": 3.0, "automatable": false, "rationale": "Judgment call about outreach, needs human decision.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783543036.038539", "date": "2026-07-08", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Whats included in that, and do we have a list of customers that have mentioned needing?", "category": "customer_request", "subtopic": "customer needs list", "difficulty": 4.0, "automatable": false, "rationale": "Highly vague references; unclear what 'that' means without context.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783525641.619599", "date": "2026-07-08", "user": "U04923DBYUU", "display_name": "Tim", "text": "Sry Jemma Baus quick follow up - but is it the same process for UKG?", "category": "partnership_process", "subtopic": "UKG process same", "difficulty": 3.0, "automatable": true, "rationale": "Process comparison could be answered from partnership docs.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783519532.916619", "date": "2026-07-08", "user": "U04Q93BATTN", "display_name": "Silbs", "text": "Can you list one or a few customers for me just for tracking?", "category": "customer_request", "subtopic": "customer list for tracking", "difficulty": 3.0, "automatable": false, "rationale": "Ambiguous scope; needs human context on which customers.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783518825.878309", "date": "2026-07-08", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Kevin Silberblatt (Silbs) Do you remember the remaining steps here?", "category": "internal_ops", "subtopic": "remaining steps followup", "difficulty": 4.0, "automatable": false, "rationale": "Vague context-dependent question requires specific human memory of prior work.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783459117.971569", "date": "2026-07-07", "user": "U04923DBYUU", "display_name": "Tim", "text": "Sg sg - is UKG any different?", "category": "partnership_process", "subtopic": "UKG process difference", "difficulty": 3.0, "automatable": true, "rationale": "Comparison of vendor processes possibly documented.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783459057.393079", "date": "2026-07-07", "user": "U04923DBYUU", "display_name": "Tim", "text": "Hmm how does workday approve the integration?", "category": "partnership_process", "subtopic": "Workday integration approval", "difficulty": 3.0, "automatable": true, "rationale": "Process question likely documented in partnership FAQ.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783458947.215719", "date": "2026-07-07", "user": "U04923DBYUU", "display_name": "Tim", "text": "Any idea if its the same using Merge to power the integration vs. them building direct to get a partnership?", "category": "partnership_process", "subtopic": "Merge vs direct partnership", "difficulty": 4.0, "automatable": false, "rationale": "Nuanced partnership eligibility question needing human expertise.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783458741.811169", "date": "2026-07-07", "user": "U060YKZR918", "display_name": "artliou", "text": "Jemma Baus iirc FirstUp did and you may have other customers who have, right?", "category": "customer_request", "subtopic": "customer reference confirmation", "difficulty": 3.0, "automatable": false, "rationale": "Needs human recall of specific customer partnership history.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783458081.798379", "date": "2026-07-07", "user": "U04923DBYUU", "display_name": "Tim", "text": "Nishka Chotai Prad Biswas Do we have examples of Merge customers that use our Workday integration, and were then able to become Workday Preferred Partners with us powering the integration?\nA prospect of mine wants to ensure that using a Merge powered integration doesn't impede them to being a UKG and/or Workday partner?", "category": "partnership_process", "subtopic": "Workday preferred partner examples", "difficulty": 4.0, "automatable": false, "rationale": "Requires specific customer references and partnership knowledge, hard to automate.", "reply_count": 17, "first_reply_latency_sec": 660.0127899646759, "first_reply_min": 11.000213166077932}, {"ts": "1783439973.821689", "date": "2026-07-07", "user": "U08P41NFP2Q", "display_name": "matt.mittleman", "text": "Apologies if there's an existing thread already, what is the latest on where we stand in the app review process?", "category": "partnership_process", "subtopic": "app review status", "difficulty": 3.0, "automatable": false, "rationale": "Status inquiry requires human tracking of current progress.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783417647.766049", "date": "2026-07-07", "user": "U07841HAUKW", "display_name": "lev.chekmarov", "text": "Pritak Patel it's probably a long shot, but have we helped other customers negotiate Paylocity's API fees in the past?", "category": "pricing_commercial", "subtopic": "negotiating Paylocity API fees", "difficulty": 4.0, "automatable": false, "rationale": "Historical fee negotiation context requires human institutional knowledge.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783364999.959409", "date": "2026-07-06", "user": "U060YKZR918", "display_name": "artliou", "text": "do we happen to have a recent consolidated OAuth app tracker that shows which integrations across Unified API and which AH connectors have Merge default credentials available for customer use, versus which require the end user to provide their own credentials?\nsimilar to this Partner Auth Audit, but perhaps as a new sheet or column on the Partnership \u0026 Sandbox Tracker", "category": "integration_connector", "subtopic": "OAuth credential tracker", "difficulty": 3.0, "automatable": true, "rationale": "Requesting existing tracker doc; a bot could locate/compile if data exists.", "reply_count": 1, "first_reply_latency_sec": 212.3612699508667, "first_reply_min": 3.5393544991811114}, {"ts": "1783027376.955079", "date": "2026-07-02", "user": "U060YKZR918", "display_name": "artliou", "text": "PartnerBot can you add Krista's contact into to our Partnerships contacts lists?", "category": "internal_ops", "subtopic": "add contact to list", "difficulty": 2.0, "automatable": true, "rationale": "CRM/contact list update, bot-executable action.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1783011053.402989", "date": "2026-07-02", "user": "U02EXQ8T1JL", "display_name": "michelle", "text": "PartnerBot do we have a contact at employment hero?", "category": "partnership_process", "subtopic": "Employment Hero contact lookup", "difficulty": 2.0, "automatable": true, "rationale": "Contact directory lookup, bot-answerable.", "reply_count": 1, "first_reply_latency_sec": 10.1842200756073, "first_reply_min": 0.16973700126012167}, {"ts": "1782939593.003229", "date": "2026-07-01", "user": "U04Q93BATTN", "display_name": "Silbs", "text": "Aidan Timmerman are you okay with me filling out the partner program signup and looping/handing off to y'all once I get a response?", "category": "partnership_process", "subtopic": "partner signup handoff", "difficulty": 2.0, "automatable": false, "rationale": "Coordination/approval request needs human acknowledgment.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782939461.426249", "date": "2026-07-01", "user": "U04Q93BATTN", "display_name": "Silbs", "text": "PartnerBot who is our contact at Freshdesk or Freshservice?", "category": "partnership_process", "subtopic": "Freshdesk contact lookup", "difficulty": 2.0, "automatable": true, "rationale": "Contact lookup, bot-answerable.", "reply_count": 3, "first_reply_latency_sec": 13.333790063858032, "first_reply_min": 0.22222983439763386}, {"ts": "1782928429.526869", "date": "2026-07-01", "user": "U0ASX68HG2V", "display_name": "aaron", "text": "met one of the guys who architected oauth2.0 at the AIE booth today, he's now working on a protocol for agent auth\nprobably worth having partnerships/eng reach out?", "category": "partnership_process", "subtopic": "agent auth outreach", "difficulty": 3.0, "automatable": false, "rationale": "Business development outreach decision needs human judgment.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782924681.173979", "date": "2026-07-01", "user": "U060YKZR918", "display_name": "artliou", "text": "Nishka Chotai Prad Biswas could either of you add me to the shared slack channel?", "category": "access_permissions", "subtopic": "add to slack channel", "difficulty": 1.0, "automatable": true, "rationale": "Routine channel access request.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782874237.905709", "date": "2026-07-01", "user": "U060YKZR918", "display_name": "artliou", "text": "PartnerBot do we have a Justworks contact who can help with this issue?", "category": "partnership_process", "subtopic": "Justworks contact for issue", "difficulty": 2.0, "automatable": true, "rationale": "Contact lookup via bot, straightforward.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782872914.739079", "date": "2026-07-01", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "We do!! Try asking partner bot?", "category": "internal_ops", "subtopic": "directing to bot", "difficulty": 1.0, "automatable": true, "rationale": "Conversational reply, trivial internal coordination.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782871991.836679", "date": "2026-07-01", "user": "U060YKZR918", "display_name": "artliou", "text": "do we have a Justworks contact who we can reach out to \u0026 get some insight for this?", "category": "partnership_process", "subtopic": "Justworks contact lookup", "difficulty": 2.0, "automatable": true, "rationale": "Contact lookup, bot-answerable.", "reply_count": 7, "first_reply_latency_sec": 922.9024000167847, "first_reply_min": 15.38170666694641}, {"ts": "1782827061.201469", "date": "2026-06-30", "user": "U0B42HJKPE3", "display_name": "grace.park", "text": "Hi! A customer was asking if their existing linked accounts will get disconnected with Hibob marketplace migration. My understanding (based on this thread but not sure if anything has changed since) is existing basic-auth linked accounts are expected to keep working for a period before needing relink. Just wanted to confirm if that is the best thing to respond with for now?", "category": "integration_connector", "subtopic": "HiBob migration disconnection", "difficulty": 3.0, "automatable": false, "rationale": "Migration behavior confirmation needs current internal status verification.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782751433.436879", "date": "2026-06-29", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "PartnerBot do we have a workday contact?", "category": "partnership_process", "subtopic": "Workday contact lookup", "difficulty": 2.0, "automatable": true, "rationale": "Contact directory lookup, bot-answerable.", "reply_count": 1, "first_reply_latency_sec": 16.071190118789673, "first_reply_min": 0.26785316864649455}, {"ts": "1782516651.206229", "date": "2026-06-26", "user": "U03SJ5UUAEN", "display_name": "allegra.aguiar", "text": "The activity codes specifically?", "category": "integration_connector", "subtopic": "activity codes clarification", "difficulty": 4.0, "automatable": false, "rationale": "Fragment with no context, likely connector field detail.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782516614.215369", "date": "2026-06-26", "user": "U03SJ5UUAEN", "display_name": "allegra.aguiar", "text": "To be clear on the ask- we are trying to enable a feature in netsuite?", "category": "integration_connector", "subtopic": "NetSuite feature enablement", "difficulty": 3.0, "automatable": false, "rationale": "Clarifying scope on NetSuite config; needs human context.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782516609.640469", "date": "2026-06-26", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "Can we reach out to him?", "category": "partnership_process", "subtopic": "outreach approval", "difficulty": 3.0, "automatable": false, "rationale": "Requires human decision on contacting a person.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782516604.594139", "date": "2026-06-26", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "Maybe he will know how to navigate this?", "category": "other", "subtopic": "vague follow-up", "difficulty": 4.0, "automatable": false, "rationale": "No context, conversational fragment, unclassifiable.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782409522.467159", "date": "2026-06-25", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "sarah sent me a new sandbox so i made a new login, should i replace the login info in the 1pass we have?", "category": "access_permissions", "subtopic": "Update sandbox login credentials", "difficulty": 1.0, "automatable": false, "rationale": "Credential management decision needing human confirmation.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782404329.727869", "date": "2026-06-25", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "PartnerBot who is our contact at uber?", "category": "partnership_process", "subtopic": "partner contact lookup", "difficulty": 2.0, "automatable": true, "rationale": "Contact lookup answerable via bot/directory.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782375208.687239", "date": "2026-06-25", "user": "U08VAV23ZL1", "display_name": "Weoy", "text": "Hey subteam Yash Gogri \u2014 inbound from EmpirioLabs asking to be listed as a provider on the Merge Gateway.\nMy take is we should not do a named listing since it's effectively gateway-on-gateway, which adds complexity (routing/latency, support ownership, observability). Does that match your view?", "category": "partnership_process", "subtopic": "gateway provider listing decision", "difficulty": 4.0, "automatable": false, "rationale": "Strategic decision on gateway-on-gateway listing requires human judgment.", "reply_count": 2, "first_reply_latency_sec": 7063.686480045319, "first_reply_min": 117.72810800075531}, {"ts": "1782337922.483759", "date": "2026-06-24", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "can we change it", "category": "other", "subtopic": "ambiguous change request", "difficulty": 4.0, "automatable": false, "rationale": "No context, unclear referent, cannot classify meaningfully.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782337404.848889", "date": "2026-06-24", "user": "U04Q93BATTN", "display_name": "Silbs", "text": "whose number ends in [redacted] for the uber account MFA?", "category": "access_permissions", "subtopic": "account MFA phone", "difficulty": 3.0, "automatable": false, "rationale": "Sensitive MFA credential lookup requires human handling.", "reply_count": 20, "first_reply_latency_sec": 493.7532398700714, "first_reply_min": 8.22922066450119}, {"ts": "1782325027.086159", "date": "2026-06-24", "user": "U0AQN0VNZ7Z", "display_name": "jonathan.ulmer", "text": "Hi all, does anyone know the current status of support for Sage CRE? I had a ticket come through asking about if we have any plans. I saw there was some mention of Sage CRE 300 suggesting talks were progressing early last year but not finding much info since. Was it dropped?", "category": "integration_connector", "subtopic": "Sage CRE support status", "difficulty": 3.0, "automatable": false, "rationale": "Roadmap status needs human/internal knowledge of dropped integration.", "reply_count": 4, "first_reply_latency_sec": 2186.140450000763, "first_reply_min": 36.435674166679384}, {"ts": "1782318474.057539", "date": "2026-06-24", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Which agent store?", "category": "other", "subtopic": "ambiguous store question", "difficulty": 4.0, "automatable": false, "rationale": "No context, unclear which agent store referenced.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1782164883.331669", "date": "2026-06-22", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "can you add me??", "category": "access_permissions", "subtopic": "add to channel", "difficulty": 1.0, "automatable": true, "rationale": "Simple access request, no context but routine.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781817637.183839", "date": "2026-06-18", "user": "U0ASMSQM3N0", "display_name": "Max", "text": "Chloe Leblanc did you end up testing in some other account / environment?", "category": "integration_connector", "subtopic": "Testing environment check", "difficulty": 1.0, "automatable": false, "rationale": "Follow-up on testing status, requires colleague response.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781799217.476539", "date": "2026-06-18", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "Pritak Patel Nishka Chotai - do either of you know what the Teamtailor account name/link is? Sarah is saying merge.dev isn't working and we can't just send the email address?", "category": "integration_connector", "subtopic": "Teamtailor account details", "difficulty": 2.0, "automatable": false, "rationale": "Needs specific account info from team; merge.dev connector issue.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781544908.069139", "date": "2026-06-15", "user": "U06R97P6LG7", "display_name": "chad.klansnic", "text": "Do we have any updates here, would love to get the MPPO shipped this week.", "category": "partnership_process", "subtopic": "MPPO shipping status", "difficulty": 2.0, "automatable": false, "rationale": "Status update request requiring human coordination.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781291275.498169", "date": "2026-06-12", "user": "U0ALP1SU2UT", "display_name": "matt.linehan", "text": "do we need to reach out to someone else at adp?", "category": "partnership_process", "subtopic": "Reach out to ADP", "difficulty": 1.0, "automatable": false, "rationale": "Escalation decision requiring human judgment.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781215994.587799", "date": "2026-06-11", "user": "U0ASMSQM3N0", "display_name": "Max", "text": "Pritak Patel Chloe Leblanc Nishka Chotai sounds like I can generate a project for your use case and add you as members - sound like a plan?", "category": "access_permissions", "subtopic": "Generate project add members", "difficulty": 2.0, "automatable": false, "rationale": "Proposal to provision access, requires human agreement.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781117872.112949", "date": "2026-06-10", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Yash Gogri Max Eagle can we use it just for testing our connector?", "category": "integration_connector", "subtopic": "Using account for connector testing", "difficulty": 2.0, "automatable": false, "rationale": "Permission question about testing environment, needs team decision.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781117120.820319", "date": "2026-06-10", "user": "U0A1961A63X", "display_name": "chloe.leblanc", "text": "Should I reach out to the rep to get access?", "category": "access_permissions", "subtopic": "Reach out for access", "difficulty": 1.0, "automatable": false, "rationale": "Approval decision needing human input on access process.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781100994.760629", "date": "2026-06-10", "user": "U040W5LA59R", "display_name": "jemma.baus", "text": "Hi team! BlackBaud just connected their first Hibob account and only saw this. I thought that for new linked accounts we were going to only show OAuth. Can we confirm that?", "category": "auth_scopes", "subtopic": "OAuth-only for new accounts", "difficulty": 3.0, "automatable": false, "rationale": "Needs confirmation of internal auth policy for connector, human verification.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781033605.664719", "date": "2026-06-09", "user": "U034LALDDK4", "display_name": "matthew.doherty", "text": "ok thanks for checking, should we take this down from default creds for now?", "category": "auth_scopes", "subtopic": "default credentials removal", "difficulty": 3.0, "automatable": false, "rationale": "Requires human decision on security/auth configuration change.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1781010498.832349", "date": "2026-06-09", "user": "U03GEH32R9A", "display_name": "kevin.zhang", "text": "When does the renewal need to ship by?", "category": "partnership_process", "subtopic": "Renewal ship deadline", "difficulty": 2.0, "automatable": false, "rationale": "Timeline question needing internal knowledge, no clear doc source.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780691210.090639", "date": "2026-06-05", "user": "U05M5UUCDS9", "display_name": "kim", "text": "We're currently trying to generate Employee Deduction records for payroll runs/checks. Are there any fields that indicate whether a deduction is an employee or employer deduction?", "category": "api_technical", "subtopic": "Employee vs employer deduction field", "difficulty": 4.0, "automatable": true, "rationale": "Specific API schema question answerable from ADP docs.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780690687.711809", "date": "2026-06-05", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "yeah whats the question?", "category": "internal_ops", "subtopic": "Clarifying the question", "difficulty": 1.0, "automatable": false, "rationale": "Conversational filler, no answerable content.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780689611.444299", "date": "2026-06-05", "user": "U05M5UUCDS9", "display_name": "kim", "text": "Do we have a technical support contact at ADP WFN? cc: Matt Linehan Pritak Patel Nishka Chotai", "category": "partnership_process", "subtopic": "ADP WFN technical contact", "difficulty": 2.0, "automatable": false, "rationale": "Requesting partner contact info, requires human directory knowledge.", "reply_count": 13, "first_reply_latency_sec": 1076.2675099372864, "first_reply_min": 17.937791832288106}, {"ts": "1780673212.334439", "date": "2026-06-05", "user": "U0832UK1KU5", "display_name": "andrei", "text": "so annual fee + fee for every linked account?", "category": "pricing_commercial", "subtopic": "fee structure clarification", "difficulty": 2.0, "automatable": true, "rationale": "Pricing question answerable via pricing doc, but lacks context on product.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780671062.076709", "date": "2026-06-05", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "or as a partner?", "category": "internal_ops", "subtopic": "Clarifying partner context", "difficulty": 1.0, "automatable": false, "rationale": "Conversational clarification, no standalone answer.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780671050.722229", "date": "2026-06-05", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Like as a product?", "category": "internal_ops", "subtopic": "Clarifying product context", "difficulty": 1.0, "automatable": false, "rationale": "Conversational clarification, no standalone answer.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780670930.021399", "date": "2026-06-05", "user": "U0832UK1KU5", "display_name": "andrei", "text": "A client is asking: do you know the licensing model of ADP workforce now? does it charge on API consumption? Pritak Patel you know anything about this?", "category": "pricing_commercial", "subtopic": "ADP WFN licensing model", "difficulty": 4.0, "automatable": true, "rationale": "Licensing/API consumption question potentially documented in vendor pricing docs.", "reply_count": 8, "first_reply_latency_sec": 120.70082998275757, "first_reply_min": 2.011680499712626}, {"ts": "1780588154.394959", "date": "2026-06-04", "user": "U0A1961A63X", "display_name": "chloe.leblanc", "text": "weird did the login page look different yesterday?", "category": "bug_issue", "subtopic": "Login page changed", "difficulty": 2.0, "automatable": false, "rationale": "Observation about UI change, needs human confirmation.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780587421.271939", "date": "2026-06-04", "user": "U0A1961A63X", "display_name": "chloe.leblanc", "text": "is it working for you?", "category": "bug_issue", "subtopic": "Confirming issue reproduces", "difficulty": 1.0, "automatable": false, "rationale": "Peer check on issue, no documentable answer.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780586945.884399", "date": "2026-06-04", "user": "U0A1961A63X", "display_name": "chloe.leblanc", "text": "Having trouble logging in, should i email posthog support?", "category": "bug_issue", "subtopic": "PostHog login trouble", "difficulty": 2.0, "automatable": false, "rationale": "Login failure, unclear if support needed; requires troubleshooting.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780581864.011639", "date": "2026-06-04", "user": "U06LX4SHBGB", "display_name": "Audrey", "text": "are we still trying to pursue a partnership with iCIMS Pritak Patel Nishka Chotai?", "category": "partnership_process", "subtopic": "Pursuing iCIMS partnership", "difficulty": 3.0, "automatable": false, "rationale": "Strategic partnership status decision, needs internal knowledge.", "reply_count": 5, "first_reply_latency_sec": 27.0694899559021, "first_reply_min": 0.45115816593170166}, {"ts": "1780581450.431869", "date": "2026-06-04", "user": "U041R9BHV6H", "display_name": "amy.leung", "text": "can i loop in either of you again lol", "category": "internal_ops", "subtopic": "Looping in colleagues", "difficulty": 1.0, "automatable": false, "rationale": "Casual coordination message, no informational answer possible.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1780409622.750309", "date": "2026-06-02", "user": "U06R97P6LG7", "display_name": "chad.klansnic", "text": "Hi team, did we learn more from Tackle about the process?", "category": "partnership_process", "subtopic": "Tackle process update", "difficulty": 2.0, "automatable": false, "rationale": "Vague status request requiring human follow-up on partner process.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1779912866.229619", "date": "2026-05-27", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "can u ask them to create one then", "category": "partnership_process", "subtopic": "Request to create account", "difficulty": 1.0, "automatable": false, "rationale": "Delegated action request, needs human execution.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1779907578.622499", "date": "2026-05-27", "user": "U041R9BHV6H", "display_name": "amy.leung", "text": "thanks nishka, am i good to reach out directly?", "category": "partnership_process", "subtopic": "Permission to contact directly", "difficulty": 1.0, "automatable": false, "rationale": "Simple approval question requiring human confirmation.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1779900911.366189", "date": "2026-05-27", "user": "U041R9BHV6H", "display_name": "amy.leung", "text": "Pritak Patel Nishka Chotai it looks like our teamtailor sandbox no longer works \u2013 think we might have to reach out to our contact to unblock it. do you have a contact we can use?", "category": "integration_connector", "subtopic": "Teamtailor sandbox broken", "difficulty": 3.0, "automatable": false, "rationale": "Needs partner contact to unblock sandbox; human action required.", "reply_count": 41, "first_reply_latency_sec": 4415.791529893875, "first_reply_min": 73.59652549823126}, {"ts": "1779489778.413229", "date": "2026-05-22", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "It should be automatic. Kevin Zhang do you know how the MPOPP gets applied to our private offers?", "category": "partnership_process", "subtopic": "MPOPP applied to private offers", "difficulty": 3.0, "automatable": false, "rationale": "Specific internal process question needing person's knowledge, unclear context.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1779485789.330599", "date": "2026-05-22", "user": "U06R97P6LG7", "display_name": "chad.klansnic", "text": "Pritak Patel I received a question from a customer about MPOP and they shared the attached doc. Screenshotting/highlighting the relevant portion. The question is do we need to take any action to get the MPOP credits approved or is it automatic?", "category": "partnership_process", "subtopic": "MPOP credit approval process", "difficulty": 4.0, "automatable": false, "rationale": "MPOP credits process unclear; requires human program knowledge.", "reply_count": 25, "first_reply_latency_sec": 3676.9302299022675, "first_reply_min": 61.28217049837112}, {"ts": "1779372330.733569", "date": "2026-05-21", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "have not seen this before! Do they need to talk to someone?", "category": "partnership_process", "subtopic": "contact needed clarification", "difficulty": 2.0, "automatable": false, "rationale": "Asks if customer needs to talk to someone; human coordination.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1779357593.245099", "date": "2026-05-21", "user": "U07841HAUKW", "display_name": "lev.chekmarov", "text": "Hello, AON mentioned that Paylocity is asking some of their customers to fill out an additional form (on top of the Web Services form) called \"Paylocity Automate Data Exchange / API\" (adding a copy in the thread). Have we seen this before, or do we know when/why Paylocity might require it?\nIt seems like this adds an extra step to obtaining Paylocity API credentials, so I wanted to check whether we're aware of it and whether we should proactively flag it to other customers working with Paylocity. Pritak Patel Nishka Chotai -- do you have any context here or do we have a good contact to reach out to?", "category": "api_technical", "subtopic": "Paylocity extra API form", "difficulty": 4.0, "automatable": false, "rationale": "Unfamiliar vendor requirement; needs contact and investigation.", "reply_count": 14, "first_reply_latency_sec": 55.140729904174805, "first_reply_min": 0.9190121650695801}, {"ts": "1778779005.109899", "date": "2026-05-14", "user": "U0ASX68HG2V", "display_name": "aaron", "text": "oh damn ty, what makes it not competitive?", "category": "sales_marketing", "subtopic": "competitive differentiation", "difficulty": 4.0, "automatable": false, "rationale": "Explaining non-competitiveness requires nuanced human judgment.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778778904.386709", "date": "2026-05-14", "user": "U0ASX68HG2V", "display_name": "aaron", "text": "I can't tell if this competes with us but have you spoken w/ folks on their side about this recently?", "category": "sales_marketing", "subtopic": "competitive assessment", "difficulty": 4.0, "automatable": false, "rationale": "Assessing competition requires human market/strategy knowledge.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778681268.489029", "date": "2026-05-13", "user": "U03UR4YUHMX", "display_name": "jack.cavalier", "text": "Is it not that we're hitting rate limits?", "category": "api_technical", "subtopic": "rate limit troubleshooting", "difficulty": 3.0, "automatable": false, "rationale": "Rate limit diagnosis requires investigation of specific case.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778512499.291159", "date": "2026-05-11", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "could it be a bug in Merge Link?", "category": "bug_issue", "subtopic": "possible Merge Link bug", "difficulty": 3.0, "automatable": false, "rationale": "Diagnosing potential bug needs investigation, not a doc.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778077092.979699", "date": "2026-05-06", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "can you do this in the gateway marketing channel", "category": "internal_ops", "subtopic": "channel routing request", "difficulty": 1.0, "automatable": false, "rationale": "Directs to another channel; simple internal ops instruction.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778077037.558959", "date": "2026-05-06", "user": "U082R8BGV7H", "display_name": "jessica.sadow", "text": "Adding in Marcos Placona!! Who should be included in the intro?", "category": "partnership_process", "subtopic": "intro attendee coordination", "difficulty": 2.0, "automatable": false, "rationale": "Coordinating who joins intro; internal human decision.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778076719.431799", "date": "2026-05-06", "user": "U013W4P3NG3", "display_name": "Shensi Ding", "text": "can he get us an intro with their team first", "category": "partnership_process", "subtopic": "requesting partner intro", "difficulty": 2.0, "automatable": false, "rationale": "Partner introduction request requires human coordination.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1778019016.626959", "date": "2026-05-05", "user": "U08VAUU4Z2M", "display_name": "Steph Mark", "text": "Is there a Hibob developer portal acct I could use to create an Agent Handler OAuth app? If you received a verification link for Hibob that was me lol Pritak Patel", "category": "auth_scopes", "subtopic": "Hibob developer portal account", "difficulty": 3.0, "automatable": false, "rationale": "Requests dev portal account for OAuth app; needs provisioning.", "reply_count": 4, "first_reply_latency_sec": 123.22595000267029, "first_reply_min": 2.053765833377838}, {"ts": "1777998360.306339", "date": "2026-05-05", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "are we good to proceed with the REST API scopes?", "category": "auth_scopes", "subtopic": "proceed with REST scopes", "difficulty": 2.0, "automatable": false, "rationale": "Approval on scope selection requires human confirmation.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1777925649.252129", "date": "2026-05-04", "user": "U02HSF3TNBG", "display_name": "Pritak", "text": "Do they roughly map 1-\u003e1 to the old ones?", "category": "integration_connector", "subtopic": "scope mapping old to new", "difficulty": 3.0, "automatable": false, "rationale": "Mapping old endpoints to new needs technical context.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1777923155.081359", "date": "2026-05-04", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "Hii I'm configuring Rippling partner portal for a customer and noticed the scopes look a little different (workers instead of employees). I believe Rippling had migrated their endpoints, but curious if we are supposed to still be selecting endpoints or if there was an update/discussion on this change?", "category": "auth_scopes", "subtopic": "Rippling scope migration", "difficulty": 4.0, "automatable": false, "rationale": "Endpoint migration changes require internal knowledge and clarification.", "reply_count": 11, "first_reply_latency_sec": 2494.1707701683044, "first_reply_min": 41.56951283613841}, {"ts": "1777920918.284559", "date": "2026-05-04", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "tagging Pritak Patel can you help?", "category": "internal_ops", "subtopic": "tagging for help", "difficulty": 1.0, "automatable": false, "rationale": "Internal ping requesting assistance; no answerable content.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1777411284.283489", "date": "2026-04-28", "user": "U08VAUU4Z2M", "display_name": "Steph Mark", "text": "ooh okay yes could I get an account to test a bug fix?", "category": "access_permissions", "subtopic": "test account for bugfix", "difficulty": 2.0, "automatable": false, "rationale": "Account provisioning request needs human action.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1777410139.852859", "date": "2026-04-28", "user": "U08VAUU4Z2M", "display_name": "Steph Mark", "text": "Do we have a Gong end-user account? I see the OAuth creds in Sandbox but not a user to test with", "category": "auth_scopes", "subtopic": "end-user test account", "difficulty": 3.0, "automatable": false, "rationale": "Requires checking existence of test account, human provisioning.", "reply_count": 7, "first_reply_latency_sec": 1047.8458800315857, "first_reply_min": 17.464098000526427}, {"ts": "1776984163.094849", "date": "2026-04-23", "user": "U096N7MURJS", "display_name": "Noura", "text": "is it a customer?", "category": "customer_request", "subtopic": "customer verification", "difficulty": 2.0, "automatable": false, "rationale": "Asks whether entity is a customer; needs internal lookup.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1776982977.675919", "date": "2026-04-23", "user": "U099MRN2JNA", "display_name": "Ariya", "text": "does this look familiar? Nishka Chotai not sure why i got this", "category": "other", "subtopic": "unclear notification query", "difficulty": 3.0, "automatable": false, "rationale": "Vague; asks colleague about unexpected message, no clear category.", "reply_count": 14, "first_reply_latency_sec": 51.93955993652344, "first_reply_min": 0.8656593322753906}, {"ts": "1776955358.350059", "date": "2026-04-23", "user": "U040W5LA59R", "display_name": "jemma.baus", "text": "How can I see what scopes an OAuth application has? Auditboard is asking for Bitbucket", "category": "auth_scopes", "subtopic": "viewing OAuth app scopes", "difficulty": 2.0, "automatable": true, "rationale": "How to view OAuth scopes is documentable in a FAQ.", "reply_count": 2, "first_reply_latency_sec": 703.6566798686981, "first_reply_min": 11.727611331144969}, {"ts": "1776446151.403329", "date": "2026-04-17", "user": "U09DQENB7PX", "display_name": "thomas.johnson", "text": "cc Ariya Patel Ashwin Prakash for this ticket - could you make the request?", "category": "internal_ops", "subtopic": "ticket request handoff", "difficulty": 1.0, "automatable": false, "rationale": "Internal delegation of a ticket request; no answerable content.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1776389616.315899", "date": "2026-04-17", "user": "U09DQENB7PX", "display_name": "thomas.johnson", "text": "I have an end user that wants to get start_date from Rippling and I mentioned the partnership terms don't currently grant us access to it. I guess they reached out to Rippling and Rippling said [screenshot]. Is this a conversation we have had recently or something we can ask them?", "category": "access_permissions", "subtopic": "field access via partnership", "difficulty": 4.0, "automatable": false, "rationale": "Partnership terms and data field access require human negotiation and context.", "reply_count": 6, "first_reply_latency_sec": 43145.409890174866, "first_reply_min": 719.0901648362477}, {"ts": "1776365152.190499", "date": "2026-04-16", "user": "U08KP0PHNG0", "display_name": "Nishka Chotai", "text": "but was able to create creds?", "category": "auth_scopes", "subtopic": "credential creation confirmation", "difficulty": 3.0, "automatable": false, "rationale": "Fragment lacking context; refers to credential creation, needs human clarification.", "reply_count": 0, "first_reply_latency_sec": null, "first_reply_min": null}, {"ts": "1776364246.950929", "date": "2026-04-16", "user": "U08VAUU4Z2M", "display_name": "Steph Mark", "text": "Can we get an upgraded plan for Smartsheet?", "category": "pricing_commercial", "subtopic": "plan upgrade request", "difficulty": 2.0, "automatable": false, "rationale": "Requires commercial decision on upgrading a specific vendor plan.", "reply_count": 5, "first_reply_latency_sec": 751.1249301433563, "first_reply_min": 12.518748835722606}], "clusters": [{"category": "other", "subtopic": "off-topic chatter", "normalized_subtopic": "offtopic chatter", "count": 1, "avg_difficulty": 1.0, "question_refs": ["1783726815.513929"], "example_texts": ["\u003c@U0BBLFYHDFG|PartnerBot\u003e \u003c@U0BETHXAKFS|Connector Bot\u003e are you a drake fan?"], "est_minutes_saved": 0.09214200178782145, "suggested_fix": "Slack auto-responder"}, {"category": "auth_scopes", "subtopic": "Google default credentials", "normalized_subtopic": "google default credentials", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1783726591.393009"], "example_texts": ["\u003c@U0BBLFYHDFG|PartnerBot\u003e what Default app credentials do we have for Google product connectors?"], "est_minutes_saved": 0.31067216793696084, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "customer Slack partnership", "normalized_subtopic": "customer slack partnership", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1783623668.140429"], "example_texts": ["\u003c@U0BBLFYHDFG|PartnerBot\u003e Do customers need their own Slack partnership?"], "est_minutes_saved": 0.11205099821090699, "suggested_fix": "Docs/FAQ answer"}, {"category": "internal_ops", "subtopic": "account ownership", "normalized_subtopic": "account ownership", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1783547112.798829"], "example_texts": ["whats the acccount under?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Access-request workflow"}, {"category": "partnership_process", "subtopic": "UKG process same", "normalized_subtopic": "ukg process same", "count": 1, "avg_difficulty": 3.0, "question_refs": ["1783525641.619599"], "example_texts": ["Sry Jemma Baus quick follow up - but is it the same process for UKG?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Docs/FAQ answer"}, {"category": "partnership_process", "subtopic": "UKG process difference", "normalized_subtopic": "ukg process difference", "count": 1, "avg_difficulty": 3.0, "question_refs": ["1783459117.971569"], "example_texts": ["Sg sg - is UKG any different?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Docs/FAQ answer"}, {"category": "partnership_process", "subtopic": "Workday integration approval", "normalized_subtopic": "workday integration approval", "count": 1, "avg_difficulty": 3.0, "question_refs": ["1783459057.393079"], "example_texts": ["Hmm how does workday approve the integration?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Docs/FAQ answer"}, {"category": "integration_connector", "subtopic": "OAuth credential tracker", "normalized_subtopic": "oauth credential tracker", "count": 1, "avg_difficulty": 3.0, "question_refs": ["1783364999.959409"], "example_texts": ["do we happen to have a recent consolidated OAuth app tracker that shows which integrations across Unified API and which AH connectors have Merge default credentials available for customer use, versus which require the end user to provide their own credentials?\nsimilar to this Partner Auth Audit, but perhaps as a new sheet or column on the Partnership \u0026 Sandbox Tracker"], "est_minutes_saved": 3.5393544991811114, "suggested_fix": "Docs/FAQ answer"}, {"category": "internal_ops", "subtopic": "add contact to list", "normalized_subtopic": "add contact to list", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1783027376.955079"], "example_texts": ["PartnerBot can you add Krista's contact into to our Partnerships contacts lists?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "Employment Hero contact lookup", "normalized_subtopic": "employment hero contact lookup", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1783011053.402989"], "example_texts": ["PartnerBot do we have a contact at employment hero?"], "est_minutes_saved": 0.16973700126012167, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "Freshdesk contact lookup", "normalized_subtopic": "freshdesk contact lookup", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1782939461.426249"], "example_texts": ["PartnerBot who is our contact at Freshdesk or Freshservice?"], "est_minutes_saved": 0.22222983439763386, "suggested_fix": "Slack auto-responder"}, {"category": "access_permissions", "subtopic": "add to slack channel", "normalized_subtopic": "add to slack channel", "count": 1, "avg_difficulty": 1.0, "question_refs": ["1782924681.173979"], "example_texts": ["Nishka Chotai Prad Biswas could either of you add me to the shared slack channel?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Access-request workflow"}, {"category": "partnership_process", "subtopic": "Justworks contact for issue", "normalized_subtopic": "justworks contact for issue", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1782874237.905709"], "example_texts": ["PartnerBot do we have a Justworks contact who can help with this issue?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Slack auto-responder"}, {"category": "internal_ops", "subtopic": "directing to bot", "normalized_subtopic": "directing to bot", "count": 1, "avg_difficulty": 1.0, "question_refs": ["1782872914.739079"], "example_texts": ["We do!! Try asking partner bot?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "Justworks contact lookup", "normalized_subtopic": "justworks contact lookup", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1782871991.836679"], "example_texts": ["do we have a Justworks contact who we can reach out to \u0026 get some insight for this?"], "est_minutes_saved": 15.38170666694641, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "Workday contact lookup", "normalized_subtopic": "workday contact lookup", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1782751433.436879"], "example_texts": ["PartnerBot do we have a workday contact?"], "est_minutes_saved": 0.26785316864649455, "suggested_fix": "Slack auto-responder"}, {"category": "partnership_process", "subtopic": "partner contact lookup", "normalized_subtopic": "partner contact lookup", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1782404329.727869"], "example_texts": ["PartnerBot who is our contact at uber?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Slack auto-responder"}, {"category": "access_permissions", "subtopic": "add to channel", "normalized_subtopic": "add to channel", "count": 1, "avg_difficulty": 1.0, "question_refs": ["1782164883.331669"], "example_texts": ["can you add me??"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Access-request workflow"}, {"category": "api_technical", "subtopic": "Employee vs employer deduction field", "normalized_subtopic": "employee vs employer deduction field", "count": 1, "avg_difficulty": 4.0, "question_refs": ["1780691210.090639"], "example_texts": ["We're currently trying to generate Employee Deduction records for payroll runs/checks. Are there any fields that indicate whether a deduction is an employee or employer deduction?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Docs/FAQ answer"}, {"category": "pricing_commercial", "subtopic": "fee structure clarification", "normalized_subtopic": "fee structure clarification", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1780673212.334439"], "example_texts": ["so annual fee + fee for every linked account?"], "est_minutes_saved": 8.22922066450119, "suggested_fix": "Docs/FAQ answer"}, {"category": "pricing_commercial", "subtopic": "ADP WFN licensing model", "normalized_subtopic": "adp wfn licensing model", "count": 1, "avg_difficulty": 4.0, "question_refs": ["1780670930.021399"], "example_texts": ["A client is asking: do you know the licensing model of ADP workforce now? does it charge on API consumption? Pritak Patel you know anything about this?"], "est_minutes_saved": 2.011680499712626, "suggested_fix": "Docs/FAQ answer"}, {"category": "auth_scopes", "subtopic": "viewing OAuth app scopes", "normalized_subtopic": "viewing oauth app scopes", "count": 1, "avg_difficulty": 2.0, "question_refs": ["1776955358.350059"], "example_texts": ["How can I see what scopes an OAuth application has? Auditboard is asking for Bitbucket"], "est_minutes_saved": 11.727611331144969, "suggested_fix": "Docs/FAQ answer"}], "notables": [], "kpis": {"automatable_count": 22, "automatable_pct": 23.404255319148938, "total_questions": 94, "total_reply_hours": 0.5639173028204176, "cluster_count": 22, "top_category": "partnership_process"}, "category_colors": {"integration_connector": "series-2", "other": "muted", "auth_scopes": "series-7", "internal_ops": "series-8", "partnership_process": "series-4", "customer_request": "muted", "pricing_commercial": "series-3", "access_permissions": "series-5", "api_technical": "series-1", "bug_issue": "series-6", "sales_marketing": "muted"}, "category_order": ["integration_connector", "other", "auth_scopes", "internal_ops", "partnership_process", "customer_request", "pricing_commercial", "access_permissions", "api_technical", "bug_issue", "sales_marketing"], "has_llm_fields": true, "other_info": null, "generated_note": null, "spend": {"ledger": null, "recommendations": []}}</script>
+<script>(function () {
+
+  var model = JSON.parse(document.getElementById('model').textContent);
+  var root = document.querySelector('.viz-root');
+
+  function css(name) {
+    return getComputedStyle(root).getPropertyValue(name).trim();
+  }
+
+  function categoryColor(name) {
+    var slot = (model.category_colors && model.category_colors[name]) || 'muted';
+    return css(slot === 'muted' ? '--muted' : '--' + slot);
+  }
+
+  // Round-number axis ticks: 1/2/5 x 10^k steps. Returns an ascending array
+  // of tick values from 0 to a "nice" max >= maxVal.
+  function niceTicks(maxVal, n) {
+    if (!maxVal || maxVal <= 0) return [0];
+    n = n || 4;
+    var rawStep = maxVal / n;
+    var mag = Math.pow(10, Math.floor(Math.log(rawStep) / Math.LN10));
+    var residual = rawStep / mag;
+    var step;
+    if (residual > 5) step = 10 * mag;
+    else if (residual > 2) step = 5 * mag;
+    else if (residual > 1) step = 2 * mag;
+    else step = mag;
+    var top = Math.ceil(maxVal / step) * step;
+    var ticks = [];
+    for (var v = 0; v <= top + step / 1e6; v += step) {
+      ticks.push(Math.round(v * 1e6) / 1e6);
+    }
+    return ticks;
+  }
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  function makeTooltip(container) {
+    var tip = document.createElement('div');
+    tip.className = 'viz-tooltip';
+    container.appendChild(tip);
+    return tip;
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function showTip(tip, container, x, y, htmlContent) {
+    tip.innerHTML = htmlContent;
+    tip.style.opacity = '1';
+    var rect = container.getBoundingClientRect();
+    var left = x + 12;
+    if (left + 160 > rect.width) left = x - 160;
+    tip.style.left = left + 'px';
+    tip.style.top = Math.max(0, y - 10) + 'px';
+  }
+
+  function hideTip(tip) { tip.style.opacity = '0'; }
+
+  // §2.3 rule 9 number formatting: counts as integers with thin-space
+  // grouping >= 10,000; percents 1 decimal; minutes as "8.2 min"; hours as
+  // "4.6 h".
+  function fmtCount(n) {
+    if (n === null || n === undefined || isNaN(n)) return 'n/a';
+    n = Math.round(n);
+    var neg = n < 0;
+    var s = Math.abs(n).toString();
+    if (s.length > 4) {
+      var parts = [];
+      while (s.length > 3) {
+        parts.unshift(s.slice(-3));
+        s = s.slice(0, -3);
+      }
+      parts.unshift(s);
+      s = parts.join(' ');
+    }
+    return (neg ? '-' : '') + s;
+  }
+
+  function fmtPct(p) {
+    if (p === null || p === undefined || isNaN(p)) return 'n/a';
+    return p.toFixed(1) + '%';
+  }
+
+  function fmtMinutes(m) {
+    if (m === null || m === undefined || isNaN(m)) return 'n/a';
+    return m.toFixed(1) + ' min';
+  }
+
+  function fmtHours(h) {
+    if (h === null || h === undefined || isNaN(h)) return 'n/a';
+    return h.toFixed(1) + ' h';
+  }
+
+  // Dark/light toggle: no data-theme is stamped server-side, so the initial
+  // state follows `prefers-color-scheme` until the user overrides it by
+  // clicking. `onToggle` (usually the page's own `init`) re-renders charts
+  // that read colors via `css()` so they pick up the new theme's hexes.
+  function setupThemeToggle(onToggle) {
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    function effectiveTheme() {
+      var explicit = root.getAttribute('data-theme');
+      if (explicit) return explicit;
+      return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    toggle.textContent = effectiveTheme() === 'dark' ? 'Light mode' : 'Dark mode';
+    toggle.addEventListener('click', function () {
+      var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+      if (onToggle) setTimeout(onToggle, 0);
+    });
+  }
+
+
+  var hasLlm = !!model.has_llm_fields;
+  var categoryOrder = model.category_order || [];
+  var allColumns = ['date', 'text', 'display_name', 'category'];
+  if (hasLlm) allColumns = allColumns.concat(['subtopic', 'difficulty']);
+  allColumns = allColumns.concat(['automatable', 'reply_count', 'first_reply_min']);
+
+  var state = {
+    search: '',
+    categories: {},
+    automatableOnly: false,
+    diffMin: 1,
+    diffMax: 5,
+    sortKey: 'date',
+    sortDir: 'desc',
+    clusterFilter: null
+  };
+  categoryOrder.forEach(function (c) { state.categories[c] = true; });
+
+  function normalizeSubtopic(s) {
+    s = (s || '').toLowerCase();
+    s = s.replace(/[^\w\s]/g, '');
+    s = s.replace(/\s+/g, ' ').trim();
+    return s;
+  }
+
+  function colorVarFor(name) {
+    var slot = (model.category_colors && model.category_colors[name]) || 'muted';
+    return slot === 'muted' ? '--muted' : '--' + slot;
+  }
+
+  function buildCategoryChip(name) {
+    var span = document.createElement('span');
+    var dot = document.createElement('span');
+    dot.className = 'cat-chip-dot';
+    dot.style.background = 'var(' + colorVarFor(name) + ')';
+    span.appendChild(dot);
+    span.appendChild(document.createTextNode(name || ''));
+    return span;
+  }
+
+  function buildDiffDots(diff) {
+    var wrap = document.createElement('span');
+    if (diff === null || diff === undefined) {
+      wrap.className = 'empty-note';
+      wrap.textContent = 'n/a';
+      return wrap;
+    }
+    wrap.className = 'diff-dots';
+    wrap.title = diff.toFixed(1) + '/5';
+    var filled = Math.max(0, Math.min(5, Math.round(diff)));
+    for (var i = 0; i < 5; i++) {
+      var d = document.createElement('span');
+      d.className = 'diff-dot' + (i < filled ? ' filled' : '');
+      wrap.appendChild(d);
+    }
+    return wrap;
+  }
+
+  function renderChips() {
+    var wrap = document.getElementById('category-chip-toggles');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    categoryOrder.forEach(function (c) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip-toggle' + (state.categories[c] ? ' active' : '');
+      btn.appendChild(buildCategoryChip(c));
+      btn.addEventListener('click', function () {
+        state.categories[c] = !state.categories[c];
+        state.clusterFilter = null;
+        var clearBtn = document.getElementById('clear-cluster-filter');
+        if (clearBtn) clearBtn.hidden = true;
+        renderChips();
+        renderTable();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function matchesFilters(q) {
+    if (state.clusterFilter) {
+      if (q.category !== state.clusterFilter.category) return false;
+      if (normalizeSubtopic(q.subtopic) !== state.clusterFilter.normalizedSubtopic) return false;
+      return true;
+    }
+    if (state.categories[q.category] === false) return false;
+    if (state.automatableOnly && !q.automatable) return false;
+    if (hasLlm && q.difficulty !== null && q.difficulty !== undefined) {
+      if (q.difficulty < state.diffMin || q.difficulty > state.diffMax) return false;
+    }
+    if (state.search) {
+      var hay = ((q.text || '') + ' ' + (q.subtopic || '')).toLowerCase();
+      if (hay.indexOf(state.search) === -1) return false;
+    }
+    return true;
+  }
+
+  function compareRows(a, b) {
+    var key = state.sortKey, dir = state.sortDir === 'asc' ? 1 : -1;
+    var av = a[key], bv = b[key];
+    if (av === null || av === undefined) av = '';
+    if (bv === null || bv === undefined) bv = '';
+    if (typeof av === 'string' || typeof bv === 'string') {
+      return String(av).localeCompare(String(bv)) * dir;
+    }
+    return (av - bv) * dir;
+  }
+
+  var expanded = {};
+
+  function appendCells(tr, q) {
+    allColumns.forEach(function (key) {
+      var td = document.createElement('td');
+      if (key === 'date') {
+        td.textContent = q.date || '';
+      } else if (key === 'text') {
+        var clamp = document.createElement('div');
+        clamp.className = 'q-text-clamp';
+        clamp.textContent = q.text || '';
+        td.appendChild(clamp);
+      } else if (key === 'display_name') {
+        td.textContent = q.display_name || q.user || '';
+      } else if (key === 'category') {
+        td.appendChild(buildCategoryChip(q.category));
+      } else if (key === 'subtopic') {
+        td.textContent = q.subtopic || '';
+      } else if (key === 'difficulty') {
+        td.appendChild(buildDiffDots(q.difficulty));
+      } else if (key === 'automatable') {
+        td.textContent = q.automatable === true ? '✓' : (q.automatable === false ? '—' : 'n/a');
+      } else if (key === 'reply_count') {
+        td.textContent = fmtCount(q.reply_count);
+      } else if (key === 'first_reply_min') {
+        td.textContent = (q.first_reply_min !== null && q.first_reply_min !== undefined) ? fmtMinutes(q.first_reply_min) : 'n/a';
+      }
+      tr.appendChild(td);
+    });
+  }
+
+  function renderTable() {
+    var filtered = (model.questions || []).filter(matchesFilters);
+    filtered.sort(compareRows);
+    var total = (model.questions || []).length;
+    var countEl = document.getElementById('question-count');
+    if (countEl) countEl.textContent = filtered.length + ' of ' + total + ' questions';
+    var notice = document.getElementById('refine-notice');
+    var capped = filtered.slice(0, 500);
+    if (notice) {
+      if (filtered.length > 500) {
+        notice.hidden = false;
+        notice.textContent = 'Showing 500 of ' + filtered.length + ' matching questions — refine filters to see more.';
+      } else {
+        notice.hidden = true;
+      }
+    }
+    var tbody = document.querySelector('#question-table tbody');
+    if (!tbody) return;
+    tbody.innerHTML = '';
+    if (!capped.length) {
+      var emptyRow = document.createElement('tr');
+      var emptyTd = document.createElement('td');
+      emptyTd.colSpan = allColumns.length;
+      emptyTd.className = 'empty-note';
+      emptyTd.textContent = 'No questions match the current filters.';
+      emptyRow.appendChild(emptyTd);
+      tbody.appendChild(emptyRow);
+      return;
+    }
+    capped.forEach(function (q) {
+      var tr = document.createElement('tr');
+      tr.className = 'q-row';
+      appendCells(tr, q);
+      tr.addEventListener('click', function () {
+        expanded[q.ts] = !expanded[q.ts];
+        renderTable();
+      });
+      tbody.appendChild(tr);
+
+      var detail = document.createElement('tr');
+      detail.className = 'q-detail-row';
+      detail.hidden = !expanded[q.ts];
+      var td = document.createElement('td');
+      td.colSpan = allColumns.length;
+      var full = document.createElement('div');
+      full.className = 'q-detail';
+      var textDiv = document.createElement('div');
+      textDiv.textContent = q.text || '';
+      full.appendChild(textDiv);
+      if (q.rationale) {
+        var rDiv = document.createElement('div');
+        rDiv.className = 'q-rationale';
+        rDiv.textContent = 'Rationale: ' + q.rationale;
+        full.appendChild(rDiv);
+      }
+      td.appendChild(full);
+      detail.appendChild(td);
+      tbody.appendChild(detail);
+    });
+  }
+
+  function wireControls() {
+    var search = document.getElementById('q-search');
+    if (search) search.addEventListener('input', function () {
+      state.search = search.value.trim().toLowerCase();
+      renderTable();
+    });
+    var autoOnly = document.getElementById('automatable-only');
+    if (autoOnly) autoOnly.addEventListener('change', function () {
+      state.automatableOnly = autoOnly.checked;
+      renderTable();
+    });
+    var diffMin = document.getElementById('diff-min');
+    var diffMax = document.getElementById('diff-max');
+    if (diffMin) diffMin.addEventListener('change', function () {
+      state.diffMin = parseInt(diffMin.value, 10);
+      renderTable();
+    });
+    if (diffMax) diffMax.addEventListener('change', function () {
+      state.diffMax = parseInt(diffMax.value, 10);
+      renderTable();
+    });
+
+    var headers = document.querySelectorAll('#question-table thead th[data-key]');
+    headers.forEach(function (th) {
+      th.addEventListener('click', function () {
+        var key = th.getAttribute('data-key');
+        if (state.sortKey === key) {
+          state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          state.sortKey = key;
+          state.sortDir = 'asc';
+        }
+        renderTable();
+      });
+    });
+
+    var clearBtn = document.getElementById('clear-cluster-filter');
+    if (clearBtn) clearBtn.addEventListener('click', function () {
+      state.clusterFilter = null;
+      clearBtn.hidden = true;
+      renderTable();
+    });
+
+    var showMatchLinks = document.querySelectorAll('.show-matching');
+    showMatchLinks.forEach(function (a) {
+      a.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        state.clusterFilter = {
+          category: a.getAttribute('data-category'),
+          normalizedSubtopic: a.getAttribute('data-subtopic')
+        };
+        var clearBtn2 = document.getElementById('clear-cluster-filter');
+        if (clearBtn2) clearBtn2.hidden = false;
+        renderTable();
+        var tableEl = document.getElementById('question-table');
+        if (tableEl && tableEl.scrollIntoView) tableEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  // ---- Spend panel (plan.md §5, Phase C3/C4) ----
+  // KPI/table/recommendations are server-rendered (ink tokens only, no
+  // theme-dependent colors); only the by-day chart is drawn here so it can
+  // reread `css()` on theme toggle.
+  function renderSpendChart() {
+    var container = document.getElementById('spend-chart');
+    if (!container) return;
+    var spend = model.spend || {};
+    var ledger = spend.ledger;
+    var byDay = (ledger && ledger.by_day) || [];
+    if (byDay.length < 2) return;
+
+    var w = container.clientWidth || 420, h = 160;
+    var padL = 46, padR = 12, padT = 10, padB = 22;
+    var plotW = w - padL - padR, plotH = h - padT - padB;
+    var n = byDay.length;
+    var vals = byDay.map(function (d) { return d.usd; });
+    var maxVal = Math.max.apply(null, vals.concat([0.01]));
+    var ticks = niceTicks(maxVal, 3);
+    var niceMax = ticks[ticks.length - 1] || 1;
+
+    function x(i) { return padL + (n <= 1 ? 0 : (i / (n - 1)) * plotW); }
+    function y(v) { return padT + plotH - (v / niceMax) * plotH; }
+
+    var svg = el('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, style: 'display:block' });
+    var gridColor = css('--grid'), baseline = css('--baseline'), textColor = css('--text-secondary');
+    ticks.forEach(function (t) {
+      var gy = y(t);
+      el('line', { x1: padL, x2: w - padR, y1: gy, y2: gy, stroke: gridColor, 'stroke-width': 1 }, svg);
+      el('text', { x: padL - 6, y: gy + 3, 'text-anchor': 'end', fill: textColor, 'font-size': 10 }, svg)
+        .textContent = '$' + t.toFixed(2);
+    });
+    el('line', { x1: padL, x2: w - padR, y1: padT + plotH, y2: padT + plotH, stroke: baseline, 'stroke-width': 1 }, svg);
+
+    var xStep = Math.min(4, n - 1) || 1;
+    var xTickIdxs = [];
+    for (var ti = 0; ti <= Math.min(4, n - 1); ti++) {
+      var idx = Math.round(ti * (n - 1) / xStep);
+      if (xTickIdxs.indexOf(idx) === -1) xTickIdxs.push(idx);
+    }
+    xTickIdxs.forEach(function (idx) {
+      el('text', { x: x(idx), y: padT + plotH + 16, 'text-anchor': 'middle', fill: textColor, 'font-size': 10 }, svg)
+        .textContent = (byDay[idx].date || '').slice(5);
+    });
+
+    var pathD = vals.map(function (v, i) { return (i === 0 ? 'M' : 'L') + x(i) + ',' + y(v); }).join(' ');
+    el('path', { d: pathD, fill: 'none', stroke: css('--series-1'), 'stroke-width': 2 }, svg);
+
+    var crosshair = el('line', { x1: 0, x2: 0, y1: padT, y2: padT + plotH, stroke: baseline, 'stroke-width': 1, opacity: 0 }, svg);
+    var hitArea = el('rect', { x: padL, y: padT, width: plotW, height: plotH, fill: 'transparent' }, svg);
+
+    container.innerHTML = '';
+    container.appendChild(svg);
+    var tip = makeTooltip(container);
+
+    hitArea.addEventListener('mousemove', function (evt) {
+      var rect = svg.getBoundingClientRect();
+      var mx = evt.clientX - rect.left;
+      var idx = Math.round(((mx - padL) / (plotW || 1)) * (n - 1));
+      idx = Math.max(0, Math.min(n - 1, idx));
+      var d = byDay[idx];
+      crosshair.setAttribute('x1', x(idx));
+      crosshair.setAttribute('x2', x(idx));
+      crosshair.setAttribute('opacity', 1);
+      showTip(tip, container, x(idx), y(d.usd), '<strong>' + d.date + '</strong><br>$' + d.usd.toFixed(4));
+    });
+    hitArea.addEventListener('mouseleave', function () { crosshair.setAttribute('opacity', 0); hideTip(tip); });
+  }
+
+  function onSpendKeydown(evt) {
+    if (evt.key === 'Escape') closeSpendPanel();
+  }
+
+  function openSpendPanel() {
+    var overlay = document.getElementById('spend-overlay');
+    var panel = document.getElementById('spend-panel');
+    if (!panel) return;
+    if (overlay) overlay.hidden = false;
+    panel.setAttribute('data-open', 'true');
+    panel.setAttribute('aria-hidden', 'false');
+    renderSpendChart();
+    document.addEventListener('keydown', onSpendKeydown);
+  }
+
+  function closeSpendPanel() {
+    var overlay = document.getElementById('spend-overlay');
+    var panel = document.getElementById('spend-panel');
+    if (!panel) return;
+    panel.setAttribute('data-open', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+    if (overlay) overlay.hidden = true;
+    document.removeEventListener('keydown', onSpendKeydown);
+  }
+
+  function initSpendPanel() {
+    var btn = document.getElementById('spend-btn');
+    var closeBtn = document.getElementById('spend-close');
+    var overlay = document.getElementById('spend-overlay');
+    if (btn) btn.addEventListener('click', openSpendPanel);
+    if (closeBtn) closeBtn.addEventListener('click', closeSpendPanel);
+    if (overlay) overlay.addEventListener('click', closeSpendPanel);
+    if (window.location.hash === '#spend') openSpendPanel();
+  }
+
+  function init() {
+    renderChips();
+    wireControls();
+    renderTable();
+    initSpendPanel();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState !== 'loading') init();
+
+  setupThemeToggle(function () { renderSpendChart(); });
+})();
+</script>
+</body>
+</html>

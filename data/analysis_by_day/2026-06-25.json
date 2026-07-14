@@ -37,10 +37,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "Update sandbox credentials 1Password",
-      "difficulty": 2,
-      "automatable": true,
-      "rationale": "Credential-storage convention could be documented in playbook."
+      "subtopic": "Update sandbox login credentials",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Credential management decision needing human confirmation."
     },
     {
       "ts": "1782404329.727869",
@@ -51,11 +51,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partner_contact",
-      "subtopic": "Uber contact lookup",
+      "llm_category": "partnership_process",
+      "subtopic": "partner contact lookup",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable from a maintained partner contacts database."
+      "rationale": "Contact lookup answerable via bot/directory."
     },
     {
       "ts": "1782375208.687239",
@@ -66,11 +66,11 @@
       "reply_count": 2,
       "first_reply_latency_sec": 7063.686480045319,
       "permalink": null,
-      "llm_category": "partnership_strategy",
-      "subtopic": "gateway-on-gateway listing",
+      "llm_category": "partnership_process",
+      "subtopic": "gateway provider listing decision",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Strategic judgment call requiring team alignment on architecture tradeoffs."
+      "rationale": "Strategic decision on gateway-on-gateway listing requires human judgment."
     }
   ]
 }

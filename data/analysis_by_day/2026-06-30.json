@@ -32,7 +32,7 @@
       "subtopic": "HiBob migration disconnection",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Needs current migration policy confirmation, may have changed."
+      "rationale": "Migration behavior confirmation needs current internal status verification."
     }
   ]
 }

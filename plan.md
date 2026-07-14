@@ -1,7 +1,12 @@
 # plan.md — Dashboard v2: polish + Automation Deep-Dive page + Spend Tracker
 
-Status: AWAITING USER CONFIRMATION (plan-first gate). No code touched yet.
+Status: CONFIRMED by user 2026-07-14 — executing.
 Branch: `claude/ui-automation-opportunities-ahugpl`.
+Amendments from confirmation: (a) gateway usage API **cancelled** — it is org-wide
+only, cannot scope to one API key (verified: `api_key_id`/`key`/`scope`/`per_key`
+params all ignored; no per-key endpoints). Spend tracker = local ledger only.
+No AH_API_KEY secret needed. (b) Phase D added: widen LLM category taxonomy +
+re-run backfill workflow.
 
 ---
 
@@ -243,25 +248,21 @@ and return usage alongside results. `cmd_analyze` writes one entry per run to
 cost `null`, never crash). Ledger starts at deploy — label "since <first entry>" in UI;
 no fabricated backfill.
 
-### C2. Gateway fetcher `src/gateway_usage.py`
-
-`fetch_day(date) → {credits, calls} | None`; called by `cmd_dashboard` for the last 90
-days, caching each **completed** day at `data/spend/gateway/YYYY-MM-DD.json` and only
-fetching missing days (today refetched, not cached). HTTP via the same client style as
-`slack_client.py` (stdlib urllib, bounded retry ×3, 10s timeout). `Authorization:
-Bearer $AH_API_KEY` header only if env var set. Any error → warn to stderr, return
-None, dashboard renders panel with "Gateway data unavailable".
+### C2. ~~Gateway fetcher~~ CANCELLED (org-wide only; cannot scope to this API key)
 
 ### C3. Spend model + panel UI (lives on automation.html; button on both headers)
 
-Model: `{ledger: {since, total_usd, total_calls, by_month, per_run_recent[10],
-cost_per_question, cost_per_candidate}, gateway: {per_day[], last_30d_credits,
-last_updated} | null, recommendations[]}`.
+Model: `{ledger: {since, total_usd, total_calls, total_input_tokens,
+total_output_tokens, by_day[], per_run_recent[10], cost_per_question,
+cost_per_candidate}, recommendations[]}`. `by_day` aggregates ledger entries by
+run date for the chart.
 
 Slide-over panel (480px, right, ESC/overlay close): KPI row ($ total since ledger
-start · cost/question · gateway credits 30d · gateway calls 30d), line chart of
-gateway credits/day (rule set §2.3), recent-runs table, recommendations list. Clear
-section labels: "This project (measured)" vs "Merge Gateway — org-wide credits".
+start · cost/question · calls · tokens in/out), line chart of $ per day from the
+ledger (rule set §2.3), recent-runs table, recommendations list. Label: "Measured
+from this project's LLM calls since <ledger start>". Empty ledger → panel shows a
+short explainer ("spend tracking starts with the next analyze run") instead of
+charts.
 
 ### C4. Recommendations engine (pure rules at build time, each with computed $ impact)
 
@@ -282,6 +283,24 @@ Estimated: ~120 lines llm/config, ~110 gateway_usage.py, ~150 model+rules, ~200 
 HTML/JS, + tests.
 
 ---
+
+## 5b. Phase D — widen LLM category taxonomy + backfill re-run
+
+Problem: 64/94 questions land in `other`. Fix in `src/llm.py` classifier prompt:
+expand the allowed category list to (snake_case, comma-free for the Notion select
+edge): `api_technical, integration_connector, data_sync, pricing_commercial,
+access_permissions, bug_issue, auth_scopes, partnership_process, customer_request,
+feature_request, sales_marketing, internal_ops, other`. Keep `other` as explicit
+last resort; instruct the model to prefer a specific category. Update any category
+list constants/tests that enumerate categories (grep first). §2.2 already assigns
+slots 7/8 + first-seen ordering for new categories — verify chip/color rendering
+handles >8 categories by folding extras into slot 8 is NOT allowed; instead extras
+get `--muted` like `other` and a note in the ranked table (rare in practice).
+Execution: after phases A–C are pushed, trigger `.github/workflows/
+backfill-llm-analysis.yml` via workflow_dispatch **with ref = this branch** so the
+widened classifier re-runs the committed 90-day history and commits refreshed
+`data/analysis*`+ dashboard onto this branch (repo secrets are available to
+workflow_dispatch on a branch). Verify category distribution afterward.
 
 ## 6. Delegation map (per CLAUDE.md routing)
 

@@ -28,11 +28,11 @@
       "reply_count": 1,
       "first_reply_latency_sec": 16.071190118789673,
       "permalink": null,
-      "llm_category": "partner_contact",
+      "llm_category": "partnership_process",
       "subtopic": "Workday contact lookup",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable from partner contacts database."
+      "rationale": "Contact directory lookup, bot-answerable."
     }
   ]
 }

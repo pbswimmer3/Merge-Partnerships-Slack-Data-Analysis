@@ -29,10 +29,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "api_technical",
-      "subtopic": "rate limit diagnosis",
+      "subtopic": "rate limit troubleshooting",
       "difficulty": 3,
-      "automatable": true,
-      "rationale": "Rate limit checks documentable, but may need log review."
+      "automatable": false,
+      "rationale": "Rate limit diagnosis requires investigation of specific case."
     }
   ]
 }

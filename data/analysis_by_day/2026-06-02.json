@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_status",
+      "llm_category": "partnership_process",
       "subtopic": "Tackle process update",
-      "difficulty": 3,
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Requires status update from ongoing partner conversation."
+      "rationale": "Vague status request requiring human follow-up on partner process."
     }
   ]
 }

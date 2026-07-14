@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
+      "llm_category": "sales_marketing",
       "subtopic": "competitive assessment",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Competitive analysis requires human strategic judgment."
+      "rationale": "Assessing competition requires human market/strategy knowledge."
     },
     {
       "ts": "1778779005.109899",
@@ -43,11 +43,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "competitiveness rationale",
+      "llm_category": "sales_marketing",
+      "subtopic": "competitive differentiation",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Nuanced competitive reasoning needs human context."
+      "rationale": "Explaining non-competitiveness requires nuanced human judgment."
     }
   ]
 }

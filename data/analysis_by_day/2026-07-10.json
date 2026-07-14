@@ -37,11 +37,11 @@
       "reply_count": 5,
       "first_reply_latency_sec": 5.528520107269287,
       "permalink": null,
-      "llm_category": "off_topic",
-      "subtopic": "casual bot chatter",
+      "llm_category": "other",
+      "subtopic": "off-topic chatter",
       "difficulty": 1,
       "automatable": true,
-      "rationale": "Trivial non-work banter directed at bot."
+      "rationale": "Non-work joke question, trivially handled or ignored by bot."
     },
     {
       "ts": "1783726591.393009",
@@ -52,11 +52,11 @@
       "reply_count": 9,
       "first_reply_latency_sec": 18.64033007621765,
       "permalink": null,
-      "llm_category": "credentials_lookup",
-      "subtopic": "Google connector default credentials",
-      "difficulty": 3,
+      "llm_category": "auth_scopes",
+      "subtopic": "Google default credentials",
+      "difficulty": 2,
       "automatable": true,
-      "rationale": "Bot could answer from credentials tracker data."
+      "rationale": "Bot query about default app credentials, answerable from data."
     },
     {
       "ts": "1783696559.743569",
@@ -67,11 +67,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "scope_lookup",
-      "subtopic": "requested scope details",
-      "difficulty": 2,
+      "llm_category": "auth_scopes",
+      "subtopic": "requested scope",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Person-directed, context-specific; needs human input."
+      "rationale": "Requires customer-specific info about desired scope."
     },
     {
       "ts": "1783699711.061289",
@@ -82,11 +82,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "task_assignment",
-      "subtopic": "investigation request",
-      "difficulty": 2,
+      "llm_category": "internal_ops",
+      "subtopic": "investigation assignment",
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Direct task delegation to individual, not automatable."
+      "rationale": "Task delegation to person; not answerable by doc/bot."
     }
   ]
 }

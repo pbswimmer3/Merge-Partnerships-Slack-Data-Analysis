@@ -30,10 +30,10 @@
       "first_reply_latency_sec": 43145.409890174866,
       "permalink": null,
       "llm_category": "access_permissions",
-      "subtopic": "partnership data access scope",
+      "subtopic": "field access via partnership",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires partner-specific negotiation knowledge and internal decision-making."
+      "rationale": "Partnership terms and data field access require human negotiation and context."
     },
     {
       "ts": "1776446151.403329",
@@ -44,11 +44,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "ticket request tagging",
-      "difficulty": 2,
+      "llm_category": "internal_ops",
+      "subtopic": "ticket request handoff",
+      "difficulty": 1,
       "automatable": false,
-      "rationale": "Coordination/action request needing human to file ticket."
+      "rationale": "Internal delegation of a ticket request; no answerable content."
     }
   ]
 }

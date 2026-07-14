@@ -38,10 +38,10 @@
       "first_reply_latency_sec": 51.93955993652344,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "unexpected notification query",
+      "subtopic": "unclear notification query",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Vague; needs human to recognize context of message."
+      "rationale": "Vague; asks colleague about unexpected message, no clear category."
     },
     {
       "ts": "1776984163.094849",
@@ -52,11 +52,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "customer identity check",
+      "llm_category": "customer_request",
+      "subtopic": "customer verification",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Requires internal lookup with no clear referent."
+      "rationale": "Asks whether entity is a customer; needs internal lookup."
     },
     {
       "ts": "1776955358.350059",
@@ -67,11 +67,11 @@
       "reply_count": 2,
       "first_reply_latency_sec": 703.6566798686981,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "OAuth scopes visibility",
+      "llm_category": "auth_scopes",
+      "subtopic": "viewing OAuth app scopes",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "How to view OAuth scopes is documentable in FAQ."
+      "rationale": "How to view OAuth scopes is documentable in a FAQ."
     }
   ]
 }

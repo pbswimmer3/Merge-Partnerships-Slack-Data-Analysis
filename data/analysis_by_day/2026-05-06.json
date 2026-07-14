@@ -32,11 +32,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "partner intro request",
-      "difficulty": 3,
+      "llm_category": "partnership_process",
+      "subtopic": "requesting partner intro",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Relationship coordination needing human involvement."
+      "rationale": "Partner introduction request requires human coordination."
     },
     {
       "ts": "1778077037.558959",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "intro attendee selection",
-      "difficulty": 3,
+      "llm_category": "partnership_process",
+      "subtopic": "intro attendee coordination",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Requires human judgment on stakeholders for intro."
+      "rationale": "Coordinating who joins intro; internal human decision."
     },
     {
       "ts": "1778077092.979699",
@@ -62,11 +62,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
+      "llm_category": "internal_ops",
       "subtopic": "channel routing request",
       "difficulty": 1,
       "automatable": false,
-      "rationale": "Simple coordination/action instruction, human handled."
+      "rationale": "Directs to another channel; simple internal ops instruction."
     }
   ]
 }

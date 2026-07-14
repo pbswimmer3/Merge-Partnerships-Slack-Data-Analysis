@@ -41,11 +41,11 @@
       "reply_count": 20,
       "first_reply_latency_sec": 493.7532398700714,
       "permalink": null,
-      "llm_category": "account_credentials",
-      "subtopic": "MFA phone lookup",
+      "llm_category": "access_permissions",
+      "subtopic": "account MFA phone",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Sensitive PII lookup, requires human verification and access."
+      "rationale": "Sensitive MFA credential lookup requires human handling."
     },
     {
       "ts": "1782337922.483759",
@@ -60,7 +60,7 @@
       "subtopic": "ambiguous change request",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "No context on what 'it' refers to; unanswerable alone."
+      "rationale": "No context, unclear referent, cannot classify meaningfully."
     },
     {
       "ts": "1782325027.086159",
@@ -73,9 +73,9 @@
       "permalink": null,
       "llm_category": "integration_connector",
       "subtopic": "Sage CRE support status",
-      "difficulty": 4,
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires internal roadmap knowledge; status unclear and unrecorded."
+      "rationale": "Roadmap status needs human/internal knowledge of dropped integration."
     },
     {
       "ts": "1782318474.057539",
@@ -87,10 +87,10 @@
       "first_reply_latency_sec": null,
       "permalink": null,
       "llm_category": "other",
-      "subtopic": "which agent store",
-      "difficulty": 3,
+      "subtopic": "ambiguous store question",
+      "difficulty": 4,
       "automatable": false,
-      "rationale": "Too little context to identify what's being asked."
+      "rationale": "No context, unclear which agent store referenced."
     }
   ]
 }

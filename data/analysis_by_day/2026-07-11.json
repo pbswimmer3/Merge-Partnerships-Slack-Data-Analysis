@@ -28,11 +28,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "connector_requirement",
+      "llm_category": "integration_connector",
       "subtopic": "required connectors",
-      "difficulty": 2,
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Ambiguous referent; needs customer-specific context."
+      "rationale": "Vague reference to 'they'; needs customer context."
     }
   ]
 }

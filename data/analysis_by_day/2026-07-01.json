@@ -42,11 +42,11 @@
       "reply_count": 3,
       "first_reply_latency_sec": 13.333790063858032,
       "permalink": null,
-      "llm_category": "partner_contact",
+      "llm_category": "partnership_process",
       "subtopic": "Freshdesk contact lookup",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable from partner contacts database."
+      "rationale": "Contact lookup, bot-answerable."
     },
     {
       "ts": "1782939593.003229",
@@ -57,11 +57,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "process_workflow",
-      "subtopic": "partner program signup handoff",
+      "llm_category": "partnership_process",
+      "subtopic": "partner signup handoff",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Approval/coordination request needing human sign-off."
+      "rationale": "Coordination/approval request needs human acknowledgment."
     },
     {
       "ts": "1782928429.526869",
@@ -72,11 +72,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partnership_strategy",
+      "llm_category": "partnership_process",
       "subtopic": "agent auth outreach",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Strategic outreach suggestion requiring human judgment and prioritization."
+      "rationale": "Business development outreach decision needs human judgment."
     },
     {
       "ts": "1782871991.836679",
@@ -87,11 +87,11 @@
       "reply_count": 7,
       "first_reply_latency_sec": 922.9024000167847,
       "permalink": null,
-      "llm_category": "partner_contact",
+      "llm_category": "partnership_process",
       "subtopic": "Justworks contact lookup",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable from partner contacts database."
+      "rationale": "Contact lookup, bot-answerable."
     },
     {
       "ts": "1782872914.739079",
@@ -102,11 +102,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "other",
-      "subtopic": "peer redirect to bot",
+      "llm_category": "internal_ops",
+      "subtopic": "directing to bot",
       "difficulty": 1,
-      "automatable": false,
-      "rationale": "Statement redirecting, not a question needing answer."
+      "automatable": true,
+      "rationale": "Conversational reply, trivial internal coordination."
     },
     {
       "ts": "1782874237.905709",
@@ -117,11 +117,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "partner_contact",
+      "llm_category": "partnership_process",
       "subtopic": "Justworks contact for issue",
       "difficulty": 2,
       "automatable": true,
-      "rationale": "Contact lookup answerable from partner contacts database."
+      "rationale": "Contact lookup via bot, straightforward."
     },
     {
       "ts": "1782924681.173979",
@@ -132,11 +132,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "access_request",
-      "subtopic": "add to shared channel",
+      "llm_category": "access_permissions",
+      "subtopic": "add to slack channel",
       "difficulty": 1,
-      "automatable": false,
-      "rationale": "Simple access grant requiring human action."
+      "automatable": true,
+      "rationale": "Routine channel access request."
     }
   ]
 }

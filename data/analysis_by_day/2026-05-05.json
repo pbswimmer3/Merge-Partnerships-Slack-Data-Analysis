@@ -32,11 +32,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "REST API scope confirmation",
-      "difficulty": 3,
+      "llm_category": "auth_scopes",
+      "subtopic": "proceed with REST scopes",
+      "difficulty": 2,
       "automatable": false,
-      "rationale": "Needs internal confirmation on approved integration approach."
+      "rationale": "Approval on scope selection requires human confirmation."
     },
     {
       "ts": "1778019016.626959",
@@ -47,11 +47,11 @@
       "reply_count": 4,
       "first_reply_latency_sec": 123.22595000267029,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "developer portal account access",
+      "llm_category": "auth_scopes",
+      "subtopic": "Hibob developer portal account",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires provisioning shared dev portal account by human."
+      "rationale": "Requests dev portal account for OAuth app; needs provisioning."
     }
   ]
 }

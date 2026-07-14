@@ -29,11 +29,11 @@
       "reply_count": 7,
       "first_reply_latency_sec": 1047.8458800315857,
       "permalink": null,
-      "llm_category": "api_technical",
-      "subtopic": "test end-user account availability",
+      "llm_category": "auth_scopes",
+      "subtopic": "end-user test account",
       "difficulty": 3,
       "automatable": false,
-      "rationale": "Requires internal account provisioning knowledge, likely human check."
+      "rationale": "Requires checking existence of test account, human provisioning."
     },
     {
       "ts": "1777411284.283489",
@@ -48,7 +48,7 @@
       "subtopic": "test account for bugfix",
       "difficulty": 2,
       "automatable": false,
-      "rationale": "Provisioning a test account typically needs human action."
+      "rationale": "Account provisioning request needs human action."
     }
   ]
 }

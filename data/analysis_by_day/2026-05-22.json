@@ -32,11 +32,11 @@
       "reply_count": 25,
       "first_reply_latency_sec": 3676.9302299022675,
       "permalink": null,
-      "llm_category": "access_permissions",
-      "subtopic": "MPOP credits approval process",
+      "llm_category": "partnership_process",
+      "subtopic": "MPOP credit approval process",
       "difficulty": 4,
       "automatable": false,
-      "rationale": "Requires partner-specific program knowledge and doc interpretation."
+      "rationale": "MPOP credits process unclear; requires human program knowledge."
     },
     {
       "ts": "1779489778.413229",
@@ -47,11 +47,11 @@
       "reply_count": 0,
       "first_reply_latency_sec": null,
       "permalink": null,
-      "llm_category": "pricing_commercial",
+      "llm_category": "partnership_process",
       "subtopic": "MPOPP applied to private offers",
-      "difficulty": 4,
+      "difficulty": 3,
       "automatable": false,
-      "rationale": "Specific internal marketplace private-offer mechanics; needs named person's knowledge."
+      "rationale": "Specific internal process question needing person's knowledge, unclear context."
     }
   ]
 }

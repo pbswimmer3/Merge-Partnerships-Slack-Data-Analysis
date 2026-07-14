@@ -28,11 +28,11 @@
       "reply_count": 1,
       "first_reply_latency_sec": 212.3612699508667,
       "permalink": null,
-      "llm_category": "credentials_tracker",
-      "subtopic": "OAuth default credentials audit",
-      "difficulty": 4,
-      "automatable": false,
-      "rationale": "Requires compiling internal tracker data across integrations; human curation needed."
+      "llm_category": "integration_connector",
+      "subtopic": "OAuth credential tracker",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Requesting existing tracker doc; a bot could locate/compile if data exists."
     }
   ]
 }

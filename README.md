@@ -55,9 +55,6 @@ intermediate data is cached in `data/raw/` (per-day raw messages) and
 Add `--post` to also post the digest to `SLACK_POST_CHANNEL_ID` via
 `chat.postMessage` (requires `SLACK_BOT_TOKEN` and `SLACK_POST_CHANNEL_ID` to be set).
 
-Add `--notion` to also write each analyzed question as a row in a Notion database
-(see "Notion output" below).
-
 ### Look-back window
 
 `--days N` (or `lookback_days` in `config.yaml`) controls how far back messages are
@@ -113,61 +110,29 @@ In GitHub Actions the base URL is read from a repo **Variable** `ANTHROPIC_BASE_
 (non-sensitive), while the key stays a **Secret**. The SDK appends `/v1/messages` to
 the base URL — if the gateway returns 404, adjust the trailing path accordingly.
 
-## Notion output
-
-Analyzed questions can be written to a Notion database (one row per question,
-upserted by Slack message timestamp so re-runs update rather than duplicate rows):
-
-1. **Create an internal Notion integration** at https://www.notion.so/my-integrations
-   and copy its **Internal Integration Secret** — this is `NOTION_API_KEY`.
-2. **Create or choose a parent page** in Notion under which the database will live.
-   Copy its page ID (the 32-char id in the page URL) — this is `NOTION_PARENT_PAGE_ID`.
-3. **Share that page with the integration**: open the page > `...` menu > Connections
-   (or Add connections) > select your integration.
-4. Set `NOTION_API_KEY` and `NOTION_PARENT_PAGE_ID` in `.env` (or as GitHub secrets)
-   and run with `--notion`:
-   ```
-   python -m src.cli run --notion
-   ```
-
-The database is auto-created under the parent page on first run. Its id is written
-to `notion_state.json` at the repo root and printed to stdout — save it as the
-`NOTION_DATABASE_ID` secret/env var so future runs reuse the same database instead
-of creating a new one each time (the GitHub Action commits `notion_state.json`
-automatically so this happens without manual copying).
-
-Columns created in the Notion database:
-
-- `Question` (title) — question text, truncated to 200 chars
-- `Date` (date) — UTC date derived from the Slack message timestamp
-- `Category` (select) — heuristic category
-- `LLM Category` (select) — LLM-assigned category, if LLM analysis is enabled
-- `Subtopic` (rich text) — LLM-assigned subtopic, if enabled
-- `Difficulty` (number) — LLM difficulty score 1-5, if enabled
-- `Automatable` (checkbox) — whether a doc/FAQ/bot could answer it
-- `Reply Count` (number)
-- `First Reply Latency (min)` (number)
-- `Slack User` (rich text)
-- `Message TS` (rich text) — used as the upsert key
-- `Permalink` (url)
-
-If `NOTION_API_KEY` is unset, `--notion` is skipped with a warning rather than
-failing the run.
-
 ## Dashboard (GitHub Pages)
 
 `site/index.html` is a self-contained static dashboard (no external CDNs/fonts,
 inline SVG charts) built from every cached `data/analysis/*.json` file. It shows:
 
 - KPI tiles (messages, questions, unanswered %, median first-reply time, automation
-  candidates)
-- a volume-over-time line chart (messages vs. questions)
+  candidates) with 30-day sparklines and vs.-prior-30d deltas
+- a volume-over-time line chart (7-day rolling mean + raw underlay)
 - a top-question-categories bar chart
-- an automation-opportunities scatter chart + ranked table (volume vs. difficulty/
-  automatable %, or volume-only if LLM analysis is disabled)
+- an automation bubble-quadrant chart (x = automatable %, y = difficulty, bubble
+  size = question volume) linking to the automation deep-dive page
 - top askers and, if present, the LLM narrative summary
+- a sticky header with a **Spend** button opening a slide-over panel: per-run
+  token/cost ledger, cost/question, a daily-spend chart, and rule-based cost
+  recommendations (Batch API, prompt caching, model-mix, re-run overlap)
 
-Build/update it locally with:
+`site/automation.html` is the automation deep-dive page linked from the dashboard:
+notable-opportunity cards (automatable questions clustered by subtopic, with
+count/difficulty/estimated reply-time saved/suggested fix type) plus a
+filterable, sortable question explorer with expandable LLM rationale per
+question.
+
+Build/update both locally with:
 
 ```
 python -m src.cli dashboard
@@ -205,9 +170,8 @@ Required repository secrets:
 - `SLACK_BOT_TOKEN`
 - `SLACK_CHANNEL_ID`
 - `ANTHROPIC_API_KEY` (optional — omit to run heuristics-only)
-- `NOTION_API_KEY`, `NOTION_PARENT_PAGE_ID`, `NOTION_DATABASE_ID` (optional —
-  omit to skip Notion output; `NOTION_DATABASE_ID` is only needed after the
-  first run creates the database)
+- ~~`NOTION_API_KEY`, `NOTION_PARENT_PAGE_ID`, `NOTION_DATABASE_ID`~~ (deprecated,
+  see "Notion output" under Deprecated below)
 
 ## Publishing the latest data (one click)
 
@@ -247,3 +211,64 @@ make test
 
 `src/analyze.py` is pure (no network calls) and unit-tested against fixture message
 dicts in `tests/`.
+
+---
+
+## Deprecated
+
+Code below is still present in the repo but no longer part of the maintained
+workflow. Kept for reference / in case it becomes usable again.
+
+### ~~Notion output~~
+
+**Status: dormant.** The Merge Notion workspace admin restricts integration
+provisioning, so this path cannot currently create/authenticate a database.
+`src/notion_writer.py`, `--notion`, and the `NOTION_*` config remain in the
+code and the daily workflow still passes the secrets through, but there is no
+working `NOTION_API_KEY` to enable it — omit the secrets and it's skipped
+with a warning. Re-enable by unblocking the Notion integration, then following
+the steps below.
+
+<details>
+<summary>Original setup instructions</summary>
+
+~~Analyzed questions can be written to a Notion database (one row per question,
+upserted by Slack message timestamp so re-runs update rather than duplicate rows):~~
+
+1. ~~**Create an internal Notion integration** at https://www.notion.so/my-integrations
+   and copy its **Internal Integration Secret** — this is `NOTION_API_KEY`.~~
+2. ~~**Create or choose a parent page** in Notion under which the database will live.
+   Copy its page ID (the 32-char id in the page URL) — this is `NOTION_PARENT_PAGE_ID`.~~
+3. ~~**Share that page with the integration**: open the page > `...` menu > Connections
+   (or Add connections) > select your integration.~~
+4. ~~Set `NOTION_API_KEY` and `NOTION_PARENT_PAGE_ID` in `.env` (or as GitHub secrets)
+   and run with `--notion`:~~
+   ```
+   python -m src.cli run --notion
+   ```
+
+~~The database is auto-created under the parent page on first run. Its id is written
+to `notion_state.json` at the repo root and printed to stdout — save it as the
+`NOTION_DATABASE_ID` secret/env var so future runs reuse the same database instead
+of creating a new one each time (the GitHub Action commits `notion_state.json`
+automatically so this happens without manual copying).~~
+
+~~Columns created in the Notion database:~~
+
+- ~~`Question` (title) — question text, truncated to 200 chars~~
+- ~~`Date` (date) — UTC date derived from the Slack message timestamp~~
+- ~~`Category` (select) — heuristic category~~
+- ~~`LLM Category` (select) — LLM-assigned category, if LLM analysis is enabled~~
+- ~~`Subtopic` (rich text) — LLM-assigned subtopic, if enabled~~
+- ~~`Difficulty` (number) — LLM difficulty score 1-5, if enabled~~
+- ~~`Automatable` (checkbox) — whether a doc/FAQ/bot could answer it~~
+- ~~`Reply Count` (number)~~
+- ~~`First Reply Latency (min)` (number)~~
+- ~~`Slack User` (rich text)~~
+- ~~`Message TS` (rich text) — used as the upsert key~~
+- ~~`Permalink` (url)~~
+
+~~If `NOTION_API_KEY` is unset, `--notion` is skipped with a warning rather than
+failing the run.~~
+
+</details>

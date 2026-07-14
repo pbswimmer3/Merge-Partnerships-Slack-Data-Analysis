@@ -8,7 +8,7 @@
 - **0** messages from **0** unique users, including **0** questions across **0** threads.
 - **0** unanswered questions; median first-reply latency: **n/a**.
 
-No activity was recorded in the channel for this period: there were zero messages, questions, threads, and unique participants, so there is no category distribution or response-latency data to report. With no questions posted, there were no unanswered items and no first-reply latency to measure. Because the dataset is empty, no trends or common question categories can be identified at this time. Consequently, there are no automation opportunities to recommend yet; I'd suggest confirming the channel and date range are correct, then revisiting once the channel has meaningful traffic.
+This reporting period shows no activity in the channel, with zero messages, questions, threads, or unique participants recorded. Because there is no data to analyze, no question categories or engagement trends can be identified, and response latency metrics are unavailable. There are correspondingly no automation opportunities to surface at this time. If activity was expected, it may be worth verifying that the data collection or channel integration is functioning correctly. Otherwise, this simply reflects a dormant or newly created channel awaiting adoption.
 
 ## Trends
 

@@ -365,6 +365,8 @@ def _notable_card_html(cluster: dict, category_colors: dict) -> str:
 def _fmt_usd(v: Optional[float]) -> str:
     if v is None:
         return "—"
+    if abs(v) >= 0.1:
+        return f"${v:,.2f}"
     return f"${v:,.4f}"
 
 
@@ -487,7 +489,7 @@ def _spend_panel_html(spend_model: Optional[dict]) -> str:
     )
 
     return (
-        f'<p class="spend-since">Measured from this project’s LLM calls since {html.escape(since)}.</p>'
+        f'<p class="spend-since">Measured from this project’s LLM calls since {html.escape((since or "")[:10] or "?")}.</p>'
         f'<div class="spend-kpi-row">{kpis}</div>'
         f'<div class="spend-section"><h3>Daily spend</h3>{chart_html}</div>'
         f'<div class="spend-section"><h3>Recent runs</h3>{runs_table_html}</div>'
@@ -551,10 +553,7 @@ def render_html(model: dict, generated_at: str) -> str:
 
     spend_model = model.get("spend") or {"ledger": None, "recommendations": []}
     spend_ledger = spend_model.get("ledger")
-    spend_heading = (
-        f"Spend — measured from this project's LLM calls since {html.escape(spend_ledger.get('since') or '?')}"
-        if spend_ledger else "Spend"
-    )
+    spend_heading = "Spend tracker"
     spend_panel_body_html = _spend_panel_html(spend_model)
 
     model_json = json.dumps(model, default=str)

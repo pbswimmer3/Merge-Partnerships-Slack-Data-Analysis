@@ -1,0 +1,92 @@
+{
+  "per_day": {
+    "2026-07-14": {
+      "messages": 19,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "other": 3,
+    "integration_connector": 1
+  },
+  "top_askers": [
+    [
+      "U0ASG7M610W",
+      2
+    ],
+    [
+      "U013W4P3NG3",
+      1
+    ],
+    [
+      "U041R9BHV6H",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 12.856639862060547,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1784066761.424309",
+      "user": "U013W4P3NG3",
+      "text": "<@U0BBLFYHDFG> do we have a marketplace notion client id / secret?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 6.732150077819824,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1784066761424309?thread_ts=1784066761.424309&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "marketplace client id/secret",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of whether marketplace credentials exist; not documented publicly."
+    },
+    {
+      "ts": "1784060247.599119",
+      "user": "U041R9BHV6H",
+      "text": "<@U0BBLFYHDFG> my customer banyan is trying to their sage web services developer license, but seems like they might be trying to get an overall partnership too. they said they reached out to an account manager who didn't know who we were. what is the typical process?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 16.918869972229004,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1784060247599119?thread_ts=1784060247.599119&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "developer license and partnership",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Ambiguous customer scenario needing account manager coordination and partnership process clarity."
+    },
+    {
+      "ts": "1784050948.083749",
+      "user": "U0ASG7M610W",
+      "text": "<@U0BBLFYHDFG> Do we have any connections at iManage?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 9,
+      "first_reply_latency_sec": 12.856639862060547,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1784050948083749?thread_ts=1784050948.083749&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "contacts at iManage",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Asking for internal relationship contacts; requires human knowledge, not a doc."
+    },
+    {
+      "ts": "1784061398.464809",
+      "user": "U0ASG7M610W",
+      "text": "<@U08KP0PHNG0> heard back from them - there's a separate partner form we have to fill out. is there a standard way we fill these out?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "standard partner form process",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Standard form-filling process could be documented in an FAQ or template."
+    }
+  ]
+}

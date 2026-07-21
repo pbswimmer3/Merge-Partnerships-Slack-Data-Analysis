@@ -1,0 +1,132 @@
+{
+  "totals": {
+    "message_count": 19,
+    "question_count": 6,
+    "thread_count": 2,
+    "unique_users": 4
+  },
+  "per_day": {
+    "2026-07-20": {
+      "messages": 12,
+      "questions": 5
+    },
+    "2026-07-21": {
+      "messages": 7,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 5,
+    "data_sync": 1
+  },
+  "top_askers": [
+    [
+      "U013W4P3NG3",
+      3
+    ],
+    [
+      "U09F1BB96KC",
+      2
+    ],
+    [
+      "U040W5LA59R",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 9.05645501613617,
+    "unanswered_question_count": 4
+  },
+  "questions": [
+    {
+      "ts": "1784591897.975699",
+      "user": "U013W4P3NG3",
+      "text": "<@U0BBLFYHDFG> does the snowflake team like us?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 10,
+      "first_reply_latency_sec": 4.705690145492554,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1784591897975699?thread_ts=1784591897.975699&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partner relationship status",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Subjective relationship question requiring human insight, not documentable."
+    },
+    {
+      "ts": "1784591935.629619",
+      "user": "U013W4P3NG3",
+      "text": "ok does the snowflake team like us?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "partner relationship status",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Subjective sentiment about partner needs human judgment."
+    },
+    {
+      "ts": "1784592414.628419",
+      "user": "U013W4P3NG3",
+      "text": "should we do some comarketing with them?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "sales_marketing",
+      "subtopic": "comarketing decision",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic marketing decision requires human stakeholder input."
+    },
+    {
+      "ts": "1784559935.218449",
+      "user": "U040W5LA59R",
+      "text": "<@U0BBLFYHDFG> do we have a UKG pro partnership?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 7,
+      "first_reply_latency_sec": 13.407219886779785,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1784559935218449?thread_ts=1784559935.218449&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partnership existence check",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Factual partnership status lookup, answerable via partner registry."
+    },
+    {
+      "ts": "1784561758.742789",
+      "user": "U09F1BB96KC",
+      "text": "<@U040W5LA59R> did you get the info you needed?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "info follow-up",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Personal follow-up needing specific human context to answer."
+    },
+    {
+      "ts": "1784561947.075499",
+      "user": "U09F1BB96KC",
+      "text": "like have we certified the data in the tracker?",
+      "category": "data_sync",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "data_sync",
+      "subtopic": "tracker data certification",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Status check on internal tracker requires human verification."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-07-21": {
+      "messages": 7,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U013W4P3NG3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1784592414.628419",
+      "user": "U013W4P3NG3",
+      "text": "should we do some comarketing with them?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "sales_marketing",
+      "subtopic": "comarketing decision",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Strategic marketing decision requires human stakeholder input."
+    }
+  ]
+}

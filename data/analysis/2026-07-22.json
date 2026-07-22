@@ -1,4 +1,10 @@
 {
+  "totals": {
+    "message_count": 20,
+    "question_count": 4,
+    "thread_count": 4,
+    "unique_users": 8
+  },
   "per_day": {
     "2026-07-21": {
       "messages": 20,

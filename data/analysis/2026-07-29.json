@@ -1,0 +1,101 @@
+{
+  "totals": {
+    "message_count": 24,
+    "question_count": 4,
+    "thread_count": 5,
+    "unique_users": 12
+  },
+  "per_day": {
+    "2026-07-28": {
+      "messages": 23,
+      "questions": 4
+    },
+    "2026-07-29": {
+      "messages": 1,
+      "questions": 0
+    }
+  },
+  "category_distribution": {
+    "other": 4
+  },
+  "top_askers": [
+    [
+      "U099MRN2JNA",
+      2
+    ],
+    [
+      "U06LX4SHBGB",
+      1
+    ],
+    [
+      "U0B6ENFE7QW",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 11.117239952087402,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1785270260.417269",
+      "user": "U099MRN2JNA",
+      "text": "<@U0BBLFYHDFG> do we have a workable contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 5.0350799560546875,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1785270260417269?thread_ts=1785270260.417269&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Workable partner contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of partner contacts; not documented in public FAQ."
+    },
+    {
+      "ts": "1785270282.703219",
+      "user": "U099MRN2JNA",
+      "text": "Who is the contact for Workable <@U0BBLFYHDFG>",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Workable partner contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs internal partner directory lookup; human likely required for accurate contact."
+    },
+    {
+      "ts": "1785258758.906089",
+      "user": "U06LX4SHBGB",
+      "text": "<@U0BBLFYHDFG> do we have Greenhouse contacts?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 13.892580032348633,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1785258758906089?thread_ts=1785258758.906089&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Greenhouse partner contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Depends on internal partner records; not answerable via generic doc."
+    },
+    {
+      "ts": "1785251369.050599",
+      "user": "U0B6ENFE7QW",
+      "text": "<@U0BBLFYHDFG> do we have a paylocity contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 11.117239952087402,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1785251369050599?thread_ts=1785251369.050599&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Paylocity partner contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires internal partner contact database; human input likely needed."
+    }
+  ]
+}

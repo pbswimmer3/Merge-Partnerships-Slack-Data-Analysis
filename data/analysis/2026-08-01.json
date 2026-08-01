@@ -1,0 +1,16 @@
+{
+  "totals": {
+    "message_count": 0,
+    "question_count": 0,
+    "thread_count": 0,
+    "unique_users": 0
+  },
+  "per_day": {},
+  "category_distribution": {},
+  "top_askers": [],
+  "response": {
+    "median_first_reply_latency_sec": null,
+    "unanswered_question_count": 0
+  },
+  "questions": []
+}

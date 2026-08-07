@@ -1,0 +1,93 @@
+{
+  "per_day": {
+    "2026-08-06": {
+      "messages": 23,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "docs": 1,
+    "other": 2,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      2
+    ],
+    [
+      "U09T37MAFM3",
+      1
+    ],
+    [
+      "U099MRN2JNA",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 7.5177600383758545,
+    "unanswered_question_count": 3
+  },
+  "questions": [
+    {
+      "ts": "1786045505.547369",
+      "user": "U09T37MAFM3",
+      "text": "their docs say they review first week of every month, maybe they just need to bump them?",
+      "category": "docs",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "app review cadence",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Ambiguous 'they' and speculative bump request; needs human context about partner process."
+    },
+    {
+      "ts": "1786045964.715479",
+      "user": "U099MRN2JNA",
+      "text": "<@U02HSF3TNBG> - looks like you were chatting with Greenhouse on this migration. I just want to make sure my customer meets the Aug 31st deadline - are you able to check in with them on if they've reviewed apps this month? Or if they've said anything about it?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "migration deadline check-in",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires human follow-up with partner Greenhouse on customer status and deadline."
+    },
+    {
+      "ts": "1786043987.078719",
+      "user": "U060YKZR918",
+      "text": "<@U0BBLFYHDFG> What's the current status of the Google Sheets OAuth app review process?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 7.5177600383758545,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1786043987078719?thread_ts=1786043987.078719&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "Google Sheets OAuth review status",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Status query needs live human check on Google OAuth verification progress."
+    },
+    {
+      "ts": "1786044010.322889",
+      "user": "U060YKZR918",
+      "text": "<@U08KP0PHNG0> Any updates from Google on this?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Google update request",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague status ask lacking context; requires human to chase Google."
+    }
+  ]
+}

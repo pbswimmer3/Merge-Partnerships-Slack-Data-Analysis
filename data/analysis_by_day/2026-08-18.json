@@ -1,0 +1,76 @@
+{
+  "per_day": {
+    "2026-08-18": {
+      "messages": 12,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U06LX4SHBGB",
+      1
+    ],
+    [
+      "U013W4P3NG3",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 6397.856514930725,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1787070736.745999",
+      "user": "U06LX4SHBGB",
+      "text": "do we know what the repercussions are for customers if they dont have the GH partnership by aug31? will their current LAs just stop working until they have partnership complete?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 1935.4724400043488,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1787070736745999?thread_ts=1787070736.745999&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partnership deadline impact on access",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Requires policy knowledge on deadline enforcement and access consequences; ambiguous, needs human."
+    },
+    {
+      "ts": "1787059046.345159",
+      "user": "U013W4P3NG3",
+      "text": "Can you guys add us here <@U08KP0PHNG0> <@U0B95J0FBJM> \n\n<https://deals.ycombinator.com/|https://deals.ycombinator.com/> ",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 10860.240589857101,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1787059046345159?thread_ts=1787059046.345159&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "add to YC deals listing",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Request to be added to partner marketplace; needs human action to fulfill."
+    },
+    {
+      "ts": "1787070865.035979",
+      "user": "U08KP0PHNG0",
+      "text": "would we be willing to up to 10K?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "increase to 10K amount",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague commercial negotiation question lacking context; requires human decision."
+    }
+  ]
+}

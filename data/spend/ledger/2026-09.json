@@ -1,0 +1,17 @@
+[
+  {
+    "run_at": "2026-09-01T05:51:48Z",
+    "command": "analyze --days 1",
+    "model": "claude-opus-4-8",
+    "calls": 1,
+    "input_tokens": 663,
+    "output_tokens": 258,
+    "cache_read_input_tokens": 0,
+    "est_cost_usd": 0.009765,
+    "dates_analyzed": [
+      "2026-08-31",
+      "2026-09-01"
+    ],
+    "questions_analyzed": 3
+  }
+]

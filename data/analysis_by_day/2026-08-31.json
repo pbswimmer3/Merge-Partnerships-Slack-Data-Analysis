@@ -1,0 +1,77 @@
+{
+  "per_day": {
+    "2026-08-31": {
+      "messages": 37,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "access_permissions": 2,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U0B90E01KM4",
+      1
+    ],
+    [
+      "U0B95J0FBJM",
+      1
+    ],
+    [
+      "U08QMDP2116",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 4037.9737701416016,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1788209584.013269",
+      "user": "U0B90E01KM4",
+      "text": "<@U0BBLFYHDFG> do we have a partnership with Active Campaign, or access to a sandbox account?",
+      "category": "access_permissions",
+      "is_question": true,
+      "reply_count": 26,
+      "first_reply_latency_sec": 16.87353014945984,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1788209584013269?thread_ts=1788209584.013269&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partnership/sandbox access ActiveCampaign",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of partnership status and sandbox availability."
+    },
+    {
+      "ts": "1788217551.001339",
+      "user": "U0B95J0FBJM",
+      "text": "tbh i think we touch multiple of these, but are these the right options would you say <@U0B90E01KM4>?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "confirming category options",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague meta-question about correct options; needs human context and judgment."
+    },
+    {
+      "ts": "1788173865.993979",
+      "user": "U08QMDP2116",
+      "text": "hey <!subteam^S0APEMVA8LQ>, Snappy\u2019s ADP cert has expired, which is affecting all of their LAs. They also don\u2019t have access to their partner login credentials, so they\u2019re unable to generate a new cert or raise a ticket themselves.\nI\u2019ve reached out to <mailto:kelly.ortman@adp.com|kelly.ortman@adp.com> and also raised a ticket through ADP\u2019s portal. Is there any other channel or contact we can use to help escalate this with ADP?",
+      "category": "access_permissions",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 8059.074010133743,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1788173865993979?thread_ts=1788173865.993979&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "expired ADP cert escalation",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Expired cert plus lost credentials requires human escalation to external partner."
+    }
+  ]
+}

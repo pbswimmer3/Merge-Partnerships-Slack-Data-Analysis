@@ -1,0 +1,245 @@
+{
+  "totals": {
+    "message_count": 40,
+    "question_count": 13,
+    "thread_count": 5,
+    "unique_users": 11
+  },
+  "per_day": {
+    "2026-09-03": {
+      "messages": 39,
+      "questions": 13
+    },
+    "2026-09-04": {
+      "messages": 1,
+      "questions": 0
+    }
+  },
+  "category_distribution": {
+    "other": 12,
+    "integration_connector": 1
+  },
+  "top_askers": [
+    [
+      "U08P41NFP2Q",
+      4
+    ],
+    [
+      "U09F1BB96KC",
+      3
+    ],
+    [
+      "U04Q93BATTN",
+      3
+    ],
+    [
+      "U0A1G4H5Z60",
+      2
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 25.78305983543396,
+    "unanswered_question_count": 10
+  },
+  "questions": [
+    {
+      "ts": "1788461329.146599",
+      "user": "U0A1G4H5Z60",
+      "text": "<@U0BBLFYHDFG> do we have any contacts at Shopify?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 25.78305983543396,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1788461329146599?thread_ts=1788461329.146599&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Shopify contact lookup",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of partner contacts, not documentable in FAQ."
+    },
+    {
+      "ts": "1788455532.309149",
+      "user": "U08KP0PHNG0",
+      "text": "<@U0BBLFYHDFG> do we have a paylocity contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Paylocity contact lookup",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs human knowledge of contact relationships."
+    },
+    {
+      "ts": "1788453579.664969",
+      "user": "U09F1BB96KC",
+      "text": "<@U0BRKAZVDRN> what is the timeline by which this needs to be completed?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "project timeline request",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires project-specific human input on deadlines."
+    },
+    {
+      "ts": "1788454267.157929",
+      "user": "U09F1BB96KC",
+      "text": "<@U04Q93BATTN> can you help with priority here? When does this need to be completed by so we can sort out resourcing and tradeoffs?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "priority and resourcing",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Prioritization decision needs human judgment and context."
+    },
+    {
+      "ts": "1788455325.378039",
+      "user": "U04Q93BATTN",
+      "text": "can y'all set up 15-30 min with me today?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "meeting scheduling request",
+      "difficulty": 1,
+      "automatable": true,
+      "rationale": "Simple scheduling could be handled by calendar bot."
+    },
+    {
+      "ts": "1788466375.139809",
+      "user": "U04Q93BATTN",
+      "text": "<@U08KP0PHNG0> can we add <@U0BRKAZVDRN> to the sharable creds vault as well?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "add user to vault",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Access grant requires human approval and action."
+    },
+    {
+      "ts": "1788466399.730509",
+      "user": "U04Q93BATTN",
+      "text": "Fabrizio is already added - can I be added to default creds integration sandboxes?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "sandbox credentials access",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Provisioning access needs human authorization."
+    },
+    {
+      "ts": "1788450699.935019",
+      "user": "U0A1G4H5Z60",
+      "text": "<@U0BBLFYHDFG> Do we have a partnerships with Lattice and Paychex?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 23.55607008934021,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1788450699935019?thread_ts=1788450699.935019&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Lattice Paychex partnerships",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Partnership status could be answered from maintained partner list."
+    },
+    {
+      "ts": "1788449688.963469",
+      "user": "U08P41NFP2Q",
+      "text": "<@U09F1BB96KC> - For Rippling, do you have a sense if they'd be upset with us if end-users used our Generic SFTP to circumvent a Rippling partnership?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 16,
+      "first_reply_latency_sec": 148.48206996917725,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1788449688963469?thread_ts=1788449688.963469&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partner relationship risk",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Ambiguous strategic judgment about partner reaction needs human."
+    },
+    {
+      "ts": "1788463522.500859",
+      "user": "U09F1BB96KC",
+      "text": "<@U08P41NFP2Q> do you see that Rippling denied the pre-vet?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Rippling pre-vet denial",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires checking specific partner vetting status with humans."
+    },
+    {
+      "ts": "1788464266.098679",
+      "user": "U08P41NFP2Q",
+      "text": "Should I direct them to Nicole or someone else at Rippling?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Rippling contact routing",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs human knowledge of partner contact relationships."
+    },
+    {
+      "ts": "1788464510.850329",
+      "user": "U08P41NFP2Q",
+      "text": "Any we don't know who that'd be at Rippling?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "identify Rippling contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires internal relationship knowledge, ambiguous context."
+    },
+    {
+      "ts": "1788464522.052949",
+      "user": "U08P41NFP2Q",
+      "text": "Or have a relationship with that person?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "existing contact relationship",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Depends on internal relationship knowledge, not documentable."
+    }
+  ]
+}

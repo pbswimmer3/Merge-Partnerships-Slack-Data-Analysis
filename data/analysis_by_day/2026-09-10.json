@@ -1,0 +1,97 @@
+{
+  "per_day": {
+    "2026-09-10": {
+      "messages": 28,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1,
+    "bug_issue": 2,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U0B6ENFE7QW",
+      1
+    ],
+    [
+      "U09F1BB96KC",
+      1
+    ],
+    [
+      "U04923DBYUU",
+      1
+    ],
+    [
+      "U099MRN2JNA",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 13.323490142822266,
+    "unanswered_question_count": 3
+  },
+  "questions": [
+    {
+      "ts": "1789071267.201699",
+      "user": "U0B6ENFE7QW",
+      "text": "<@U09F1BB96KC> I saw in a <https://mergeapi.slack.com/archives/C02K5EEFM55/p1788290704908719|previous message> you said you met with Deel, did you end up asking anything related to their rate limits?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "Deel rate limits inquiry",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires knowledge of specific partner meeting; human context needed."
+    },
+    {
+      "ts": "1789072177.179109",
+      "user": "U09F1BB96KC",
+      "text": "<@U0B6ENFE7QW> do we have a RL we would want to see to reduce the performance issues we're seeing?",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "rate limit for performance",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs internal judgment on rate limits to fix performance issues."
+    },
+    {
+      "ts": "1789062902.359099",
+      "user": "U04923DBYUU",
+      "text": "Do we have a shareable SharePoint sandbox for customers to test with? It sounds like no, and if not, are we open to purchase or getting another one? cc: <@U0B95J0FBJM>",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 13.323490142822266,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789062902359099?thread_ts=1789062902.359099&cid=C03NXTWBQKT",
+      "llm_category": "integration_connector",
+      "subtopic": "SharePoint sandbox availability",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Availability of test sandbox could be documented in FAQ."
+    },
+    {
+      "ts": "1789061022.221859",
+      "user": "U099MRN2JNA",
+      "text": "Do we have a technical contact for ADP WFN SFTP? My customer is having some issues with their end user's SFTP's and asked us for a contact to help answer questions/troubleshoot. I guess their end user's contact isnt helpful",
+      "category": "bug_issue",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789061022221859",
+      "llm_category": "partnership_process",
+      "subtopic": "ADP WFN SFTP contact",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires locating a specific partner technical contact; not documented."
+    }
+  ]
+}

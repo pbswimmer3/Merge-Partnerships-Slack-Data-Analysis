@@ -56,5 +56,20 @@
       "2026-09-10"
     ],
     "questions_analyzed": 4
+  },
+  {
+    "run_at": "2026-09-15T05:34:35Z",
+    "command": "analyze --days 1",
+    "model": "claude-opus-4-8",
+    "calls": 1,
+    "input_tokens": 806,
+    "output_tokens": 578,
+    "cache_read_input_tokens": 0,
+    "est_cost_usd": 0.01848,
+    "dates_analyzed": [
+      "2026-09-14",
+      "2026-09-15"
+    ],
+    "questions_analyzed": 7
   }
 ]

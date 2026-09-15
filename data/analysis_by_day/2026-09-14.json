@@ -1,0 +1,140 @@
+{
+  "per_day": {
+    "2026-09-14": {
+      "messages": 31,
+      "questions": 7
+    }
+  },
+  "category_distribution": {
+    "other": 7
+  },
+  "top_askers": [
+    [
+      "U013W4P3NG3",
+      3
+    ],
+    [
+      "U0BRKAZVDRN",
+      2
+    ],
+    [
+      "U0BKXMEMW03",
+      1
+    ],
+    [
+      "U0B95J0FBJM",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 56.39468002319336,
+    "unanswered_question_count": 5
+  },
+  "questions": [
+    {
+      "ts": "1789428920.611819",
+      "user": "U0BKXMEMW03",
+      "text": "<@U0BBLFYHDFG> do we have sandbox credentials for Microsoft Dynamics 365 (F&amp;O and F&amp;SCM), Microsoft BI (Power BI), and Microsoft Graph?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 33.47499990463257,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789428920611819?thread_ts=1789428920.611819&cid=C03NXTWBQKT",
+      "llm_category": "access_permissions",
+      "subtopic": "sandbox credentials Microsoft products",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires human to locate/provision specific sandbox credentials for multiple systems."
+    },
+    {
+      "ts": "1789426707.544679",
+      "user": "U013W4P3NG3",
+      "text": "<@U0B95J0FBJM> <@U08KP0PHNG0> i think the slack creds have expired, could we clean up the 1password and get new ones?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 12,
+      "first_reply_latency_sec": 79.31436014175415,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789426707544679?thread_ts=1789426707.544679&cid=C03NXTWBQKT",
+      "llm_category": "access_permissions",
+      "subtopic": "expired Slack credentials cleanup",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Credential refresh and 1Password cleanup needs human action."
+    },
+    {
+      "ts": "1789426823.230329",
+      "user": "U013W4P3NG3",
+      "text": "can you give me some when we have them lol",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "credentials request followup",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Vague request awaiting credentials; needs human context to fulfill."
+    },
+    {
+      "ts": "1789419605.186809",
+      "user": "U0B95J0FBJM",
+      "text": "does this one work?: <https://share.1password.com/s#bqi80lN9rkQvTNFbsx1Pew8vl0Ixdnv-1i3v3_hi9To|share.1password.com/s#\u2026>",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "1Password share link verification",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Verifying a shared credential link requires human confirmation."
+    },
+    {
+      "ts": "1789420395.888829",
+      "user": "U0BRKAZVDRN",
+      "text": "Only the merge login lets me in but then if i run a sql command it says the account is suspended. And the <mailto:sanboxes@merge.dev|sanboxes@merge.dev> keeps saying incorrect user or pass?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "auth_scopes",
+      "subtopic": "suspended account login failure",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Suspended sandbox account and auth failures require human troubleshooting."
+    },
+    {
+      "ts": "1789420406.356619",
+      "user": "U0BRKAZVDRN",
+      "text": "Were you also able to run a sql command?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "sql command access check",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Clarifying question about testing sandbox access; needs human dialogue."
+    },
+    {
+      "ts": "1789420499.239159",
+      "user": "U013W4P3NG3",
+      "text": "When mine expires just make another one ",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "recreate expired credential",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Instruction to regenerate credentials on expiry requires human action."
+    }
+  ]
+}

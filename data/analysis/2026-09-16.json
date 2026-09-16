@@ -1,0 +1,68 @@
+{
+  "totals": {
+    "message_count": 9,
+    "question_count": 2,
+    "thread_count": 2,
+    "unique_users": 5
+  },
+  "per_day": {
+    "2026-09-15": {
+      "messages": 5,
+      "questions": 1
+    },
+    "2026-09-16": {
+      "messages": 4,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "other": 1,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U040W5LA59R",
+      1
+    ],
+    [
+      "U013W4P3NG3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 195.01235008239746,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1789482465.243569",
+      "user": "U040W5LA59R",
+      "text": "<@U08KP0PHNG0> or <@U02HSF3TNBG> do you guys know if we can give our customers passthrough logo rights for BambooHR or Workday?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "passthrough logo rights",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Depends on partner-specific branding agreements, needs human verification of rights."
+    },
+    {
+      "ts": "1789529356.556269",
+      "user": "U013W4P3NG3",
+      "text": "<https://developer.copper.com/introduction/oauth/index.html|developer.copper.com/introduction/oauth/index.html>\n\n<@U08KP0PHNG0> <@U0B95J0FBJM> could you help with contacting them to get us oauth creds?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 195.01235008239746,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789529356556269?thread_ts=1789529356.556269&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "obtaining OAuth credentials",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires contacting external provider for credentials, human coordination needed."
+    }
+  ]
+}

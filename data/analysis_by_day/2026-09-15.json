@@ -1,15 +1,38 @@
 {
   "per_day": {
     "2026-09-15": {
-      "messages": 3,
-      "questions": 0
+      "messages": 5,
+      "questions": 1
     }
   },
-  "category_distribution": {},
-  "top_askers": [],
+  "category_distribution": {
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U040W5LA59R",
+      1
+    ]
+  ],
   "response": {
     "median_first_reply_latency_sec": null,
-    "unanswered_question_count": 0
+    "unanswered_question_count": 1
   },
-  "questions": []
+  "questions": [
+    {
+      "ts": "1789482465.243569",
+      "user": "U040W5LA59R",
+      "text": "<@U08KP0PHNG0> or <@U02HSF3TNBG> do you guys know if we can give our customers passthrough logo rights for BambooHR or Workday?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "passthrough logo rights",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Depends on partner-specific branding agreements, needs human verification of rights."
+    }
+  ]
 }

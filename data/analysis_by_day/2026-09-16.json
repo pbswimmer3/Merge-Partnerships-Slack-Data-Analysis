@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-09-16": {
+      "messages": 4,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U013W4P3NG3",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 195.01235008239746,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1789529356.556269",
+      "user": "U013W4P3NG3",
+      "text": "<https://developer.copper.com/introduction/oauth/index.html|developer.copper.com/introduction/oauth/index.html>\n\n<@U08KP0PHNG0> <@U0B95J0FBJM> could you help with contacting them to get us oauth creds?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 3,
+      "first_reply_latency_sec": 195.01235008239746,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789529356556269?thread_ts=1789529356.556269&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "obtaining OAuth credentials",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires contacting external provider for credentials, human coordination needed."
+    }
+  ]
+}

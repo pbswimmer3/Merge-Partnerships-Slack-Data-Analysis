@@ -1,0 +1,38 @@
+{
+  "per_day": {
+    "2026-09-18": {
+      "messages": 4,
+      "questions": 1
+    }
+  },
+  "category_distribution": {
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 17.924279928207397,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1789753950.015109",
+      "user": "U060YKZR918",
+      "text": "<@U0BBLFYHDFG> Whats the review status of our Merge OAuth App for Slack?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 17.924279928207397,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1789753950015109?thread_ts=1789753950.015109&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "OAuth app review status",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of specific app review status; not answerable via docs."
+    }
+  ]
+}

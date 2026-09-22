@@ -1,0 +1,82 @@
+{
+  "totals": {
+    "message_count": 13,
+    "question_count": 3,
+    "thread_count": 5,
+    "unique_users": 9
+  },
+  "per_day": {
+    "2026-09-21": {
+      "messages": 13,
+      "questions": 3
+    }
+  },
+  "category_distribution": {
+    "other": 3
+  },
+  "top_askers": [
+    [
+      "U08KP0PHNG0",
+      1
+    ],
+    [
+      "U0BTR87S5L5",
+      1
+    ],
+    [
+      "U07841HAUKW",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 15.419190168380737,
+    "unanswered_question_count": 0
+  },
+  "questions": [
+    {
+      "ts": "1790024609.009019",
+      "user": "U08KP0PHNG0",
+      "text": "<@U0BBLFYHDFG> whose our partner contact at <http://You.com|You.com>?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 15.419190168380737,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790024609009019?thread_ts=1790024609.009019&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "partner contact lookup",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Contact directory lookup answerable from internal partner records or bot."
+    },
+    {
+      "ts": "1790021178.831379",
+      "user": "U0BTR87S5L5",
+      "text": "<@U0BBLFYHDFG> do we have a sandbox for UKG? And who are our key contacts there?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 37.95606017112732,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790021178831379?thread_ts=1790021178.831379&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "sandbox and contacts",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Combines sandbox availability and contact lookup, both from internal records."
+    },
+    {
+      "ts": "1790006828.867249",
+      "user": "U07841HAUKW",
+      "text": "<@U0BBLFYHDFG> do we have a shareable sandbox for Salesforce?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 15.053639888763428,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790006828867249?thread_ts=1790006828.867249&cid=C03NXTWBQKT",
+      "llm_category": "integration_connector",
+      "subtopic": "Salesforce shareable sandbox",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Sandbox availability info retrievable from internal integration documentation."
+    }
+  ]
+}

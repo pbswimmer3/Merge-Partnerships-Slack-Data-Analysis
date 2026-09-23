@@ -1,0 +1,137 @@
+{
+  "totals": {
+    "message_count": 33,
+    "question_count": 6,
+    "thread_count": 4,
+    "unique_users": 9
+  },
+  "per_day": {
+    "2026-09-22": {
+      "messages": 33,
+      "questions": 6
+    }
+  },
+  "category_distribution": {
+    "other": 4,
+    "integration_connector": 1,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U08KP0PHNG0",
+      2
+    ],
+    [
+      "U09DQENB7PX",
+      1
+    ],
+    [
+      "U034LALDDK4",
+      1
+    ],
+    [
+      "U08P41NFP2Q",
+      1
+    ],
+    [
+      "U060YKZR918",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 13.731630086898804,
+    "unanswered_question_count": 3
+  },
+  "questions": [
+    {
+      "ts": "1790117436.921519",
+      "user": "U08KP0PHNG0",
+      "text": "should i add you to the google project where the creds live?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "access_permissions",
+      "subtopic": "sharing GCP project credentials",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Contextual access decision needing human judgment on credential sharing."
+    },
+    {
+      "ts": "1790119917.125309",
+      "user": "U09DQENB7PX",
+      "text": "Im still working with the customer to better understand which part of the usage threshold is hampering them... but am I allowed to ask for an increase?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "pricing_commercial",
+      "subtopic": "usage threshold increase request",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires human approval and account-specific evaluation of limit increase."
+    },
+    {
+      "ts": "1790119945.396809",
+      "user": "U08KP0PHNG0",
+      "text": "yeah let's just try it?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "other",
+      "subtopic": "ambiguous confirmation reply",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "No context; too vague to classify or automate."
+    },
+    {
+      "ts": "1790103109.759739",
+      "user": "U034LALDDK4",
+      "text": "<@U0BETHXAKFS> is our hubspot AH app approved?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 5,
+      "first_reply_latency_sec": 14.111220121383667,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790103109759739?thread_ts=1790103109.759739&cid=C03NXTWBQKT",
+      "llm_category": "integration_connector",
+      "subtopic": "HubSpot app approval status",
+      "difficulty": 2,
+      "automatable": true,
+      "rationale": "Approval status could be looked up in a tracker."
+    },
+    {
+      "ts": "1790102166.245729",
+      "user": "U08P41NFP2Q",
+      "text": "<@U09F1BB96KC> - New customer Safeguard Global is interested in being introduced to our partners at various HRIS, Payroll, ATSs. I asked for a shortlist of providers and what their end-goal is (they are an EOR, so I suspect to be listed as a preferred partner of sorts).\n\nThat said and depending on the list they provide, what is your recommendation for introing Safeguard? Is it necessary for them to connect with you beforehand?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 13.731630086898804,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790102166245729?thread_ts=1790102166.245729&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "customer intro to HRIS partners",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Strategic intro decision requiring human recommendation and coordination."
+    },
+    {
+      "ts": "1790098872.627579",
+      "user": "U060YKZR918",
+      "text": "<@U0BBLFYHDFG> what's the newer Salesforce Partner SFDC app requirements for customers creating their own OAuth app?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 12.775530099868774,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790098872627579?thread_ts=1790098872.627579&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "Salesforce OAuth app requirements",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Documented OAuth requirements likely answerable via reference docs."
+    }
+  ]
+}

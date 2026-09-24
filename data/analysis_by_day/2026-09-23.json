@@ -1,0 +1,93 @@
+{
+  "per_day": {
+    "2026-09-23": {
+      "messages": 11,
+      "questions": 4
+    }
+  },
+  "category_distribution": {
+    "integration_connector": 2,
+    "roadmap": 1,
+    "other": 1
+  },
+  "top_askers": [
+    [
+      "U0B95J0FBJM",
+      2
+    ],
+    [
+      "U0BRKAZVDRN",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 401.665109872818,
+    "unanswered_question_count": 3
+  },
+  "questions": [
+    {
+      "ts": "1790197525.912249",
+      "user": "U0BRKAZVDRN",
+      "text": "Hi <!subteam^S0APEMVA8LQ>! I need help getting a Salesforce Partner Business Org (PBO) provisioned.\n*Context:* I'm adding Merge default credentials for the Agent Handler Salesforce connector. Today our client app would have to live in our corporate RevOps Salesforce org, which makes our production CRM a permanent dependency of the product \u2014 that org could never be migrated or consolidated without breaking every customer who installed our package. A PBO is Salesforce's intended home for this and removes the dependency entirely. There is no upfront license cost for a base PBO.\nI've completed a full proof of concept end to end, so the build steps and config are already validated. I just need your help setting up the account registration under the right team credentials.\n*What I need help with:*\n1. *Determine the Team Email Alias:* We need to choose a team distribution list or alias (e.g., `<mailto:salesforce-devs@merge.dev|salesforce-devs@merge.dev>` or `<mailto:partnerships@merge.dev|partnerships@merge.dev>`) to register the account. We should *not* use individual personal emails or our main production CRM admin accounts.\n2. *Enroll at <http://salesforce.com|salesforce.com>:* Click *Become a Salesforce Partner* and create a new Salesforce Username using that team alias. Select *ISV* as the partner type.\n3. *Accept the Click-Through Agreement:* The first time you log into the newly created account, Salesforce will show a standard, full-screen click-through agreement (the SPPA) to verify the portal access. It just requires a simple checkbox confirmation on the screen to pass.\n4. *Log a Help Case:* Once inside the portal, log a support case with the subject _\"Requesting Partner Business Org (PBO)\"_. In the description, explicitly request a *completely new, clean environment* to host our agreement.\nPlease let me know if I should clarify anything :slightly_smiling_face:",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 401.665109872818,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790197525912249?thread_ts=1790197525.912249&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "Salesforce PBO provisioning",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Detailed partner-org setup requiring internal credential decisions and manual portal case logging."
+    },
+    {
+      "ts": "1790197927.577359",
+      "user": "U0B95J0FBJM",
+      "text": "We have a Salesforce partner account already (<https://share.1password.com/s#RU0Ec7IxWAXLcktnMMqIzkWP21z6f1OVBLDONk4CCko|share.1password.com/s#\u2026>), I can log a help case for a partner business org. we recently got a salesforce cloud marketing tenant the same way, are there any additional details I need for a PBO?",
+      "category": "roadmap",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "partnership_process",
+      "subtopic": "PBO additional requirements",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Needs specific knowledge of Salesforce partner org process; no simple doc answer."
+    },
+    {
+      "ts": "1790197820.577169",
+      "user": "U0B95J0FBJM",
+      "text": "<@U08KP0PHNG0> there was some prior progress here for other meta connectors right? i think we were stuck in the process iirc?",
+      "category": "integration_connector",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "integration_connector",
+      "subtopic": "Meta connector prior progress",
+      "difficulty": 4,
+      "automatable": false,
+      "rationale": "Vague reference to past internal work requiring human context recall."
+    },
+    {
+      "ts": "1790198444.640069",
+      "user": "U08KP0PHNG0",
+      "text": "thanks Patrick!! can you share your sandbox here?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "Requesting sandbox access",
+      "difficulty": 1,
+      "automatable": false,
+      "rationale": "Simple request but depends on specific person sharing sandbox details."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "totals": {
+    "message_count": 22,
+    "question_count": 3,
+    "thread_count": 4,
+    "unique_users": 8
+  },
+  "per_day": {
+    "2026-09-24": {
+      "messages": 21,
+      "questions": 3
+    },
+    "2026-09-25": {
+      "messages": 1,
+      "questions": 0
+    }
+  },
+  "category_distribution": {
+    "other": 2,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U060YKZR918",
+      2
+    ],
+    [
+      "U07V69V0SH1",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 5396.8714500665665,
+    "unanswered_question_count": 1
+  },
+  "questions": [
+    {
+      "ts": "1790288745.871239",
+      "user": "U060YKZR918",
+      "text": "<@U0BBLFYHDFG> who is our ADP Partnerships contact and have we passed ADP's security review?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 2,
+      "first_reply_latency_sec": 7.5208001136779785,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790288745871239?thread_ts=1790288745.871239&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "ADP contact and security review",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of partner contacts and review status; not documented."
+    },
+    {
+      "ts": "1790286061.097039",
+      "user": "U07V69V0SH1",
+      "text": "when you guys created the Hubspot OAuth app, did you have to do it via CLI or were you able to create a public app from the UI? for ref I'm trying to make an article on how customers can create their own app (so their name shows in the hubspot linking flow instead of ours)",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 10786.222100019455,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790286061097039?thread_ts=1790286061.097039&cid=C03NXTWBQKT",
+      "llm_category": "auth_scopes",
+      "subtopic": "HubSpot OAuth app creation",
+      "difficulty": 3,
+      "automatable": true,
+      "rationale": "Technical OAuth setup question answerable via docs on CLI vs UI app creation."
+    },
+    {
+      "ts": "1790283734.211009",
+      "user": "U060YKZR918",
+      "text": "do we want to tell them this part?\n&gt; Agent Handler currently uses the Client Credentials flow.",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "disclosing auth flow details",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Judgment call on what to share with customer; needs human decision."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "totals": {
+    "message_count": 26,
+    "question_count": 4,
+    "thread_count": 4,
+    "unique_users": 6
+  },
+  "per_day": {
+    "2026-09-29": {
+      "messages": 17,
+      "questions": 4
+    },
+    "2026-09-30": {
+      "messages": 9,
+      "questions": 0
+    }
+  },
+  "category_distribution": {
+    "other": 3,
+    "api_technical": 1
+  },
+  "top_askers": [
+    [
+      "U07V69V0SH1",
+      2
+    ],
+    [
+      "U09DQENB7PX",
+      1
+    ],
+    [
+      "U08KP0PHNG0",
+      1
+    ]
+  ],
+  "response": {
+    "median_first_reply_latency_sec": 16.50336492061615,
+    "unanswered_question_count": 2
+  },
+  "questions": [
+    {
+      "ts": "1790716447.033549",
+      "user": "U07V69V0SH1",
+      "text": "<@U0BBLFYHDFG> do we have a dropbox contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 4,
+      "first_reply_latency_sec": 17.829229831695557,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790716447033549?thread_ts=1790716447.033549&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "find Dropbox contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Requires internal knowledge of partner contacts, not documented in a public FAQ."
+    },
+    {
+      "ts": "1790716505.718729",
+      "user": "U07V69V0SH1",
+      "text": "<@U08KP0PHNG0> just confirming, is it ok if we reach out to this person to ask about rate limits we are seeing for a particular user?",
+      "category": "api_technical",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "api_technical",
+      "subtopic": "rate limit outreach approval",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Approval question needs human judgment about contacting a specific person."
+    },
+    {
+      "ts": "1790704759.035939",
+      "user": "U09DQENB7PX",
+      "text": "<@U0BBLFYHDFG> who is our ukg pro recruiting contact?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 1,
+      "first_reply_latency_sec": 15.177500009536743,
+      "permalink": "https://mergeapi.slack.com/archives/C03NXTWBQKT/p1790704759035939?thread_ts=1790704759.035939&cid=C03NXTWBQKT",
+      "llm_category": "partnership_process",
+      "subtopic": "find UKG Pro contact",
+      "difficulty": 2,
+      "automatable": false,
+      "rationale": "Needs internal contact directory knowledge, not answerable by generic docs."
+    },
+    {
+      "ts": "1790699722.971899",
+      "user": "U08KP0PHNG0",
+      "text": "Can do! For future, does this apply to all evals that we need to run?",
+      "category": "other",
+      "is_question": true,
+      "reply_count": 0,
+      "first_reply_latency_sec": null,
+      "permalink": null,
+      "llm_category": "internal_ops",
+      "subtopic": "clarify eval scope",
+      "difficulty": 3,
+      "automatable": false,
+      "rationale": "Vague follow-up lacking context; requires human to clarify which evals apply."
+    }
+  ]
+}
